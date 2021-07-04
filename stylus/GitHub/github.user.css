@@ -1,0 +1,23 @@
+
+/* ==UserStyle==
+@name         GitHub Black Theme
+@description  Works best with "Dark High Contrast" theme. 
+@namespace    github.com/IdioticBuffoonery/stylus/GitHub
+@version      0.0.1
+@license      https://github.com/zolomohan/stylus-onedrive-dark/blob/master/LICENSE
+==/UserStyle== */
+
+@-moz-document url-prefix("https://github.com/") {
+  body, :root, [data-color-mode=dark][data-dark-theme*=light], [data-color-mode=light][data-light-theme*=light]{
+    --color-page-header-bg: black;
+    --color-bg-primary: #0a0a0a;
+    --color-bg-secondary: #0e0e0e;
+    --color-sidenav-selected-bg: #1c1c1c;
+    --color-bg-tertiary: #111;
+    --color-btn-bg: #0a0a0a;
+    --color-social-count-bg: #0a0a0a;
+    --color-header-bg: #0a0a0a;
+    --color-box-header-blue-bg:#1a1a1a;
+    background: #000;
+  }
+}
