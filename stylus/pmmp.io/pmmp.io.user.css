@@ -1,0 +1,100 @@
+/* ==UserStyle==
+@name         PMMP.IO Dark Mode
+@description  Dark Mode for PMMP.IO's Landing Page. 
+@namespace    github.com/IdioticBuffoonery/stylus/pmmp.io
+@version      0.0.1
+@license      MIT Licence
+==/UserStyle== */
+
+@-moz-document url("https://pmmp.io/"), url("https://pmmp.io/2016/11/08/PMMP-Forums-Released.html") {
+	body {
+	  background: #111;
+	}
+
+	#banner {
+	  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+	  url('https://pmmp.io/assets/images/mcwall.png');
+	}
+
+	span[class="image featured"] {
+	  background: rgba(0, 0, 0, 0.5);
+	}
+
+	#footer,
+	section[class^="box"],
+	div[class^="box"]{
+	  color: white;
+	  background: #171717;
+	  box-shadow: 0 2px 0 0 #2e2e2e;
+	}
+
+	header.major p,
+	.box.features .features-row {
+	  border-color: #2e2e2e;
+	}
+
+	.box.features .features-row section:nth-child(2n):before {
+	  background: #2e2e2e;
+	}
+
+	input[type="submit"].alt:hover,
+	input[type="reset"].alt:hover,
+	input[type="button"].alt:hover,
+	.button.alt:hover {
+	  background-color: rgba(255, 255, 255, 0.1);
+	}
+
+	#banner input[type="submit"].special:hover,
+	#banner input[type="reset"].special:hover,
+	#banner input[type="button"].special:hover,
+	#banner .button.special:hover {
+	  background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	#banner input[type="submit"].special,
+	#banner input[type="reset"].special,
+	#banner input[type="button"].special,
+	#banner .button.special {
+	  background: rgb(255 255 255 / 75%);
+	  color: black !important;
+	}
+
+	#navButton .toggle:before {
+	  background: #2e2e2e;
+	}
+
+	ul[class="dropotron level-0 right"] {
+	  background: rgba(255, 255, 255, 0.2);
+	  color: white;
+	  box-shadow: 0 2px 0 0 #111, inset 0 -1px 0 0 #111, inset 0 0 0 1px #111;
+	  background-color: rgba(255, 255, 255, 0.3);
+	  /*z-index: 10000 !important;
+	  display: block !important;*/
+	}
+
+	.dropotron li.active > a,
+	.dropotron li.active > span,
+	.dropotron li:hover > a,
+	.dropotron li:hover > span {
+	  transition: 0.2s ease-in-out, color 0.2s ease-in-out;
+	  background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.dropotron.level-0:before {
+	  background: #111;
+	  border-color: #111;
+	}
+
+	.dropotron li a,
+	.dropotron li span {
+	  border-color: #111;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p {
+	  color: white !important;
+	}
+}
