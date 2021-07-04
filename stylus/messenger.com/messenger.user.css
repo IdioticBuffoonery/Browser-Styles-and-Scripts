@@ -1,0 +1,51 @@
+/* ==UserStyle==
+@name         Dark Messenger.com
+@namespace    github.com/IdioticBuffoonery/stylus/messenger.com
+@version      0.0.1
+@license      MIT License
+==/UserStyle== */
+
+
+@-moz-document url-prefix("https://www.messenger.com/t"), url-prefix("https://www.messenger.com/new") {
+body,
+code,
+img,
+image,
+video,
+span[class="pq6dq46d is6700om qu0x051f esr5mh6w e9989ue4 r7d6kgcz s45kfl79 emlxlaya bkmhp75w spb7xbtv cyypbtt7 fwizqjfa"],
+div[class="k4urcfbm abiwlrkh l9j0dhe7 a8nywdso sj5x9vvc rz4wbd8a cxgpxx05 nhd2j8a9"],
+div[class="rq0escxv pmk7jnqg du4w35lb i09qtzwb j83agx80 cbu4d94t mb6dcl82 n7fi1qx3"],
+div[class="l9j0dhe7 stjgntxs ni8dbmo4 j83agx80 spb7xbtv bkmhp75w emlxlaya s45kfl79"],
+div[class="j83agx80 cbu4d94t p7hjln8o"],
+.gtx-trans-icon {
+	filter: invert(1);
+}
+
+div[class="k4urcfbm l9j0dhe7 stjgntxs ni8dbmo4 taijpn5t datstx6m buofh1pr j83agx80 rq0escxv j0qtgc86 e9n865no"],
+div[class="rq0escxv l9j0dhe7 du4w35lb j83agx80 pfnyh3mw taijpn5t bp9cbjyn owycx6da btwxx1t3 kt9q3ron ak7q8e6j isp2s0ed ri5dt5u2 rt8b4zig n8ej3o3l agehan2d sk4xxmp2 d1544ag0 tw6a2znq oo1teu6h tv7at329"] {
+	color: #00ff62;
+	background: #e0e0e0;
+}
+
+span[class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5"] {
+	color: black;
+}
+
+*::selection {
+	background: #ff872b;
+}
+div[aria-label="Message"]{
+	filter: invert(1);
+	color: white;
+}
+div[class="rq0escxv l9j0dhe7 du4w35lb j83agx80 g5gj957u rj1gh0hx buofh1pr hpfvmrgz i1fnvgqd bp9cbjyn owycx6da btwxx1t3 s9xz0pwp c4m0enpj rl78xhln srn514ro sn0e7ne5 f6rbj1fe l3ldwz01"] {
+	display: none;
+}
+code::selection,
+img::selection,
+image::selection,
+video::selection {
+	background: #0078d4;
+	color: white !important;
+}
+}
