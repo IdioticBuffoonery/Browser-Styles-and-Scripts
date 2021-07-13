@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Dark Messenger.com
 @namespace    github.com/IdioticBuffoonery/stylus/messenger.com
-@version      0.0.1
+@version      0.1.0
 @license      MIT License
 ==/UserStyle== */
 
@@ -10,15 +10,31 @@
 body,
 code,
 img,
+svg[fill="#0099FF"],
+svg[class="crt8y2ji"],
+svg[height="28px"],
 image,
 video,
+ul[class="j83agx80 cbu4d94t p7hjln8o"],
 span[class="pq6dq46d is6700om qu0x051f esr5mh6w e9989ue4 r7d6kgcz s45kfl79 emlxlaya bkmhp75w spb7xbtv cyypbtt7 fwizqjfa"],
 div[class="k4urcfbm abiwlrkh l9j0dhe7 a8nywdso sj5x9vvc rz4wbd8a cxgpxx05 nhd2j8a9"],
 div[class="rq0escxv pmk7jnqg du4w35lb i09qtzwb j83agx80 cbu4d94t mb6dcl82 n7fi1qx3"],
 div[class="l9j0dhe7 stjgntxs ni8dbmo4 j83agx80 spb7xbtv bkmhp75w emlxlaya s45kfl79"],
 div[class="j83agx80 cbu4d94t p7hjln8o"],
+div.ljqsnud1,
+span[class="tojvnm2t a6sixzi8 abs2jz4q a8s20v7p t1p8iaqh k5wvi7nf q3lfd5jv pk4s997a bipmatt0 cebpdrjk qowsmv63 owwhemhu dp1hu0rb dhp61c6y iyyx5f41"] div[class="l60d2q6s d1544ag0 sj5x9vvc tw6a2znq l9j0dhe7 ni8dbmo4 stjgntxs qlfml3jp inkptoze e72ty7fz qmr60zad jm1wdb64 qv66sw1b ljqsnud1 g6srhlxm odn2s2vf"],
+/*div[class="oo9gr5id"],*/
+div[style="background-color: rgb(0, 153, 255);"],
 .gtx-trans-icon {
-	filter: invert(1);
+	filter: invert(1) !important;
+}
+
+div[data-testid="outgoing_message"] span[class="tojvnm2t a6sixzi8 abs2jz4q a8s20v7p t1p8iaqh k5wvi7nf q3lfd5jv pk4s997a bipmatt0 cebpdrjk qowsmv63 owwhemhu dp1hu0rb dhp61c6y iyyx5f41"] img[src^="https://static.xx.fbcdn.net/images/emoji.php"] {
+	filter: invert(1) !important;
+}
+
+div[dir="auto"] img[src^="https://static.xx.fbcdn.net/images/emoji.php"] {
+	filter: invert(0) !important;
 }
 
 div[class="k4urcfbm l9j0dhe7 stjgntxs ni8dbmo4 taijpn5t datstx6m buofh1pr j83agx80 rq0escxv j0qtgc86 e9n865no"],
@@ -28,19 +44,27 @@ div[class="rq0escxv l9j0dhe7 du4w35lb j83agx80 pfnyh3mw taijpn5t bp9cbjyn owycx6
 }
 
 span[class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5"] {
-	color: black;
+	color: #000;
+}
+
+span[class="d2edcug0 hpfvmrgz qv66sw1b c1et5uql lr9zc1uh a8c37x1j keod5gw0 nxhoafnm aigsh9s9 d3f4x2em fe6kdd0r mau55g9w c8b282yb iv3no6db gfeo3gy3 a3bd9o3v knj5qynh oo9gr5id"] span[class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5"],
+span[class="d2edcug0 hpfvmrgz qv66sw1b c1et5uql lr9zc1uh a8c37x1j keod5gw0 nxhoafnm aigsh9s9 d3f4x2em fe6kdd0r mau55g9w c8b282yb iv3no6db gfeo3gy3 a3bd9o3v knj5qynh py34i1dx"] span[class="a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5"] {
+	color: #fff;
 }
 
 *::selection {
 	background: #ff872b;
 }
-div[aria-label="Message"]{
+
+div[aria-label="Message"] {
 	filter: invert(1);
 	color: white;
 }
+
 div[class="rq0escxv l9j0dhe7 du4w35lb j83agx80 g5gj957u rj1gh0hx buofh1pr hpfvmrgz i1fnvgqd bp9cbjyn owycx6da btwxx1t3 s9xz0pwp c4m0enpj rl78xhln srn514ro sn0e7ne5 f6rbj1fe l3ldwz01"] {
 	display: none;
 }
+
 code::selection,
 img::selection,
 image::selection,
