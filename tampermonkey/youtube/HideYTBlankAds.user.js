@@ -17,11 +17,10 @@
         while(a){
             try{
                 document.querySelector(".style-scope .ytd-display-ad-renderer").parentElement.parentElement.parentElement.remove();
-                console.warn("\n\n\nBlank Advert Deleted!\n\n\n");
-
+                //console.warn("\n\n\nBlank Advert Deleted!\n\n\n");
                 break
             } catch(err){
-                console.warn("\n\n\nNo Blank Advert Detected.\n\n\n")
+                //console.warn("\n\n\nNo Blank Advert Detected.\n\n\n")
                 break
             }
         }
