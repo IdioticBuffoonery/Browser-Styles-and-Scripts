@@ -1,32 +1,34 @@
 // ==UserScript==
 // @name         Volume-Up-To-Eleven!
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @namespace    Volume-Up-To-Eleven.user.js
+// @version      0.2
 // @description  Boost Volume!
 // @author       padenot & HBIDamian
 // @run-at       document-start
-// @match        https://www.youtube.com/watch?v=*
+// @match        https://www.youtube.com
+// @match        https://www.youtube.com/
+// @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?domain=youtube.com
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
+
 (function() {
     'use strict';
-    GM_registerMenuCommand("1. Normal-ish volume", normal, "1");
+    GM_registerMenuCommand("1. Normal volume", normal, "1");
     GM_registerMenuCommand("2. Crank the volume up to 11!", volTo11, "2");
     GM_registerMenuCommand("3. ⚠️ Blast my Ears off! ⚠️", goodbyeEars, "3");
-    GM_registerMenuCommand("4. Wait, I can't hear you! Am I deaf?", mute, "4");
+    GM_registerMenuCommand("4. Mute", mute, "4");
 
     // Parameters:
     // volumeControl(varGain, varThreshold, varRatio)
-
     function normal(){
-        volumeControl("1.0", "-50", "20.0");
+        volumeControl("1", "-24", "12.0");
+    }
+    function volTo11(){
+        volumeControl("10.0", "-24", "20.0");
     }
     function goodbyeEars(){
         volumeControl("100.0", "100", "100.0");
-    }
-    function volTo11(){
-        volumeControl("25.0", "-50", "20.0");
     }
     function mute(){
         volumeControl("-0.0", "-0", "0");
@@ -55,10 +57,12 @@
 
         // brick-wall limiter to avoid output saturation.
         // This one has a makeup gain stage built-in
+        // https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode
         var comp = new DynamicsCompressorNode(window.__ac, {ratio: varRatio, threshold: varThreshold});
 
         // Increase the gain quite a lot.
         // Maybe it would be good to make it configurable.
+        // https://developer.mozilla.org/en-US/docs/Web/API/GainNode/GainNode
         var gain = new GainNode(window.__ac, {gain: varGain});
         if (!window.__source) {
             var element = document.querySelector("video");
