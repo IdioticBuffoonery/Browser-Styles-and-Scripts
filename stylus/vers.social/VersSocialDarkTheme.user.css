@@ -1,0 +1,36 @@
+/* ==UserStyle==
+@name           vers.social Dark Theme
+@namespace      github.com/IdioticBuffoonery/stylus/vers.social
+@version        1.0.0
+@description    My own personal Dark Mode for Vers Social
+@author         HBIDamian
+==/UserStyle== */
+@-moz-document domain("vers.social") {
+	html, body {
+		background-color: #1e1e1e !important;
+	}
+
+	div[class="post"],
+	div[class="profile"],
+	div[class="card"],
+	div[class="card center"],
+	div[class="user"],
+	div[id="popup"],
+	div[class="notification"],
+	div[class="post single"], 
+	div[class="blogPost"]{
+		background-color: #333 !important;
+	}
+
+	h1, h2, h3, h4, h5, h6, span, p, a, div[class="pronouns"], textarea, input, *{
+		color: white !important;
+	}
+
+	p.likedBy a {
+		color: #e966ff !important;
+	}
+	
+	.comments .comment_body{
+		background-image: unset;
+	}
+}
