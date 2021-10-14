@@ -1,13 +1,18 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/stylus/vers.social
-@version        1.0.0
+@version        1.0.1
 @description    My own personal Dark Mode for Vers Social
 @author         HBIDamian
 ==/UserStyle== */
 @-moz-document domain("vers.social") {
 	html, body {
 		background-color: #1e1e1e !important;
+		overflow-x: hidden;
+	}
+
+	* {
+		overflow-x: hidden !important;
 	}
 
 	div[class="post"],
@@ -17,20 +22,48 @@
 	div[class="user"],
 	div[id="popup"],
 	div[class="notification"],
-	div[class="post single"], 
-	div[class="blogPost"]{
+	div[class="post single"],
+	div[class="blogPost"] {
 		background-color: #333 !important;
 	}
 
-	h1, h2, h3, h4, h5, h6, span, p, a, div[class="pronouns"], textarea, input, *{
+	h1, h2, h3, h4, h5, h6, span, p, a, div[class="pronouns"], textarea, input, * {
 		color: white !important;
 	}
 
 	p.likedBy a {
 		color: #e966ff !important;
 	}
-	
-	.comments .comment_body{
+
+	.comments .comment_body {
 		background-image: unset;
+	}
+
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-corner {
+		background: #995fa3;
+		height: unset;
+		width: unset;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #995fa3;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #e966ff;
+		border-radius: 10px;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #b78fbe;
 	}
 }
