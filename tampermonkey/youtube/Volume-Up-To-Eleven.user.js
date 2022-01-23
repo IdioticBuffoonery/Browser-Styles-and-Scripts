@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name         Volume-Up-To-Eleven!
 // @namespace    Volume-Up-To-Eleven.user.js
-// @version      0.2
-// @description  Boost Volume!
+// @version      1.0.0
+// @description  Boost Video Volume on various websites. Websites I've included work for me with this script.
 // @author       padenot & HBIDamian
-// @run-at       document-start
-// @match        https://www.youtube.com
-// @match        https://www.youtube.com/
-// @match        https://www.youtube.com/*
-// @icon         https://www.google.com/s2/favicons?domain=youtube.com
+// @run-at       document-body
+// @match        *://*.facebook.com/*
+// @match        *://*.incompetech.com/*
+// @match        *://*.onedrive.live.com/*
+// @match        *://*.twitter.com/*
+// @match        *://*.vimeo.com/*
+// @match        *://*.youtube.com/*
+// @icon         https://cdn-icons-png.flaticon.com/512/4349/4349708.png
 // @grant        GM_registerMenuCommand
 // ==/UserScript==
 
@@ -19,19 +22,35 @@
     GM_registerMenuCommand("3. ⚠️ Blast my Ears off! ⚠️", goodbyeEars, "3");
     GM_registerMenuCommand("4. Mute", mute, "4");
 
+
+
     // Parameters:
     // volumeControl(varGain, varThreshold, varRatio)
+    var goodbyeEarsCount = 0;
+
     function normal(){
         volumeControl("1", "-24", "12.0");
+        goodbyeEarsCount = 0;
     }
+
     function volTo11(){
         volumeControl("10.0", "-24", "20.0");
+        goodbyeEarsCount = 0;
     }
+
     function goodbyeEars(){
-        volumeControl("100.0", "100", "100.0");
+        if (!goodbyeEarsCount == 1) {
+            goodbyeEarsCount++;
+            alert("If you're sure you want to do this, click this again!");
+        } else {
+            volumeControl("100.0", "100", "100.0");
+            goodbyeEarsCount = 0;
+        }
     }
+
     function mute(){
         volumeControl("-0.0", "-0", "0");
+        goodbyeEarsCount = 0;
     }
 
     /*
@@ -65,7 +84,7 @@
         // https://developer.mozilla.org/en-US/docs/Web/API/GainNode/GainNode
         var gain = new GainNode(window.__ac, {gain: varGain});
         if (!window.__source) {
-            var element = document.querySelector("video");
+            var element = document.querySelector("video,audio");
             window.__source = new MediaElementAudioSourceNode(window.__ac, { mediaElement: element});
         } else {
             window.__source.disconnect();
