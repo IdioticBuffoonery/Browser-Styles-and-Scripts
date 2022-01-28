@@ -1,12 +1,24 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.0.4
+@version        1.0.5
 @description    My own personal Dark Mode for Vers Social
 @author         HBIDamian
 ==/UserStyle== */
-@-moz-document url-prefix("https://vers.social/@"), url("https://vers.social/"), url("https://vers.social/home"), url("https://vers.social/meditate"), url("https://vers.social/notifications"), url("https://vers.social/pro"), url("https://vers.social/wellness"), url("https://vers.social/profile-settings"), url-prefix("https://vers.social/post-office"), url-prefix("https://vers.social/distraction-free"), url-prefix("https://vers.social/letter/") {
-	html, body {
+@-moz-document url-prefix("https://vers.social/@"),
+url("https://vers.social/"),
+url("https://vers.social/login"),
+url("https://vers.social/home"),
+url("https://vers.social/meditate"),
+url("https://vers.social/notifications"),
+url("https://vers.social/pro"),
+url("https://vers.social/wellness"),
+url("https://vers.social/profile-settings"),
+url-prefix("https://vers.social/post-office"),
+url-prefix("https://vers.social/distraction-free"),
+url-prefix("https://vers.social/letter/") {
+	html,
+	body {
 		background-color: #1e1e1e !important;
 		scroll-behavior: smooth;
 		overflow-x: hidden;
@@ -32,7 +44,20 @@
 	/*h1, h2, h3, h4, h5, h6, span, div[class="post"], a, div[class="pronouns"], textarea, input, * {
 		color: white !important;
 	}*/
-	h1, h2, h3, h4, h5, h6, span, p, a, div[class="pronouns"], div[class="comments"], div[class="comment_body"], textarea, input {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	span,
+	p,
+	a,
+	div[class="pronouns"],
+	div[class="comments"],
+	div[class="comment_body"],
+	textarea,
+	input {
 		color: white !important;
 	}
 
