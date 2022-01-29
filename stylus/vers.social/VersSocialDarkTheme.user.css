@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.0.5
-@description    My own personal Dark Mode for Vers Social
+@version        1.1.0
+@description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
 @-moz-document url-prefix("https://vers.social/@"),
@@ -33,12 +33,25 @@ url-prefix("https://vers.social/letter/") {
 	div[class="profile"],
 	div[class="card"],
 	div[class="card center"],
+	div[class="card meditate center"],
 	div[class="user"],
 	div[id="popup"],
 	div[class="notification"],
 	div[class="post single"],
-	div[class="blogPost"] {
+	div[class="blogPost"],
+	textarea[name="status"],
+	textarea[name="comment"] {
 		background-color: #333 !important;
+	}
+
+	input#synchronizationFrequency,
+	input[type="text"],
+	input[type="date"],
+	select,
+	option,
+	textarea#profileBioInput,
+	pre {
+		background-color: #1e1e1e;
 	}
 
 	/*h1, h2, h3, h4, h5, h6, span, div[class="post"], a, div[class="pronouns"], textarea, input, * {
@@ -52,6 +65,7 @@ url-prefix("https://vers.social/letter/") {
 	h6,
 	span,
 	p,
+	pre,
 	a,
 	div[class="pronouns"],
 	div[class="comments"],
