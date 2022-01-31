@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.1.0
+@version        1.2.0
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
@@ -17,13 +17,13 @@ url("https://vers.social/profile-settings"),
 url-prefix("https://vers.social/post-office"),
 url-prefix("https://vers.social/distraction-free"),
 url-prefix("https://vers.social/letter/") {
+
 	html,
 	body {
-		background-color: #1e1e1e !important;
+		background-color: var(--main-dark-color) !important;
 		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
-
 
 	div[class="verified"] {
 		overflow-y: hidden !important;
@@ -41,7 +41,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="blogPost"],
 	textarea[name="status"],
 	textarea[name="comment"] {
-		background-color: #333 !important;
+		background-color: var(--secondary-dark-color) !important;
 	}
 
 	input#synchronizationFrequency,
@@ -51,12 +51,11 @@ url-prefix("https://vers.social/letter/") {
 	option,
 	textarea#profileBioInput,
 	pre {
-		background-color: #1e1e1e;
+		background-color: var(--main-dark-color);
 	}
 
-	/*h1, h2, h3, h4, h5, h6, span, div[class="post"], a, div[class="pronouns"], textarea, input, * {
-		color: white !important;
-	}*/
+	a,
+	p,
 	h1,
 	h2,
 	h3,
@@ -64,58 +63,65 @@ url-prefix("https://vers.social/letter/") {
 	h5,
 	h6,
 	span,
-	p,
 	pre,
-	a,
 	div[class="pronouns"],
 	div[class="comments"],
 	div[class="comment_body"],
 	textarea,
-	input {
+	table,
+	input,
+	select {
 		color: white !important;
 	}
 
 	div[class="postBody"] a {
-		color: #995fa3 !important;
+		color: var(--main-color) !important;
 	}
 
 	div[class="card lettercard"] {
 		filter: invert(1);
 	}
 
-	p.likedBy a {
-		color: #e966ff !important;
+	p.likedBy a,
+	div.postBody a {
+		color: var(--main-color) !important;
 	}
 
 	.comments .comment_body {
 		background-image: unset;
 	}
 
-	/* width */
 	::-webkit-scrollbar {
 		width: 10px;
 		height: 10px;
 	}
 
 	::-webkit-scrollbar-corner {
-		background: #995fa3;
+		background: var(--secondary-color);
 		height: unset;
 		width: unset;
 	}
 
-	/* Track */
 	::-webkit-scrollbar-track {
-		background: #995fa3;
+		background: var(--secondary-color);
 	}
 
-	/* Handle */
 	::-webkit-scrollbar-thumb {
-		background: #e966ff;
-		border-radius: 10px;
+		background: var(--third-color);
+		/*border-radius: 10px;*/
 	}
 
-	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover {
-		background: #b78fbe;
+		background: var(--hover-color);
+	}
+
+	:root {
+		--main-color: #995fa3;
+		--hover-color: #b78fbe;
+		--secondary-color: #7c4984;
+		--third-color: #512957;
+		--link-color: #e966ff;
+		--main-dark-color: #1e1e1e;
+		--secondary-dark-color: #333;
 	}
 }
