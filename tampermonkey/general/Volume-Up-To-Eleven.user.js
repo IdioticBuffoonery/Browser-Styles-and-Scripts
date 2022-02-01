@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         Volume-Up-To-Eleven!
 // @namespace    Volume-Up-To-Eleven.user.js
-// @version      1.0.0
-// @description  Boost Video Volume on various websites. Websites I've included work for me with this script.
+// @version      1.0.1
+// @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/general/Volume-Up-To-Eleven.user.js
+// @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/general/Volume-Up-To-Eleven.user.js
+// @description  Boost volume on various websites. Websites I've included work for me with this script.
 // @author       padenot & HBIDamian
 // @run-at       document-body
 // @match        *://*.facebook.com/*
@@ -17,40 +19,34 @@
 
 (function() {
     'use strict';
-    GM_registerMenuCommand("1. Normal volume", normal, "1");
-    GM_registerMenuCommand("2. Crank the volume up to 11!", volTo11, "2");
-    GM_registerMenuCommand("3. ⚠️ Blast my Ears off! ⚠️", goodbyeEars, "3");
-    GM_registerMenuCommand("4. Mute", mute, "4");
+    GM_registerMenuCommand("1. Mute", muteVolume, "1");
+    GM_registerMenuCommand("2. Normal volume", normalVolume, "2");
+    GM_registerMenuCommand("3. Crank the volume up to 11!", volTo11, "3");
+    GM_registerMenuCommand("4. ⚠️ Blast my Ears off! ⚠️", goodbyeEarsVolume, "4");
 
-
-
-    // Parameters:
-    // volumeControl(varGain, varThreshold, varRatio)
     var goodbyeEarsCount = 0;
 
-    function normal(){
-        volumeControl("1", "-24", "12.0");
-        goodbyeEarsCount = 0;
+    // Parameters:
+    // volumeUpToControl(varGain, varThreshold, varRatio)
+    function muteVolume(){
+        volumeUpToControl("-0.0", "-0", "0");
+    }
+
+    function normalVolume(){
+        volumeUpToControl("1", "-24", "12.0");
     }
 
     function volTo11(){
-        volumeControl("10.0", "-24", "20.0");
-        goodbyeEarsCount = 0;
+        volumeUpToControl("10.0", "-24", "20.0");
     }
 
-    function goodbyeEars(){
+    function goodbyeEarsVolume(){
         if (!goodbyeEarsCount == 1) {
             goodbyeEarsCount++;
             alert("If you're sure you want to do this, click this again!");
         } else {
-            volumeControl("100.0", "100", "100.0");
-            goodbyeEarsCount = 0;
+            volumeUpToControl("100.0", "100", "100.0");
         }
-    }
-
-    function mute(){
-        volumeControl("-0.0", "-0", "0");
-        goodbyeEarsCount = 0;
     }
 
     /*
@@ -68,7 +64,8 @@
     HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
-    function volumeControl(varGain, varThreshold, varRatio) {
+    function volumeUpToControl(varGain, varThreshold, varRatio) {
+        goodbyeEarsCount = 0;
         console.log(`Gain: ${varGain}\nThreshold: ${varThreshold}\nRatio: ${varRatio}`);
         if (!window.__ac) {
             window.__ac = new AudioContext();
