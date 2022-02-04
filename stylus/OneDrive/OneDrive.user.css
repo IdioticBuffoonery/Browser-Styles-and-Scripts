@@ -1,12 +1,25 @@
 /* ==UserStyle==
-@name         Dark Mode
+@name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.4
+@version      0.0.5
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
 @-moz-document url-prefix("https://onedrive.live.com/?") {
 
+	/*
+	TODO:
+
+	- Help Section / Setting Section / Profile Section.
+	- "OneDrive Plans and Upgrades" page.
+	- Recycle Bin page.
+	- Recent page.
+	- Apps button -> All Apps
+	- A few other small odities on the main page.
+	- Make use of var() class to make it easier to keep a consistent colour palette.
+	- Try comment things more... like that's ever gonna happen. 😂
+	*/
+	
 	body,
 	html {
 		background-color: #151515;
@@ -14,7 +27,6 @@
 
 	div[data-automationid="main-left-nav"] {
 		background-color: #212121 !important;
-		color: cyan !important;
 	}
 
 	div[class="od-DetailsPaneWrapper isFluent"] div {
@@ -61,11 +73,17 @@
 	div[role="menubar"],
 	button[role="menuitem"],
 	div[role="listbox"] div,
-	ul[class="group-150"],
-	button[class="submitSuggestion-144"],
+	ul[class^="group-"],
+	button[class^="submitSuggestion-"],
 	form[role="search"] {
 		color: white !important;
 		background-color: #212121 !important;
+	}
+
+	/*below is a hacky way for the search bar */
+	div[class^="suggestionContainer"] div div:hover,
+	div div[class^="suggestionIconWrapper-"] div[class^="noWrap-"]:hover {
+		background-color: #151515 !important;
 	}
 
 	div[class="OneUp-carousel"] {
@@ -107,23 +125,38 @@
 		color: white !important;
 	}
 
-	/* width */
-	::-webkit-scrollbar {
-		width: 10px;
+
+	/*Microsoft 365 Application Launcher*/
+	div[id="appLauncherTop"],
+	div[id="appLauncherMainView"] {
+		background-color: #212121 !important;
 	}
 
-	/* Track */
+	div[id="appLauncherTop"] div,
+	div[id="appLauncherMainView"] div,
+	div[id="appsModule"] div h2 {
+		color: #bbb !important;
+	}
+
+
+	/*scrollbar I ripped off of W3Schools*/
+	::-webkit-scrollbar {
+		width: 11px;
+	}
+
 	::-webkit-scrollbar-track {
+		background: #212121;
+	}
+
+	::-webkit-scrollbar-thumb {
 		background: #333;
 	}
 
-	/* Handle */
-	::-webkit-scrollbar-thumb {
+	::-webkit-scrollbar-thumb:hover {
 		background: #666;
 	}
 
-	/* Handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-		background: #888;
+	::-webkit-scrollbar-corner {
+		background: #212121;
 	}
 }
