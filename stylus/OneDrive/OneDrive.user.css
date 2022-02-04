@@ -1,324 +1,129 @@
 /* ==UserStyle==
-@name         stylus-onedrive-dark (Blue)
+@name         Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.3
-@license      https://github.com/zolomohan/stylus-onedrive-dark/blob/master/LICENSE
+@version      0.0.4
+@description  Dark mode for the online version of OneDrive
+@author       HBIDamian
 ==/UserStyle== */
-
 @-moz-document url-prefix("https://onedrive.live.com/?") {
-.od-BasePage,
-.od-ItemTile2-icon,
-#appLauncher,
-#O365fpcontainerid {
-	filter: invert(0.92);
-	background-color: #efefef;
-}
 
-/*above: and #O365fpcontainerid */
-#O365_MainLink_MePhoto {
-	filter: invert(0);
-}
+	body,
+	html {
+		background-color: #151515;
+	}
 
-.od-Share-PeoplePicker .ms-BasePicker-text {
-	border-bottom: 1px solid #ff872b;
-}
+	div[data-automationid="main-left-nav"] {
+		background-color: #212121 !important;
+		color: cyan !important;
+	}
 
-.od-DragAndDropTargetFrame,
-.od-DragAndDropTargetFrame-message {
-	filter: invert(1);
-}
+	div[class="od-DetailsPaneWrapper isFluent"] div {
+		background-color: #212121 !important;
+		color: #bbb;
+	}
 
-.isFluent .od-Panel {
-	box-shadow: 0 25.6px 57.6px 0 rgb(255 255 255 / 22%), 0 4.8px 14.4px 0 rgb(255 255 255 / 18%);
-}
+	div div[class="od-ItemActivityList-activity"],
+	div[class="od-ItemActivityList-activity"] div {
+		background-color: #151515 !important;
+	}
 
-._2ciYrAR-RvVbmSIqaSPwCZ,
-.od-VideoCanvas-video,
-.od-ScrubBar,
-.ms-Check,
-#meControlEditPhotoButton,
-._1f_xZYaR76amiIfYIOmZIX,
-._1iS4i6t-LwG4hyshshhEJo,
-.ms-Button--primary,
-#emptyFolderImg,
-.EmptyFolder-subTextPart2Link,
-div[data-bind="interactionScope:{isActive:isActive},css:{'is-active':isActive,'has-info-pane':isInfoPaneExpanded,'has-O365-flex-pane':isO365FlexPaneVisible,'od-BasePage--hasSmartBanner':isSmartBannerVisible,'od-BasePage-leftNavVisible':isLeftNavLoadedAndVisible,'od-BasePage-leftNavOverlayVisible':isLeftNavLoadedAndExpanded,'od-BasePage-leftNavClosing':isLeftNavLoadedAndClosing,'od-BasePage--noSuiteNav':isSuiteNavHidden},class:pageTypeClassName,dragAndDrop:{mayReceiveDrop:onMayReceiveDrop,isDragging:onDragging,receiveDrop:onReceiveDrop}"],
-.isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view .ms-Button-label:after,
-.isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled .ms-Button-label:after,
-.itemActivity_b2e77c57 .action_b2e77c57,
-#meControlLinks,
-.ms-Button-icon,
-.od-DetailsPane-SecondaryPane-header-icon,
-.InfoPaneSection-information-changeFolderType,
-.od-ItemActivity-item-textContent a span,
-.ms-ActivityItem-activityTypeIcon,
-.od-QuotaBar,
-.od-Button,
-button[role="menuitemcheckbox"],
-.od-ShowPermissions-commandBar .ms-CommandBar .ms-OverflowSet-item:first-child button,
-.OperationMonitor-itemProgress,
-.OperationMonitor-itemIconAction,
-.ms-ContextualMenu-icon,
-.container-144,
-/* .ms-Callout-beak, 
-.ms-Callout-container,
-.ms-Callout-main,*/
-.LeftNav-notificationLink,
-.ms-Icon--OneDrive,
-.ms-ContextualMenu-list,
-button[aria-owns="ContextualMenu467"],
-#ContextualMenu320,
-.content-109,
-.ms-Image-image,
-.od-ItemLink[data-bind="click:$component.execute.bind($component),text:$component.name"],
-div [class*="box-"],
-div [class*="dragMask-"],
-form[role="search"],
-.o365cs-base ._3X3KIHRvQlB_k1KQr3703K,
-.OperationMonitor-itemType,
-span.FileTypeIcon,
-.tileViewport_4f0a5228,
-i[data-icon-name="glimmer"],
-.SharerHeader,
-.ItemTile-subText,
-div[aria-label="Photo gallery"],
-.exploreCarousel_fe7338cd,
-.ms-ContextualMenu-container,
-/*.carouselList_fe7338cd,*/
-.background_cba26233,
-.StorageOptions-newPage-currentPlan-value,
-.od-quota-progress-bar-top,
-.od-PlanCardTest-headerIconImage,
-div[data-bind="currentPlanValueText"],
-.ms-Spinner-circle,
-form[role="search"],
-.o365cs-base ._3Z7VFS_x3gZybNb1mFRy6C,
-.o365cs-base ._3Z7VFS_x3gZybNb1mFRy6C._18pt2coL7SmPYrUPU5Lgb6,
-.o365cs-base ._3Z7VFS_x3gZybNb1mFRy6C._2K-JLZHcZtOM3YraBHxKst,
-.ms-MessageBar,
-.ProgressBar-value,
-.StorageInfo-links,
-*[class="StorageInfo-plans-link"],
-.StorageInfo-plans-redeemcode,
-.StorageInfo-support-link-url,
-.od-BasePage-loadingDiv,
-.od-BasePage-suiteNav,
-.calloutMain-159,
-.FileTypeIcon-icon,
-.checkbox-239,
-div[class="od-ShareLinkDescription-icon icon-Globe"],
-div[class="FileTypeIcon"],
-.ProgressBar-track,
-.od-FolderBuilder-status{
-	filter: invert(1) !important;
-}
+	nav[role="navigation"] div {
+		color: #bbb !important;
+	}
 
-div[aria-label="exe File"]{
-	filter: invert(0) !important;
-}
-.od-BasePage-loadingDiv {
-	background: unset;
-}
+	li[class^="ms-Nav-navItem navItem"] div div div a {
+		color: #bbb !important;
+	}
 
-.od-VideoPlayer-canvas,
-.od-VideoPlayer-status,
-.od-ImageFrame {
-	background: white;
-}
+	li[class^="ms-Nav-navItem navItem"] div div div a:hover {
+		background-color: #151515 !important;
+	}
 
-.SharerHeader-title,
-.SharerHeader-subText {
-	color: white !important;
-}
+	li[class^="ms-Nav-navItem navItem"] div.is-selected div div a {
+		background-color: #333 !important;
+	}
 
-.ItemTile.is-folder .ItemTile-namePlate,
-.ItemTile.is-folder .ItemTile-namePlate::after,
-.ItemTile.is-folder .ItemTile-namePlate::before,
-.ItemTile-folderBeak::before,
-.ItemTile.is-file .ItemTile-namePlate {
-	opacity: 1 !important;
-	background-color: white;
-	color: black;
-}
+	ul[class^="ms-ContextualMenu-list is-open list"] {
+		background-color: #212121 !important;
+		color: cyan !important;
+	}
 
-input[type="search"] {
-	color: red !important;
-}
+	ul[class^="ms-ContextualMenu-list is-open list"] li button:hover {
+		background-color: #151515 !important;
+		color: white !important;
+	}
 
-.od-TextField-field:focus {
-	border: 1px solid #ff872b;
-}
+	ul[class^="ms-ContextualMenu-list is-open list"] li button {
+		color: #bbb !important;
+	}
 
-.od-Link {
-	color: #ff872b;
-}
+	div[data-automationid="ItemTile"],
+	div[role="menubar"],
+	button[role="menuitem"],
+	div[role="listbox"] div,
+	ul[class="group-150"],
+	button[class="submitSuggestion-144"],
+	form[role="search"] {
+		color: white !important;
+		background-color: #212121 !important;
+	}
 
-a.ocpArticleLink {
-	color: red !important;
-}
+	div[class="OneUp-carousel"] {
+		background-color: #151515 !important;
+	}
 
-.od-Link::selection,
-.od-FolderTree-commandBar .ms-CommandBar .od-Command--PrimaryButton {
-	background: #ff872b;
-}
+	button[role="menuitem"]:hover {
+		color: #bbb !important
+	}
 
-.od-FolderTree-commandBar .ms-CommandBar .od-Command--PrimaryButton:hover {
-	background: #ff933f;
-}
+	span[class="od-commandBar-divider"] {
+		background-color: #151515 !important;
+	}
 
-a::selection {
-	background: #ff872b;
-}
+	div[aria-label="Command bar"],
+	.LeftNav-notificationLink,
+	.LeftPane-notifications {
+		border-color: #151515 !important;
+	}
 
-/* Box witin item */
-.od-ItemTile2--isLarge .od-ItemTile2-icon::after,
-.linkContent-164 {
-	filter: invert(1) !important;
-	background: white !important;
-}
+	li[role="separator"] {
+		background-color: #151515 !important
+	}
 
-.hasForegroundFrame_9c46d494 .foreground_9c46d494::after {
-	border: 2px solid #3c3c3c;
-}
+	span[id^="Tile-name"] {
+		color: #fff !important;
+	}
 
-.od-PremiumUpsellBanner-header {
-	border: 1px solid #FF872b !important;
-	color: #FF872B !important;
-}
+	button[aria-label="More"] {
+		color: white !important;
+	}
 
-/*box inside item */
-.hasForegroundFrame_fcf7455f .foreground_fcf7455f:after {
-	filter: invert(1);
-}
+	i[data-icon-name="More"] {
+		color: #fff !important;
+	}
 
-.od-Panel {
-	box-shadow: none;
-	border-left: 1px solid #dadada;
-}
+	li[class^="ms-Breadcrumb-listItem"] div div button:hover {
+		background-color: #212121;
+		color: white !important;
+	}
 
-/*Text Editor*/
-.line-numbers,
-/* File Type Icon */
-.od-ItemTile2-icon div img,
-/* Personal Vault Setup Modal User Image  */
-.od-Persona-image,
-/* Manage Access Icon */
-.od-FileNameWithIcon-icon,
-/* New Dropdown Icons */
-.ms-Image,
-/* Office 365 Icons in App Launcher */
-.ms-svg-Icon,
-/* Preview File Icon */
-.OneUp-other-fileIcon,
-/* File/Folder in List Mode */
-.od-DetailsRow-cell--FileIcon,
-/* Folders in Tiles View */
-.ms-Tile-content,
-.ms-Tile-nameplate,
-/* File Thumbnail Image */
-.od-ItemTile2-image,
-.od-ImageTile--isDimensioned,
-/* Folder Content Thumbnail */
-.ms-FolderCover-content,
-/* PDF Reader */
-.od-PdfViewer-container,
-/* User Avatar */
-._14ggU2yZvNol5U91gfmYQA img,
-/* Information Pane Icon */
-.InfoPane-itemDetails-icon img,
-/* Progress Icon */
-.OperationMonitor-itemType,
-/* Share By  Link Social Media */
-.od-SharingByLink-icon img,
-/* Premium Card Office 365 Icons */
-.od-PlanCardTest-officeAppIcon,
-.od-Button.od-PlanCardTest-buttonPrimary,
-.ms-ContextualMenu-link,
-.od-Share,
-.ms-Icon--CheckMark {
-	filter: invert(1);
-}
+	/* width */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
 
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #333;
+	}
 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #666;
+	}
 
-/*premium shit*/
-.od-quota-progress-bar-top,
-.od-PlanCardTest-headerIconImage,
-.od-PostPurchasePlansPage-link,
-div.storageAddOnTile div.title {
-	filter: invert(1);
-}
-
-.isFluent .storageAddOnTile,
-.od-Dropdown.is-open .od-Dropdown-title,
-.od-Dropdown:focus .od-Dropdown-title {
-	border-color: #ff872b;
-}
-
-.root-121 {
-	filter: invert(0);
-}
-
-.od-Dropdown-title:hover,
-.dropdown-103:focus,
-.dropdown-103:hover {
-	border-color: #50ff00 !important;
-}
-
-.isFluent .od-PlanCardTest-SliderLayout {
-	border-color: #ef83ef;
-}
-
-.isFluent .od-PlanCardTest-featureListItemContent-CheckMark {
-	color: #ef83ef;
-}
-
-.calloutMain-116,
-.pill-108,
-.od-PhotoPreferences-preference-description a,
-.od-TagPreferences-preference-description a {
-	filter: invert(1) !important;
-}
-
-
-
-.od-ItemContent-metadata-button {
-	background: unset;
-}
-
-button.od-ItemContent-metadata > span::after {
-	filter: invert(1);
-	background: red;
-	color: yellow
-}
-
-li[role="separator"] {
-	filter: invert(1);
-}
-
-.ms-Tile-link * {
-	color: white;
-}
-
-.ms-ContextualMenu-itemText {
-	color: black;
-}
-
-/* Removes Drag Files Here Hint */
-img.od-DragAndDropHint-file,
-.od-DragAndDropHint-text.od-DragAndDropHint-text--grid {
-	display: none;
-}
-
-*::selection {
-	background: #ff872b !important;
-}
-.od-ItemTile2-blankCover {
-	background: #000 !important;
-}
-
-body,
-html {
-	background-color: black;
-}
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #888;
+	}
 }
