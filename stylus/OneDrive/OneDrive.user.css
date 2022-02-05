@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.6
+@version      0.0.7
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
@@ -14,9 +14,28 @@
 	- "OneDrive Plans and Upgrades" page.
 	- A few other small odities on the main page.
 	- Make use of var() class to make it easier to keep a consistent colour palette.
+	- Look into other possible models
+	- Fully set up the Details Panel. (Espessially when looking at other folders and files)
+	- Fix Shimmer (When OneDrive is loading) so it's dark mode, or hidden. 
+	- clean up my mess
+	- Fix bugs 
+        	= MoveTo Screen different within folders
+		= Occasionally some elements (upon hover) have incorrect BG Colour.
 	*/
+
+	/*
+	Testing for Shimmer... 
+	its hard to get the exact info because it disappears too fast,
+	but i'd need find a way to hide whatever this shimmer is,
+	or invert it.) This below is incorrect as Im not sure if it is
+	a class, id, or other value type. I also need to find it's parents. 
+		
+	ms-Shaaaimmer-shimmerGradient {
+		filter: invert(1);
+	}
 	
-	
+	*/
+
 	/*
 	Main Page
 	*/
@@ -42,6 +61,10 @@
 	form[role="search"] {
 		color: white !important;
 		background-color: #212121 !important;
+	}
+
+	div[role="menubar"] {
+		border-bottom: unset !important;
 	}
 
 	button[role="menuitem"]:hover,
@@ -76,12 +99,6 @@
 		background-color: #151515 !important;
 	}
 
-	/*below is a hacky way for the search bar */
-	div[class^="suggestionContainer"] div div:hover,
-	div div[class^="suggestionIconWrapper-"] div[class^="noWrap-"]:hover {
-		background-color: #151515 !important;
-	}
-
 	div[aria-label="Command bar"],
 	.LeftNav-notificationLink,
 	.LeftPane-notifications,
@@ -89,9 +106,20 @@
 		border-color: #151515 !important;
 	}
 
+	/*below is a hacky way for the search bar */
+	div[class^="suggestionContainer"] div div:hover,
+	div div[class^="suggestionIconWrapper-"] div[class^="noWrap-"]:hover {
+		background-color: #151515 !important;
+	}
 
 	/* Folder Cover */
-	i[class^="ms-FolderCover-"] {
+	span[class^="ms-Tile-aboveNameplate aboveNameplate_3d7a162e"] span span {
+		background: unset !important;
+	}
+
+
+	i[class^="ms-FolderCover-"],
+	img[alt=".zip"], img[class="FileTypeIcon-icon"] {
 		filter: brightness(0.275) grayscale(1);
 	}
 
@@ -99,11 +127,12 @@
 	span[class^="ms-FolderCover-signal"] i {
 		color: #bbb !important;
 	}
-
 	/* End Folder Cover */
 	/*
 	End Main Page
 	*/
+	
+	
 	/*Move items to page*/
 	div[aria-label="Move items to"],
 	div[aria-label="Copy items to"] {
@@ -119,9 +148,35 @@
 	div[class="od-FolderTree-row icon-visible"]:hover {
 		background-color: #212121 !important;
 	}
+	
+	button[role="menuitem"]:hover {
+		color: #bbb !important
+	}
 
+	span[class="od-commandBar-divider"] {
+		background-color: #151515 !important;
+	}
+
+	li[role="separator"] {
+		background-color: #151515 !important
+	}
+
+	button[aria-label="More"] {
+		color: white !important;
+	}
+
+	i[data-icon-name="More"] {
+		color: #fff !important;
+	}
+
+	li[class^="ms-Breadcrumb-listItem"] div div button:hover {
+		background-color: #212121;
+		color: white !important;
+	}
 	/*End Move items to page*/
-	/*"Delete? Modal"*/
+	
+	
+	/*"Modal"*/
 	div[class^="ms-Modal-scrollableContent scrollableContent-"] {
 		background-color: #262626 !important;
 	}
@@ -147,39 +202,26 @@
 		background-color: #151515 !important;
 		color: white;
 	}
-	/*End "Delete? Modal"*/
+
+	div[class^="od-Dialog-content"]{
+		background-color: #212121 !important;
+		color: #bbb !important;
+	}
 	
-
-	button[role="menuitem"]:hover {
-		color: #bbb !important
+	p[class="od-Dialog-title"]{
+		color: #bbb !important;
 	}
-
-	span[class="od-commandBar-divider"] {
-		background-color: #151515 !important;
+	
+	button[aria-label="Close"]:hover{
+		background-color: #333 !important;
+		color: #bbb !important;
 	}
+	
+	div[class="ms-ModalOverlay"]{
+		background-color: rgb(0 0 0 / 59%) !important;
 
-
-
-	li[role="separator"] {
-		background-color: #151515 !important
 	}
-
-
-	button[aria-label="More"] {
-		color: white !important;
-	}
-
-	i[data-icon-name="More"] {
-		color: #fff !important;
-	}
-
-	li[class^="ms-Breadcrumb-listItem"] div div button:hover {
-		background-color: #212121;
-		color: white !important;
-	}
-
-
-
+	/*End Modal"*/
 
 
 	/* Start Left Panel */
@@ -228,16 +270,30 @@
 	div[class="od-PremiumUpsellBanner-header"]:hover {
 		background-color: #151515;
 	}
-
 	/*End Left Panel*/
-	/*Video/Audio background*/
+	
+	
+	/*Video/Audio*/
 	div[class="OneUp-carousel"] {
 		background-color: #151515 !important;
 	}
 
+	div[class^="OneUp-detailsBar OneUp-detailsBar--hasCaption"] div {
+		background-color: #252525 !important;
+		color: white !important;
+	}
 
+	button[class^="OneUp-caption"],
+	div[class="od-PlaybackPanel"] * {
+		color: #bbb !important;
+	}
 
-
+	div[class="od-ScrubBar"] div div div {
+		background: #bbb !important;
+	}
+	/*End Video/Audio*/
+	
+	
 	/*Recycle Bin List*/
 	div[class="od-FolderItemContent-list od-ItemContent-list"] div {
 		background-color: #151515 !important;
@@ -256,11 +312,9 @@
 	div[class="od-FolderItemContent-header od-ItemContent-header"] {
 		color: #bbb
 	}
-
-
-
-
-
+	/*End Recycle Bin List*/
+	
+	
 	/*Microsoft 365 Application Launcher*/
 	div[id="appLauncherTop"],
 	div[id="appLauncherMainView"] {
@@ -292,9 +346,9 @@
 	span[class="ms-Icon--Search o365sx-neutral-dark-font"] {
 		color: white !important;
 	}
-
-
 	/*END Microsoft 365 Application Launcher*/
+	
+	
 	/*scrollbar I ripped off of W3Schools*/
 	::-webkit-scrollbar {
 		width: 11px;
