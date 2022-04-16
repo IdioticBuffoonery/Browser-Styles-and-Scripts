@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.2.0
+@version        1.3.0
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
@@ -40,7 +40,8 @@ url-prefix("https://vers.social/letter/") {
 	div[class="post single"],
 	div[class="blogPost"],
 	textarea[name="status"],
-	textarea[name="comment"] {
+	textarea[name="comment"],
+	div[class="badges"] div {
 		background-color: var(--secondary-dark-color) !important;
 	}
 
@@ -71,7 +72,7 @@ url-prefix("https://vers.social/letter/") {
 	table,
 	input,
 	select {
-		color: white !important;
+		color: var(--main-text-color) !important;
 	}
 
 	div[class="postBody"] a {
@@ -89,6 +90,11 @@ url-prefix("https://vers.social/letter/") {
 
 	.comments .comment_body {
 		background-image: unset;
+	}
+
+	/*Make shadow nicer*/
+	div[class="badgeShadow"] {
+		opacity: 0.3
 	}
 
 	::-webkit-scrollbar {
@@ -123,5 +129,6 @@ url-prefix("https://vers.social/letter/") {
 		--link-color: #e966ff;
 		--main-dark-color: #1e1e1e;
 		--secondary-dark-color: #333;
+		--main-text-color: #fff;
 	}
 }
