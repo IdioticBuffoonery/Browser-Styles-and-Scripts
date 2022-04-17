@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           odysee.com
+@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/odysee.com
+@version        1.0.0
+@description    A new userstyle
+@author         HBIDamian
+==/UserStyle== */
+
+@-moz-document domain("odysee.com") {
+	div[class^="ads"]{
+		display: none !important;
+	}
+}
