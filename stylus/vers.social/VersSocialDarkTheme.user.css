@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.3.0
+@version        1.3.1
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
@@ -25,9 +25,6 @@ url-prefix("https://vers.social/letter/") {
 		overflow-x: hidden;
 	}
 
-	div[class="verified"] {
-		overflow-y: hidden !important;
-	}
 
 	div[class="post"],
 	div[class="profile"],
@@ -94,7 +91,11 @@ url-prefix("https://vers.social/letter/") {
 
 	/*Make shadow nicer*/
 	div[class="badgeShadow"] {
-		opacity: 0.3
+
+		-webkit-animation: flickerAnimation 20s linear infinite;
+		-moz-animation: flickerAnimation 20s linear infinite;
+		-o-animation: flickerAnimation 20s linear infinite;
+		animation: flickerAnimation 20s linear infinite;
 	}
 
 	::-webkit-scrollbar {
@@ -119,6 +120,50 @@ url-prefix("https://vers.social/letter/") {
 
 	::-webkit-scrollbar-thumb:hover {
 		background: var(--hover-color);
+	}
+
+	@keyframes flickerAnimation {
+		0% { opacity: 0.25;
+		}
+
+		50% { opacity: 0.1;
+		}
+
+		100% { opacity: 0.25;
+		}
+	}
+
+	@-o-keyframes flickerAnimation {
+		0% { opacity: 0.25;
+		}
+
+		50% { opacity: 0.1;
+		}
+
+		100% { opacity: 0.25;
+		}
+	}
+
+	@-moz-keyframes flickerAnimation {
+		0% { opacity: 0.25;
+		}
+
+		50% { opacity: 0.1;
+		}
+
+		100% { opacity: 0.25;
+		}
+	}
+
+	@-webkit-keyframes flickerAnimation {
+		0% { opacity: 0.25;
+		}
+
+		50% { opacity: 0.1;
+		}
+
+		100% { opacity: 0.25;
+		}
 	}
 
 	:root {
