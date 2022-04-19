@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Google Search Blacklist Filter
 // @namespace    googleSearch.user.js
-// @version      1.0.0
-// @description  Removes blacklisted domains from Google search results (even Google Images)
+// @version      1.0.1
+// @description  Removes/Blacklists domains from Google Search results (even Google Images, Videos and News!)
 // @author       HBIDamian
 // @match        *://*.google.com/search?q=*
 // @match        *://*.google.co*.*/search?q=*
@@ -21,11 +21,7 @@
     // There may occasionally be false positives, or remove social media posts which include the links within them.
     const links = [
         'pinterest.com',
-        'pinterest.pt',
-        'pinterest.se',
-        'pinterest.co.uk',
-        'pinterest.ca',
-        'quora.com'
+        'quora.com',
     ];
     takeOutTheTrash();
     setInterval(takeOutTheTrash, 1000);
