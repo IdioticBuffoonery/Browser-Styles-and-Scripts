@@ -5,6 +5,8 @@
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
+
+	
 @-moz-document url-prefix("https://vers.social/@"),
 url("https://vers.social/"),
 url("https://vers.social/login"),
@@ -90,14 +92,10 @@ url-prefix("https://vers.social/letter/") {
 	}
 
 	/*Make shadow nicer*/
-	div[class="badgeShadow"] {
-
-		-webkit-animation: flickerAnimation 20s linear infinite;
-		-moz-animation: flickerAnimation 20s linear infinite;
-		-o-animation: flickerAnimation 20s linear infinite;
-		animation: flickerAnimation 20s linear infinite;
+	div[class="badgeIcon"] {
+		box-shadow: var(--main-color) 0px 0px 20px !important;
 	}
-
+	
 	::-webkit-scrollbar {
 		width: 10px;
 		height: 10px;
@@ -115,55 +113,10 @@ url-prefix("https://vers.social/letter/") {
 
 	::-webkit-scrollbar-thumb {
 		background: var(--third-color);
-		/*border-radius: 10px;*/
 	}
 
 	::-webkit-scrollbar-thumb:hover {
 		background: var(--hover-color);
-	}
-
-	@keyframes flickerAnimation {
-		0% { opacity: 0.25;
-		}
-
-		50% { opacity: 0.1;
-		}
-
-		100% { opacity: 0.25;
-		}
-	}
-
-	@-o-keyframes flickerAnimation {
-		0% { opacity: 0.25;
-		}
-
-		50% { opacity: 0.1;
-		}
-
-		100% { opacity: 0.25;
-		}
-	}
-
-	@-moz-keyframes flickerAnimation {
-		0% { opacity: 0.25;
-		}
-
-		50% { opacity: 0.1;
-		}
-
-		100% { opacity: 0.25;
-		}
-	}
-
-	@-webkit-keyframes flickerAnimation {
-		0% { opacity: 0.25;
-		}
-
-		50% { opacity: 0.1;
-		}
-
-		100% { opacity: 0.25;
-		}
 	}
 
 	:root {
@@ -175,5 +128,11 @@ url-prefix("https://vers.social/letter/") {
 		--main-dark-color: #1e1e1e;
 		--secondary-dark-color: #333;
 		--main-text-color: #fff;
+	}
+}
+
+@-moz-document url("https://vers.social/meditate"){
+	body{
+		background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("https://source.unsplash.com/random/1000×1000/?nature,tranquil,peaceful,sky,trees,mountains,flowers,ocean,beach") !important;
 	}
 }
