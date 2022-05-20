@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Alternative Twitter Mute
 // @namespace    alternativeTwitterMute.user.js
-// @version      1.0.0
-// @description  try to take over the world!
+// @version      1.0.1
+// @description  An alternative to Twitter's "Mute Words" function.
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/alternativeTwitterMute.user.js
 // @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/alternativeTwitterMute.user.js
@@ -33,14 +33,14 @@
         var notifications = document.querySelectorAll('div[aria-label="Timeline: Notifications"] div div[class="css-1dbjc4n r-1igl3o0 r-qklmqi r-1adg3ll r-1ny4l3l"]');
         for (let i = 0; i < phrasesToRemove.length; ++i) {
             Array.from(whatsHappening)
-                .filter(v => v.textContent.includes(phrasesToRemove[i]))
-                .forEach(a=> a.remove());
+                .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
+                .forEach(rmElm => rmElm.remove());
             Array.from(tweets)
-                .filter(v => v.textContent.includes(phrasesToRemove[i]))
-                .forEach(a=> a.parentElement.parentElement.parentElement.remove());
+                .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
+                .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.remove());
             Array.from(notifications)
-                .filter(v => v.textContent.includes(phrasesToRemove[i]))
-                .forEach(a=> a.remove());
+                .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
+                .forEach(rmElm => rmElm.remove());
         }
     }
 })();
