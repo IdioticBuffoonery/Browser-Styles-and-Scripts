@@ -1,12 +1,10 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.3.1
+@version        1.4.0
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
-
-	
 @-moz-document url-prefix("https://vers.social/@"),
 url("https://vers.social/"),
 url("https://vers.social/login"),
@@ -27,7 +25,6 @@ url-prefix("https://vers.social/letter/") {
 		overflow-x: hidden;
 	}
 
-
 	div[class="post"],
 	div[class="profile"],
 	div[class="card"],
@@ -40,10 +37,56 @@ url-prefix("https://vers.social/letter/") {
 	div[class="blogPost"],
 	textarea[name="status"],
 	textarea[name="comment"],
+	div[id="editor"],
 	div[class="badges"] div {
 		background-color: var(--secondary-dark-color) !important;
 	}
 
+	/*CodeMirror Editor*/
+	div[class="editor-toolbar"] {
+		background: var(--secondary-dark-color) !important;
+		border: none;
+	}
+
+	div[class^="editor-preview"] {
+		background: var(--secondary-dark-color) !important;
+		border: none;
+	}
+
+	div[class="editor-toolbar"]:hover {
+		filter: unset !important;
+	}
+
+	div[class="editor-toolbar"] a {
+		background: var(--main-color);
+		color: var(--main-text-color) !important;
+	}
+
+	div[class="editor-preview editor-preview-active"] pre {
+		background: var(--main-dark-color);
+	}
+
+	div[class="editor-toolbar"] a:hover {
+		background: var(--main-color) !important;
+		filter: brightness(1.5);
+	}
+
+	div[class="editor-toolbar"] a.active {
+		background: var(--main-color) !important;
+		filter: brightness(0.5);
+	}
+
+	div[class="CodeMirror-cursor"],
+	div[class="CodeMirror-cursors"] {
+		border-left: 1px solid white !important;
+	}
+
+	div[class^=CodeMirror] {
+		background: var(--secondary-dark-color);
+		border: none;
+	}
+
+	/*End CodeMirror Editor*/
 	input#synchronizationFrequency,
 	input[type="text"],
 	input[type="date"],
@@ -67,6 +110,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="pronouns"],
 	div[class="comments"],
 	div[class="comment_body"],
+	div[id="editor"],
 	textarea,
 	table,
 	input,
@@ -95,7 +139,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="badgeIcon"] {
 		box-shadow: var(--main-color) 0px 0px 20px !important;
 	}
-	
+
 	::-webkit-scrollbar {
 		width: 10px;
 		height: 10px;
@@ -131,8 +175,8 @@ url-prefix("https://vers.social/letter/") {
 	}
 }
 
-@-moz-document url("https://vers.social/meditate"){
-	body{
-		background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("https://source.unsplash.com/random/1000×1000/?nature,tranquil,peaceful,sky,trees,mountains,flowers,ocean,beach") !important;
+@-moz-document url("https://vers.social/meditate") {
+	body {
+		background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://source.unsplash.com/random/1000×1000/?nature,tranquil,peaceful,sky,trees,mountains,flowers,ocean,beach") !important;
 	}
 }
