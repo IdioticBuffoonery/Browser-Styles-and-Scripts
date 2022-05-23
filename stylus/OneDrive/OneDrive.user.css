@@ -17,12 +17,10 @@
 	- Look into other possible models
 	- Fully set up the Details Panel. (Espessially when looking at other folders and files)
 	- Fix Shimmer (When OneDrive is loading) so it's dark mode, or hidden. 
-	- clean up my mess
 	- Fix bugs 
-        	= MoveTo Screen different within folders
+        = MoveTo Screen different within folders
 		= Occasionally some elements (upon hover) have incorrect BG Colour.
 	*/
-
 	/*
 	Testing for Shimmer... 
 	its hard to get the exact info because it disappears too fast,
@@ -35,7 +33,6 @@
 	}
 	
 	*/
-
 	/*
 	Main Page
 	*/
@@ -58,6 +55,8 @@
 	div[role="listbox"] div,
 	ul[class^="group-"],
 	button[class^="submitSuggestion-"],
+	div[class="ms-Viewport"] div,
+	button[data-automationid="FieldRenderer-name"],
 	form[role="search"] {
 		color: white !important;
 		background-color: #212121 !important;
@@ -119,7 +118,8 @@
 
 
 	i[class^="ms-FolderCover-"],
-	img[alt=".zip"], img[class="FileTypeIcon-icon"] {
+	img[alt=".zip"],
+	img[class="FileTypeIcon-icon"] {
 		filter: brightness(0.275) grayscale(1);
 	}
 
@@ -127,12 +127,11 @@
 	span[class^="ms-FolderCover-signal"] i {
 		color: #bbb !important;
 	}
+
 	/* End Folder Cover */
 	/*
 	End Main Page
 	*/
-	
-	
 	/*Move items to page*/
 	div[aria-label="Move items to"],
 	div[aria-label="Copy items to"] {
@@ -148,7 +147,7 @@
 	div[class="od-FolderTree-row icon-visible"]:hover {
 		background-color: #212121 !important;
 	}
-	
+
 	button[role="menuitem"]:hover {
 		color: #bbb !important
 	}
@@ -173,9 +172,8 @@
 		background-color: #212121;
 		color: white !important;
 	}
+
 	/*End Move items to page*/
-	
-	
 	/*"Modal"*/
 	div[class^="ms-Modal-scrollableContent scrollableContent-"] {
 		background-color: #262626 !important;
@@ -203,27 +201,25 @@
 		color: white;
 	}
 
-	div[class^="od-Dialog-content"]{
+	div[class^="od-Dialog-content"] {
 		background-color: #212121 !important;
 		color: #bbb !important;
 	}
-	
-	p[class="od-Dialog-title"]{
+
+	p[class="od-Dialog-title"] {
 		color: #bbb !important;
 	}
-	
-	button[aria-label="Close"]:hover{
+
+	button[aria-label="Close"]:hover {
 		background-color: #333 !important;
 		color: #bbb !important;
 	}
-	
-	div[class="ms-ModalOverlay"]{
+
+	div[class="ms-ModalOverlay"] {
 		background-color: rgb(0 0 0 / 59%) !important;
-
 	}
+
 	/*End Modal"*/
-
-
 	/* Start Left Panel */
 	nav[role="navigation"] div {
 		color: #bbb !important;
@@ -270,9 +266,8 @@
 	div[class="od-PremiumUpsellBanner-header"]:hover {
 		background-color: #151515;
 	}
+
 	/*End Left Panel*/
-	
-	
 	/*Video/Audio*/
 	div[class="OneUp-carousel"] {
 		background-color: #151515 !important;
@@ -291,9 +286,8 @@
 	div[class="od-ScrubBar"] div div div {
 		background: #bbb !important;
 	}
+
 	/*End Video/Audio*/
-	
-	
 	/*Recycle Bin List*/
 	div[class="od-FolderItemContent-list od-ItemContent-list"] div {
 		background-color: #151515 !important;
@@ -312,9 +306,8 @@
 	div[class="od-FolderItemContent-header od-ItemContent-header"] {
 		color: #bbb
 	}
+
 	/*End Recycle Bin List*/
-	
-	
 	/*Microsoft 365 Application Launcher*/
 	div[id="appLauncherTop"],
 	div[id="appLauncherMainView"] {
@@ -347,8 +340,7 @@
 		color: white !important;
 	}
 	/*END Microsoft 365 Application Launcher*/
-	
-	
+
 	/*scrollbar I ripped off of W3Schools*/
 	::-webkit-scrollbar {
 		width: 11px;
