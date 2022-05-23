@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.9
+@version      0.0.10
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
@@ -63,7 +63,7 @@
 	}
 
 	div[role="menubar"],
-	div[class="ms-Viewport"] div{
+	div[class="ms-Viewport"] div {
 		border-bottom: unset !important;
 	}
 
@@ -121,7 +121,7 @@
 	i[class^="ms-FolderCover-"],
 	img[alt=".zip"],
 	img[class="FileTypeIcon-icon"],
-	i[data-icon-name="sharedfolder20_svg"]{
+	i[data-icon-name="sharedfolder20_svg"] {
 		filter: brightness(0.275) grayscale(1);
 	}
 
@@ -341,8 +341,8 @@
 	span[class="ms-Icon--Search o365sx-neutral-dark-font"] {
 		color: white !important;
 	}
-	/*END Microsoft 365 Application Launcher*/
 
+	/*END Microsoft 365 Application Launcher*/
 	/*scrollbar I ripped off of W3Schools*/
 	::-webkit-scrollbar {
 		width: 11px;
