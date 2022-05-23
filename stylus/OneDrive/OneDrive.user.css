@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.8
+@version      0.0.9
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
@@ -62,7 +62,8 @@
 		background-color: #212121 !important;
 	}
 
-	div[role="menubar"] {
+	div[role="menubar"],
+	div[class="ms-Viewport"] div{
 		border-bottom: unset !important;
 	}
 
@@ -119,7 +120,8 @@
 
 	i[class^="ms-FolderCover-"],
 	img[alt=".zip"],
-	img[class="FileTypeIcon-icon"] {
+	img[class="FileTypeIcon-icon"],
+	i[data-icon-name="sharedfolder20_svg"]{
 		filter: brightness(0.275) grayscale(1);
 	}
 
