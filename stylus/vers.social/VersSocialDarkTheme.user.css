@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.4.0
+@version        1.5.0
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
@@ -37,56 +37,11 @@ url-prefix("https://vers.social/letter/") {
 	div[class="blogPost"],
 	textarea[name="status"],
 	textarea[name="comment"],
-	div[id="editor"],
-	div[class="badges"] div {
+	div[class="badges"] div,
+	div[class="versmd"]{
 		background-color: var(--secondary-dark-color) !important;
 	}
 
-	/*CodeMirror Editor*/
-	div[class="editor-toolbar"] {
-		background: var(--secondary-dark-color) !important;
-		border: none;
-	}
-
-	div[class^="editor-preview"] {
-		background: var(--secondary-dark-color) !important;
-		border: none;
-	}
-
-	div[class="editor-toolbar"]:hover {
-		filter: unset !important;
-	}
-
-	div[class="editor-toolbar"] a {
-		background: var(--main-color);
-		color: var(--main-text-color) !important;
-	}
-
-	div[class="editor-preview editor-preview-active"] pre {
-		background: var(--main-dark-color);
-	}
-
-	div[class="editor-toolbar"] a:hover {
-		background: var(--main-color) !important;
-		filter: brightness(1.5);
-	}
-
-	div[class="editor-toolbar"] a.active {
-		background: var(--main-color) !important;
-		filter: brightness(0.5);
-	}
-
-	div[class="CodeMirror-cursor"],
-	div[class="CodeMirror-cursors"] {
-		border-left: 1px solid white !important;
-	}
-
-	div[class^=CodeMirror] {
-		background: var(--secondary-dark-color);
-		border: none;
-	}
-
-	/*End CodeMirror Editor*/
 	input#synchronizationFrequency,
 	input[type="text"],
 	input[type="date"],
@@ -110,7 +65,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="pronouns"],
 	div[class="comments"],
 	div[class="comment_body"],
-	div[id="editor"],
+	div[class="versmd"],
 	textarea,
 	table,
 	input,
