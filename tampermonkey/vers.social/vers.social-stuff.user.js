@@ -16,16 +16,5 @@
     setInterval(function() {
         oscillator.disconnect();
         gainNode.disconnect();
-    }, 450);
-
-    //Give the site an icon
-    var link = document.querySelector("link[rel~='icon']");
-    if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    }
-    // link.href = 'https://vers.social/static/images/logo_white.png';
-    link.href = 'https://pbs.twimg.com/profile_images/1447665019693551622/1Ad34MT3_400x400.jpg';
-    
+    }, 450);   
 })();
