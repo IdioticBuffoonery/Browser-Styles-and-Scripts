@@ -3,7 +3,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function deleteLikedVideos() {
+async function deleteAllCommunityActions() {
     'use strict';
     var items = document.querySelectorAll('ytd-menu-renderer yt-icon-button.dropdown-trigger > button[aria-label="Action menu"]');
     var out;
@@ -28,4 +28,4 @@ async function deleteLikedVideos() {
     }
 }
 
-deleteLikedVideos();
+deleteAllCommunityActions();
