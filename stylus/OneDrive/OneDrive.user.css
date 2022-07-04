@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.10
+@version      0.0.11
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
@@ -45,8 +45,9 @@
 		color: #bbb !important;
 	}
 
-	h2[class="od-ItemContent-title"] {
-		color: #bbb;
+	h2[class="od-ItemContent-title"],
+	h2{
+		color: #bbb !important;
 	}
 
 	div[data-automationid="ItemTile"],
@@ -60,6 +61,11 @@
 	form[role="search"] {
 		color: white !important;
 		background-color: #212121 !important;
+	}
+	
+	[class^="core"],
+	[class^="commandBar"]{
+		background-color: unset !important;
 	}
 
 	div[role="menubar"],
@@ -112,6 +118,12 @@
 		background-color: #151515 !important;
 	}
 
+	div[class^="carouselCardContainer"] a,
+	div[class^="carouselCardContainer"] a span {
+		background: #212121 !important;
+		color: #fff !important
+	}
+
 	/* Folder Cover */
 	span[class^="ms-Tile-aboveNameplate aboveNameplate_3d7a162e"] span span {
 		background: unset !important;
@@ -121,7 +133,8 @@
 	i[class^="ms-FolderCover-"],
 	img[alt=".zip"],
 	img[class="FileTypeIcon-icon"],
-	i[data-icon-name="sharedfolder20_svg"] {
+	i[data-icon-name="sharedfolder20_svg"],
+	i[data-icon-name="folder20_svg"] {
 		filter: brightness(0.275) grayscale(1);
 	}
 
