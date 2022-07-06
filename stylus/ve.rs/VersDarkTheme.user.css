@@ -1,23 +1,23 @@
 /* ==UserStyle==
-@name           vers.social Dark Theme
-@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.6.0
-@description    Dark mode for Vers.Social
+@name           ve.rs Dark Theme
+@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/ve.rs
+@version        1.7.0
+@description    Dark mode for ve.rs
 @author         HBIDamian
 ==/UserStyle== */
-@-moz-document url-prefix("https://vers.social/@"),
-url("https://vers.social/"),
-url("https://vers.social/login"),
-url("https://vers.social/home"),
-url("https://vers.social/meditate"),
-url("https://vers.social/notifications"),
-url("https://vers.social/pro"),
-url("https://vers.social/wellness"),
-url("https://vers.social/profile-settings"),
-url-prefix("https://vers.social/search/hashtag"),
-url-prefix("https://vers.social/post-office"),
-url-prefix("https://vers.social/distraction-free"),
-url-prefix("https://vers.social/letter/") {
+@-moz-document url-prefix("https://ve.rs/@"),
+url("https://ve.rs/"),
+url("https://ve.rs/login"),
+url("https://ve.rs/home"),
+url("https://ve.rs/meditate"),
+url("https://ve.rs/notifications"),
+url("https://ve.rs/pro"),
+url("https://ve.rs/wellness"),
+url("https://ve.rs/profile-settings"),
+url-prefix("https://ve.rs/search/hashtag"),
+url-prefix("https://ve.rs/post-office"),
+url-prefix("https://ve.rs/distraction-free"),
+url-prefix("https://ve.rs/letter/") {
 
 	html,
 	body {
@@ -137,7 +137,7 @@ url-prefix("https://vers.social/letter/") {
 	}
 }
 
-@-moz-document url("https://vers.social/meditate") {
+@-moz-document url("https://ve.rs/meditate") {
 	body {
 		background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://source.unsplash.com/random/1000×1000/?nature,tranquil,peaceful,sky,trees,mountains,flowers,ocean,beach") !important;
 	}
