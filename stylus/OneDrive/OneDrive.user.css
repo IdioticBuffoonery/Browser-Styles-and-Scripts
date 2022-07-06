@@ -1,53 +1,47 @@
 /* ==UserStyle==
 @name         OneDrive Dark Mode
 @namespace    github.com/IdioticBuffoonery/stylus/OneDrive
-@version      0.0.11
+@version      0.0.12
 @description  Dark mode for the online version of OneDrive
 @author       HBIDamian
 ==/UserStyle== */
-@-moz-document url-prefix("https://onedrive.live.com/?") {
+:root {
+	--Main-Color: #151515;
+	--Secondary-Color: #212121;
+	--Tertiary-Color: #262626;
+	--Item-Focus-Color: #333;
+	--Main-Text-Color: #fff;
+	--Secondary-Text-Color: #bbb;
+}
 
-	/*
-	TODO:
+/*
+TODO:
 
-	- Help Section / Setting Section / Profile Section.
-	- "OneDrive Plans and Upgrades" page.
-	- A few other small odities on the main page.
-	- Make use of var() class to make it easier to keep a consistent colour palette.
-	- Look into other possible models
-	- Fully set up the Details Panel. (Espessially when looking at other folders and files)
-	- Fix Shimmer (When OneDrive is loading) so it's dark mode, or hidden. 
-	- Fix bugs 
-        = MoveTo Screen different within folders
-		= Occasionally some elements (upon hover) have incorrect BG Colour.
-	*/
-	/*
-	Testing for Shimmer... 
-	its hard to get the exact info because it disappears too fast,
-	but i'd need find a way to hide whatever this shimmer is,
-	or invert it.) This below is incorrect as Im not sure if it is
-	a class, id, or other value type. I also need to find it's parents. 
-		
-	ms-Shaaaimmer-shimmerGradient {
-		filter: invert(1);
-	}
-	
-	*/
+- Help Section / Setting Section / Profile Section.
+- "OneDrive Plans and Upgrades" page.
+- Look into other possible models
+- Fix Shimmer (When OneDrive is loading) so it's dark mode, or hidden. 
+- Fix bugs 
+- MoveTo/CopyTo parent folder occasionally is white
+*/
+@-moz-document url-prefix("https://onedrive.live.com/?"), url("https://onedrive.live.com/")  {
+
+
 	/*
 	Main Page
 	*/
 	body,
 	html {
-		background-color: #151515;
+		background-color: var(--Main-Color);
 	}
 
 	nav[role="navigation"] div {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	h2[class="od-ItemContent-title"],
-	h2{
-		color: #bbb !important;
+	h2 {
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	div[data-automationid="ItemTile"],
@@ -59,12 +53,12 @@
 	div[class="ms-Viewport"] div,
 	button[data-automationid="FieldRenderer-name"],
 	form[role="search"] {
-		color: white !important;
-		background-color: #212121 !important;
+		color: var(--Main-Text-Color) !important;
+		background-color: var(--Secondary-Color) !important;
 	}
-	
+
 	[class^="core"],
-	[class^="commandBar"]{
+	[class^="commandBar"] {
 		background-color: unset !important;
 	}
 
@@ -74,54 +68,95 @@
 	}
 
 	button[role="menuitem"]:hover,
-	button[role="menuitem"] span:hover {
-		background: #151515 !important
+	button[role="menuitem"] span:hover,
+	div[aria-label="Command bar"] span[class^="ms-Button-flexContainer"] {
+		background: var(--Main-Color) !important
+	}
+
+	ol[class^="ms-Breadcrumb-list"] li div,
+	i[class^="ms-Breadcrumb-chevron"] {
+		color: var(--Main-Text-Color) !important;
 	}
 
 	i[class*="ms-Button-menuIcon is-expanded"] {
 		background-color: unset !important;
-		color: white !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	div[data-automationid="ItemTile"]:hover {
-		background-color: #262626 !important;
+		background-color: var(--Tertiary-Color) !important;
 	}
 
-	div[class="od-DetailsPaneWrapper isFluent"] div {
-		background-color: #212121 !important;
-		color: #bbb;
+	div[class="od-DetailsPane-PrimaryPane-wrapper"] {
+		background-color: var(--Tertiary-Color) !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
-	span[id^="Tile-name"] {
-		color: #fff !important;
+	span[aria-label="You"] span,
+	span[id^="Title-name"],
+	div[class="od-DetailsPane-PrimaryPane-header"] h2,
+	div[class="od-DetailsPane-PrimaryPane-header"] div,
+	button[aria-label="Close the details pane"] span i,
+	input[aria-label="Description"],
+	div[class="od-addNewCommentTextField-mentionableTextBox"],
+	button[aria-label="Activity feed view options. Selected view option is All activity"],
+	div[class="od-SharingSection-PermissionsPile-descriptionText"] {
+		color: var(--Main-Text-Color) !important;
 	}
 
-	div[data-automationid="FieldRenderer-date"] {
-		color: #999
+	div[class*="od-DetailsPaneWrapper"] {
+		border-color: var(--Main-Color) !important;
+	}
+
+	div[class*="od-Caption-textField"],
+	div[class*="od-DetailsPane-PrimaryPane-header"],
+	div[class="od-SharingSection-PermissionsPile"],
+	button[class="od-SharingSection-ManageAccessLink-Button"],
+	div[class="od-DetailsPane-SecondaryPane-wrapper"],
+	div[class*="od-DetailsPane-SecondaryPane"],
+	div[class="InfoPane-section InfoPaneSection--information is-expanded no-arrow"],
+	.od-DetailsPane-SecondaryPane-header,
+	div[class="InfoPane-sectionContent"] *,
+	div[class="od-ItemActivityFeed-noActivities"] {
+		background-color: var(--Main-Color) !important;
+		color: var(--Main-Text-Color) !important;
+	}
+
+	div[data-automationid="FieldRenderer-date"],
+	div[class="od-ItemActivity-item-textContent"] {
+		color: var(--Secondary-Text-Color);
 	}
 
 	div div[class="od-ItemActivityList-activity"],
-	div[class="od-ItemActivityList-activity"] div {
-		background-color: #151515 !important;
+	div[class="od-ItemActivityList-activity"] div,
+	.ms-CommandBar:after,
+	button[aria-label="Show actions"]:hover,
+	button[aria-label="Share the selected item with other people"]:hover,
+	input[aria-label="Description"],
+	div[class="od-addNewCommentTextField-mentionableTextBox"],
+	div[class="od-addNewCommentTextField-mentionableTextBox-outer"] {
+		background-color: var(--Main-Color) !important;
 	}
 
 	div[aria-label="Command bar"],
+	div[data-automationid="main-left-nav"],
+	div[class^="ms-OverflowSet"]::after,
 	.LeftNav-notificationLink,
 	.LeftPane-notifications,
 	.od-LeftNav-hamburger {
-		border-color: #151515 !important;
+		border-color: var(--Main-Color) !important;
 	}
 
 	/*below is a hacky way for the search bar */
 	div[class^="suggestionContainer"] div div:hover,
 	div div[class^="suggestionIconWrapper-"] div[class^="noWrap-"]:hover {
-		background-color: #151515 !important;
+		background-color: var(--Main-Color) !important;
 	}
 
 	div[class^="carouselCardContainer"] a,
 	div[class^="carouselCardContainer"] a span {
-		background: #212121 !important;
-		color: #fff !important
+		background: var(--Secondary-Color) !important;
+		color: var(--Main-Text-Color) !important
 	}
 
 	/* Folder Cover */
@@ -140,7 +175,7 @@
 
 	span[class^="ms-FolderCover-metadata"],
 	span[class^="ms-FolderCover-signal"] i {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	/* End Folder Cover */
@@ -150,209 +185,235 @@
 	/*Move items to page*/
 	div[aria-label="Move items to"],
 	div[aria-label="Copy items to"] {
-		color: white !important;
-		background-color: #262626 !important;
+		color: var(--Main-Text-Color) !important;
+		background-color: var(--Tertiary-Color) !important;
+	}
+
+	div[class="od-FolderTree-contentContainer"] {
+		background-color: var(--Secondary-Color)
+	}
+
+	span[class^="od-FolderTree-folderName"],
+	div[class^="od-FolderTree-title"] {
+		color: var(--Main-Text-Color) !important
 	}
 
 	div[class*="od-FolderTree-row icon-visible is-selected"],
-	div[class*="od-FolderTree-row is-selected"] {
-		background: #151515 !important;
+	div[class*="od-FolderTree-row is-selected"],
+	div[class^="od-FolderTree-row icon-visible"] {
+		background: var(--Main-Color) !important;
 	}
 
 	div[class="od-FolderTree-row icon-visible"]:hover {
-		background-color: #212121 !important;
+		background-color: var(--Secondary-Color) !important;
 	}
 
 	button[role="menuitem"]:hover {
-		color: #bbb !important
+		color: var(--Secondary-Text-Color) !important
 	}
 
 	span[class="od-commandBar-divider"] {
-		background-color: #151515 !important;
+		background-color: var(--Main-Color) !important;
 	}
 
 	li[role="separator"] {
-		background-color: #151515 !important
+		background-color: var(--Main-Color) !important
 	}
 
 	button[aria-label="More"] {
-		color: white !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	i[data-icon-name="More"] {
-		color: #fff !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	li[class^="ms-Breadcrumb-listItem"] div div button:hover {
-		background-color: #212121;
-		color: white !important;
+		background-color: var(--Secondary-Color);
+		color: var(--Main-Text-Color) !important;
 	}
 
 	/*End Move items to page*/
+	/*Embed Page*/
+	div[aria-label*="in a blog or webpage."],
+	p[class^="od-embed-disclaimer"] {
+		background-color: var(--Tertiary-Color);
+		color: var(--Main-Text-Color) !important
+	}
+
+	div[class="od-embed-details"] textarea {
+		background: var(--Main-Color) !important;
+		color: var(--Main-Text-Color) !important
+	}
+
+	/*End Embed Page*/
 	/*"Modal"*/
 	div[class^="ms-Modal-scrollableContent scrollableContent-"] {
-		background-color: #262626 !important;
+		background-color: var(--Tertiary-Color) !important;
 	}
 
 	div[class^="ms-Dialog-title title-"] {
-		color: white !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	button[aria-label="Close"] span {
-		color: white;
+		color: var(--Main-Text-Color);
 	}
 
 	button[aria-label="Close"]:hover {
-		background-color: #151515;
+		background-color: var(--Main-Color);
 	}
 
 	button[data-automationid="cancelbutton"] {
-		background-color: #212121 !important;
-		color: white;
+		background-color: var(--Secondary-Color) !important;
+		color: var(--Main-Text-Color);
 	}
 
 	button[data-automationid="cancelbutton"]:hover {
-		background-color: #151515 !important;
-		color: white;
+		background-color: var(--Main-Color) !important;
+		color: var(--Main-Text-Color);
 	}
 
 	div[class^="od-Dialog-content"] {
-		background-color: #212121 !important;
-		color: #bbb !important;
+		background-color: var(--Secondary-Color) !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	p[class="od-Dialog-title"] {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	button[aria-label="Close"]:hover {
-		background-color: #333 !important;
-		color: #bbb !important;
+		background-color: var(--Item-Focus-Color) !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
-	div[class="ms-ModalOverlay"] {
+	div[class*="ms-ModalOverlay"] {
 		background-color: rgb(0 0 0 / 59%) !important;
 	}
 
 	/*End Modal"*/
 	/* Start Left Panel */
 	nav[role="navigation"] div {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	button[aria-label="Navigation pane"]:hover {
-		background-color: #151515 !important;
+		background-color: var(--Main-Color) !important;
 	}
 
 	li[class^="ms-Nav-navItem navItem"] div div div a {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	li[class^="ms-Nav-navItem navItem"] div div div a:hover {
-		background-color: #151515 !important;
+		background-color: var(--Main-Color) !important;
 	}
 
 	li[class^="ms-Nav-navItem navItem"] div.is-selected div div a {
-		background-color: #333 !important;
+		background-color: var(--Item-Focus-Color) !important;
 	}
 
 	ul[class^="ms-ContextualMenu-list is-open list"] {
-		background-color: #212121 !important;
-		color: cyan !important;
+		background-color: var(--Secondary-Color) !important;
 	}
 
 	ul[class^="ms-ContextualMenu-list is-open list"] li button:hover {
-		background-color: #151515 !important;
-		color: white !important;
+		background-color: var(--Main-Color) !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	ul[class^="ms-ContextualMenu-list is-open list"] li button {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	div[data-automationid="main-left-nav"] {
-		background-color: #212121 !important;
+		background-color: var(--Secondary-Color) !important;
 	}
 
 	div[class="od-LeftNav-overlay"] {
 		background-color: rgb(0 0 0 / 59%);
 	}
 
-	div[class="od-PremiumUpsellBanner-header"]:hover {
-		background-color: #151515;
+	div[class="od-PremiumUpsellBanner-header"] {
+		background-color: var(--Main-Color) !important;
+	}
+
+	div[class="od-QuotaBar-total"] {
+		border-color: var(--Main-Color) !important;
 	}
 
 	/*End Left Panel*/
 	/*Video/Audio*/
 	div[class="OneUp-carousel"] {
-		background-color: #151515 !important;
+		background-color: var(--Main-Color) !important;
 	}
 
 	div[class^="OneUp-detailsBar OneUp-detailsBar--hasCaption"] div {
-		background-color: #252525 !important;
-		color: white !important;
+		background-color: var(--Tertiary-Color) !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	button[class^="OneUp-caption"],
 	div[class="od-PlaybackPanel"] * {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	div[class="od-ScrubBar"] div div div {
-		background: #bbb !important;
+		background: var(--Secondary-Text-Color) !important;
 	}
 
 	/*End Video/Audio*/
 	/*Recycle Bin List*/
 	div[class="od-FolderItemContent-list od-ItemContent-list"] div {
-		background-color: #151515 !important;
-		color: white !important;
+		background-color: var(--Main-Color) !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	a[data-automationid="FieldRenderer-name"] {
-		color: #fff !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	button[class^="od-FieldRenderer-dot"] {
-		color: white !important;
-		background: #212121 !important;
+		color: var(--Main-Text-Color) !important;
+		background: var(--Secondary-Color) !important;
 	}
 
 	div[class="od-FolderItemContent-header od-ItemContent-header"] {
-		color: #bbb
+		color: var(--Secondary-Text-Color)
 	}
 
 	/*End Recycle Bin List*/
 	/*Microsoft 365 Application Launcher*/
 	div[id="appLauncherTop"],
 	div[id="appLauncherMainView"] {
-		background-color: #212121 !important;
+		background-color: var(--Secondary-Color) !important;
 	}
 
 	div[id="appLauncherTop"] div,
 	div[id="appLauncherMainView"] div,
 	div[id="appsModule"] div h2 {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	/* -> All Apps */
 	div[aria-label="App launcher opened"] div {
-		background-color: #151515 !important;
-		color: white !important;
+		background-color: var(--Main-Color) !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	div[id="appLauncher"] div div div[id="allView"] * {
-		color: #bbb !important;
+		color: var(--Secondary-Text-Color) !important;
 	}
 
 	input[id="appLauncherSearch"] {
 		box-shadow: 1px 2px 0 rgba(236, 236, 236, .14) !important;
-		background-color: #212121 !important;
-		color: white !important;
+		background-color: var(--Secondary-Color) !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	span[class="ms-Icon--Search o365sx-neutral-dark-font"] {
-		color: white !important;
+		color: var(--Main-Text-Color) !important;
 	}
 
 	/*END Microsoft 365 Application Launcher*/
@@ -362,11 +423,11 @@
 	}
 
 	::-webkit-scrollbar-track {
-		background: #212121;
+		background: var(--Secondary-Color);
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: #333;
+		background: var(--Item-Focus-Color);
 	}
 
 	::-webkit-scrollbar-thumb:hover {
@@ -374,6 +435,67 @@
 	}
 
 	::-webkit-scrollbar-corner {
-		background: #212121;
+		background: var(--Secondary-Color);
+	}
+}
+
+@-moz-document url-prefix("https://onedrive.live.com/?ocid=PROD") {
+	/*
+	--Main-Color: #151515;
+	--Secondary-Color: #212121;
+	--Tertiary-Color: #262626;
+	*/
+	/*Nav Bar*/
+	nav[role="navigation"] div {
+		color: var(--Secondary-Text-Color) !important;
+	}
+
+	span[class="LeftNav-linkText"] {
+		color: var(--Secondary-Text-Color) !important;
+	}
+
+	a[role="menuitem"]:hover {
+		background: var(--Main-Color) !important;
+	}
+
+	a[class*="LeftNav-is-active"] {
+		background: var(--Tertiary-Color) !important;
+	}
+
+	a[class*="LeftNav-is-active"]:hover {
+		background: var(--Tertiary-Color) !important;
+	}
+
+	div[data-automationid="main-left-nav"] {
+		background-color: var(--Secondary-Color) !important;
+	}
+
+	/*End Nav Bar*/
+	/*Search Bar*/
+	form[role="search"] {
+		color: var(--Main-Text-Color) !important;
+		background-color: var(--Secondary-Color) !important;
+	}
+
+	div[data-automationid="ItemTile"],
+	div[role="menubar"],
+	button[role="menuitem"],
+	div[role="listbox"] div,
+	ul[class^="group-"],
+	button[class^="submitSuggestion-"],
+	div[class="ms-Viewport"] div,
+	button[data-automationid="FieldRenderer-name"],
+	form[role="search"] {
+		color: var(--Main-Text-Color) !important;
+		background-color: var(--Secondary-Color) !important;
+	}
+
+	i[class^="ms-FolderCover-"],
+	img[alt=".zip"],
+	img[class="FileTypeIcon-icon"],
+	i[data-icon-name="sharedfolder20_svg"],
+	i[data-icon-name="folder20_svg"],
+	i[data-icon-name="folder24_1.5x_svg"] {
+		filter: brightness(0.275) grayscale(1);
 	}
 }
