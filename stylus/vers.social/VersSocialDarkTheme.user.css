@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.5.0
+@version        1.6.0
 @description    Dark mode for Vers.Social
 @author         HBIDamian
 ==/UserStyle== */
@@ -14,6 +14,7 @@ url("https://vers.social/notifications"),
 url("https://vers.social/pro"),
 url("https://vers.social/wellness"),
 url("https://vers.social/profile-settings"),
+url-prefix("https://vers.social/search/hashtag"),
 url-prefix("https://vers.social/post-office"),
 url-prefix("https://vers.social/distraction-free"),
 url-prefix("https://vers.social/letter/") {
@@ -37,9 +38,14 @@ url-prefix("https://vers.social/letter/") {
 	div[class="blogPost"],
 	textarea[name="status"],
 	textarea[name="comment"],
-	div[class="badges"] div,
-	div[class="versmd"]{
+	div[class="badges"] div {
 		background-color: var(--secondary-dark-color) !important;
+	}
+
+	/*VersMD*/
+	div[class="versmd"] {
+		background: var(--secondary-dark-color);
+		color: var(--main-text-color)
 	}
 
 	input#synchronizationFrequency,
@@ -65,7 +71,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="pronouns"],
 	div[class="comments"],
 	div[class="comment_body"],
-	div[class="versmd"],
+	div[class="postBody"],
 	textarea,
 	table,
 	input,
@@ -73,7 +79,8 @@ url-prefix("https://vers.social/letter/") {
 		color: var(--main-text-color) !important;
 	}
 
-	div[class="postBody"] a {
+	div[class="postBody"] a,
+	div[class="hashtag"] a {
 		color: var(--main-color) !important;
 	}
 
