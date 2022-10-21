@@ -1,27 +1,27 @@
 /* ==UserStyle==
-@name           ve.rs Dark Theme
-@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/ve.rs
-@version        1.7.0
-@description    Dark mode for ve.rs
+@name           vers.social Dark Theme
+@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
+@version        1.8.0
+@description    Dark mode for vers.social
 @author         HBIDamian
 ==/UserStyle== */
-@-moz-document url-prefix("https://ve.rs/@"),
-url("https://ve.rs/"),
-url("https://ve.rs/login"),
-url("https://ve.rs/home"),
-url("https://ve.rs/meditate"),
-url("https://ve.rs/notifications"),
-url("https://ve.rs/pro"),
-url("https://ve.rs/wellness"),
-url("https://ve.rs/profile-settings"),
-url-prefix("https://ve.rs/search/hashtag"),
-url-prefix("https://ve.rs/post-office"),
-url-prefix("https://ve.rs/distraction-free"),
-url-prefix("https://ve.rs/letter/") {
+@-moz-document url-prefix("https://vers.social/@"),
+url("https://vers.social/"),
+url("https://vers.social/login"),
+url("https://vers.social/home"),
+url("https://vers.social/meditate"),
+url("https://vers.social/notifications"),
+url("https://vers.social/pro"),
+url("https://vers.social/wellness"),
+url("https://vers.social/profile-settings"),
+url-prefix("https://vers.social/search/hashtag"),
+url-prefix("https://vers.social/post-office"),
+url-prefix("https://vers.social/distraction-free"),
+url-prefix("https://vers.social/letter/") {
 
 	html,
-	body {
-		background-color: var(--main-dark-color) !important;
+	body{
+	background-color: var(--main-dark-color) !important;
 		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
@@ -31,12 +31,14 @@ url-prefix("https://ve.rs/letter/") {
 	div[class="card"],
 	div[class="card center"],
 	div[class="card meditate center"],
+	div[class="card compose"],
 	div[class="user"],
 	div[id="popup"],
 	div[class="notification"],
 	div[class="post single"],
 	div[class="blogPost"],
 	textarea[name="status"],
+	div[class="versPostEmbed"],
 	textarea[name="comment"],
 	div[class="badges"] div {
 		background-color: var(--secondary-dark-color) !important;
@@ -44,19 +46,22 @@ url-prefix("https://ve.rs/letter/") {
 
 	/*VersMD*/
 	div[class="versmd"] {
-		background: var(--secondary-dark-color);
+		background: var(--main-dark-color);
 		color: var(--main-text-color)
 	}
 
 	input#synchronizationFrequency,
 	input[type="text"],
 	input[type="date"],
+	input[type="username"],
+	input[type="password"],
 	select,
 	option,
 	textarea#profileBioInput,
 	pre {
 		background-color: var(--main-dark-color);
 	}
+
 
 	a,
 	p,
@@ -72,6 +77,7 @@ url-prefix("https://ve.rs/letter/") {
 	div[class="comments"],
 	div[class="comment_body"],
 	div[class="postBody"],
+	span[class="likeBadge"],
 	textarea,
 	table,
 	input,
@@ -137,7 +143,7 @@ url-prefix("https://ve.rs/letter/") {
 	}
 }
 
-@-moz-document url("https://ve.rs/meditate") {
+@-moz-document url("https://vers.social/meditate") {
 	body {
 		background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://source.unsplash.com/random/1000×1000/?nature,tranquil,peaceful,sky,trees,mountains,flowers,ocean,beach") !important;
 	}
