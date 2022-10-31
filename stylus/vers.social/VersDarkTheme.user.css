@@ -1,23 +1,25 @@
 /* ==UserStyle==
 @name           vers.social Dark Theme
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/vers.social
-@version        1.8.0
+@version        1.9.0
 @description    Dark mode for vers.social
 @author         HBIDamian
 ==/UserStyle== */
 @-moz-document url-prefix("https://vers.social/@"),
 url("https://vers.social/"),
 url("https://vers.social/login"),
+url("https://vers.social/register"),
 url("https://vers.social/home"),
 url("https://vers.social/meditate"),
 url("https://vers.social/notifications"),
 url("https://vers.social/pro"),
 url("https://vers.social/wellness"),
-url("https://vers.social/profile-settings"),
+url("https://vers.social/profile-settings"), url("https://vers.social/journey"),
 url-prefix("https://vers.social/search/hashtag"),
 url-prefix("https://vers.social/post-office"),
 url-prefix("https://vers.social/distraction-free"),
-url-prefix("https://vers.social/letter/") {
+url-prefix("https://vers.social/letter"),
+url-prefix("https://vers.social/explore") {
 
 	html,
 	body{
@@ -32,6 +34,7 @@ url-prefix("https://vers.social/letter/") {
 	div[class="card center"],
 	div[class="card meditate center"],
 	div[class="card compose"],
+	div[class="card journey"],
 	div[class="user"],
 	div[id="popup"],
 	div[class="notification"],
@@ -55,6 +58,7 @@ url-prefix("https://vers.social/letter/") {
 	input[type="date"],
 	input[type="username"],
 	input[type="password"],
+	input[type="email"],
 	select,
 	option,
 	textarea#profileBioInput,
@@ -81,7 +85,8 @@ url-prefix("https://vers.social/letter/") {
 	textarea,
 	table,
 	input,
-	select {
+	select,
+	div[class="profileTimezoneArea"]{
 		color: var(--main-text-color) !important;
 	}
 
