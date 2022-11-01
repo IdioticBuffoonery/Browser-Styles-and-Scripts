@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.0.0
+// @version      1.1.0
 // @description  Elon Musk wishes he hired me...
 // @author       You
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -19,7 +19,11 @@
         'Matt Hancock',
         '#imaceleb'
     ];
-    var tweets = document.querySelectorAll('article[data-testid="tweet"]');
+
+    const promotedPhrases = [
+        'Promoted',
+        'Advertisment'
+    ];
 
     takeOutTheTrash();
     setInterval(takeOutTheTrash, 500);
@@ -39,6 +43,12 @@
             Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
                 .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
                 .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.remove())
+        }
+
+        for (let ii = 0; ii < promotedPhrases.length; ++ii) {
+            Array.from(document.querySelectorAll('[data-testid="placementTracking"]'))
+                .filter(elm => elm.textContent.includes(promotedPhrases[ii]))
+                .forEach(rmElm => rmElm.parentElement.parentElement.remove());
         }
     }
 })();
