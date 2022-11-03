@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.2.0
+// @version      1.2.1
 // @description  Elon Musk wishes he hired me...
 // @author       You
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -19,18 +19,16 @@
         'Matt Hancock',
         '#imaceleb'
     ];
+
     const promotedPhrases = [
         'Promoted',
         'Advertisment'
     ];
 
     takeOutTheTrash();
-    setInterval(takeOutTheTrash, 50);
+    setInterval(takeOutTheTrash, 0);
+
     function takeOutTheTrash(){
-        if(document.querySelector('svg[aria-label="Verified account"]')){
-            Array.from(document.querySelectorAll('svg[aria-label="Verified account"]'))
-                .forEach(rmElm => rmElm.remove());
-        }
         if(document.querySelector('[data-testid="sidebarColumn"]')){
             document.querySelector('[data-testid="sidebarColumn"]').remove();
         }
@@ -53,13 +51,15 @@
         if(document.querySelector('[aria-label="Timeline: Notifications"]')){
             document.querySelector('[aria-label="Timeline: Notifications"]').parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100%";
         }
-        
+        if(document.querySelector('svg[aria-label="Verified account"]')){
+            Array.from(document.querySelectorAll('svg[aria-label="Verified account"]'))
+                .forEach(rmElm => rmElm.remove());
+        }
         for (let i = 0; i < phrasesToRemove.length; ++i) {
             Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
                 .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
                 .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.remove())
         }
-        
         for (let ii = 0; ii < promotedPhrases.length; ++ii) {
             Array.from(document.querySelectorAll('[data-testid="placementTracking"]'))
                 .filter(elm => elm.textContent.includes(promotedPhrases[ii]))
