@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.2.1
+// @version      1.3.0
 // @description  Elon Musk wishes he hired me...
-// @author       You
+// @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
 // @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
 // @match        *://*.twitter.com/*
@@ -12,10 +12,17 @@
 // ==/UserScript==
 
 (function() {
+    var ss = document.styleSheets[0];
+    ss.insertRule('::-webkit-scrollbar {width:10px; height:10px;}', 0);
+    ss.insertRule('::-webkit-scrollbar-corner {background: rgb(29, 155, 240); height: unset; width: unset;}', 0);
+    ss.insertRule('::-webkit-scrollbar-track {background: rgb(29, 155, 240);}', 0);
+    ss.insertRule('::-webkit-scrollbar-thumb {background: rgb(7, 82, 133);}', 0);
+    ss.insertRule('::-webkit-scrollbar-thumb:hover {background: rgb(13, 116, 186);}', 0);
     'use strict';
     const phrasesToRemove = [
         'Carol Vorderman',
         'Manchester United',
+        'Elon Musk',
         'Matt Hancock',
         '#imaceleb'
     ];
