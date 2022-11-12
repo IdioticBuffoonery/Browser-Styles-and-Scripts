@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.3.0
+// @version      1.4.0
 // @description  Elon Musk wishes he hired me...
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
 // @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
 // @match        *://*.twitter.com/*
-// @icon         https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/768px-Twitter-logo.svg.png
+// @icon         https://images.livemint.com/img/2022/11/05/600x338/TWITTER-LAYOFFS--Elon_Musk_1667610270597_1667610270851_1667610270851.JPG
 // @grant        none
 // ==/UserScript==
 
@@ -38,6 +38,15 @@
     function takeOutTheTrash(){
         if(document.querySelector('[data-testid="sidebarColumn"]')){
             document.querySelector('[data-testid="sidebarColumn"]').remove();
+        }
+
+        var xpath = "//span[text()='Official']";
+        var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+        if(matchingElement){
+            matchingElement.parentElement.parentElement.parentElement.remove();
+        }
+        if(document.querySelector('img[src^="https://pbs.twimg.com/semantic_core_img/"]')){
+            document.querySelector('img[src^="https://pbs.twimg.com/semantic_core_img/"]').parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
         }
         if(document.querySelector('[data-testid="primaryColumn"]')){
             document.querySelector('[data-testid="primaryColumn"]').style.setProperty("max-width", "100%", "important");
