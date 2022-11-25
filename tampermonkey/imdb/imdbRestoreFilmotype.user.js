@@ -4,8 +4,8 @@
 // @version      0.1
 // @description  Restore IMDb's "Filmotype" to actor's pages. PROOF OF CONCEPT.
 // @author       HBIDamian
-// @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/imdb/cleanTwitterFeed.user.js
-// @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/imdb/cleanTwitterFeed.user.js
+// @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/imdb/imdbRestoreFilmotype.user.js
+// @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/imdb/imdbRestoreFilmotype.user.js
 // @match        https://www.imdb.com/name/*/
 // @match        https://www.imdb.com/name/*/?ref*
 // @run-at       document-start
