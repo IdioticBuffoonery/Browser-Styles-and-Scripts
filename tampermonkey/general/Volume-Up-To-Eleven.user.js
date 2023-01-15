@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Volume-Up-To-Eleven!
 // @namespace    Volume-Up-To-Eleven.user.js
-// @version      1.0.1
+// @version      1.1.0
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/general/Volume-Up-To-Eleven.user.js
 // @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/general/Volume-Up-To-Eleven.user.js
 // @description  Boost volume on various websites. Websites I've included work for me with this script.
@@ -41,10 +41,7 @@
     }
 
     function goodbyeEarsVolume(){
-        if (!goodbyeEarsCount == 1) {
-            goodbyeEarsCount++;
-            alert("If you're sure you want to do this, click this again!");
-        } else {
+        if (confirm('⚠️ Warning! ⚠️\n\rThis maxes out the gain, threshold and ratio.\nThe result will make it very (possibly dangerously) loud.\n\r Press OK to use it.')) {
             volumeUpToControl("100.0", "100", "100.0");
         }
     }
@@ -65,7 +62,6 @@
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
     function volumeUpToControl(varGain, varThreshold, varRatio) {
-        goodbyeEarsCount = 0;
         console.log(`Gain: ${varGain}\nThreshold: ${varThreshold}\nRatio: ${varRatio}`);
         if (!window.__ac) {
             window.__ac = new AudioContext();
