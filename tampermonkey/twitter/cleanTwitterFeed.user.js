@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.4.0
+// @version      1.5.0
 // @description  Elon Musk wishes he hired me...
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -21,9 +21,12 @@
     'use strict';
     const phrasesToRemove = [
         'Carol Vorderman',
+        '@elonmusk',
+        'elon musk',
         'Manchester United',
-        'Elon Musk',
         'Matt Hancock',
+        '#MattHancock',
+        '@MattHancock',
         '#imaceleb'
     ];
 
@@ -69,17 +72,17 @@
         }
         if(document.querySelector('svg[aria-label="Verified account"]')){
             Array.from(document.querySelectorAll('svg[aria-label="Verified account"]'))
-                .forEach(rmElm => rmElm.remove());
+                .forEach(rmElm => rmElm.innerHTML = '');
         }
         for (let i = 0; i < phrasesToRemove.length; ++i) {
             Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
-                .filter(elm => elm.textContent.includes(phrasesToRemove[i]))
-                .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.remove())
+                .filter(elm => elm.textContent.toLowerCase().includes(phrasesToRemove[i].toLowerCase()))
+                .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.innerHTML = '')
         }
         for (let ii = 0; ii < promotedPhrases.length; ++ii) {
             Array.from(document.querySelectorAll('[data-testid="placementTracking"]'))
-                .filter(elm => elm.textContent.includes(promotedPhrases[ii]))
-                .forEach(rmElm => rmElm.parentElement.parentElement.remove());
+                .filter(elm => elm.textContent.toLowerCase().includes(promotedPhrases[ii].toLowerCase()))
+                .forEach(rmElm => rmElm.parentElement.parentElement.innerHTML = '');
         }
     }
 })();
