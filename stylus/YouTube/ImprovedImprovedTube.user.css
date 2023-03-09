@@ -1,11 +1,18 @@
 /* ==UserStyle==
 @name           Improved ImprovedTube Dark Mode
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/YouTube
-@version        1.0.0
+@version        1.0.1
 @description    Improved Theme (based on improvedtube.com)
 @author         HBIDamian
 ==/UserStyle== */
 @-moz-document domain("youtube.com") {
+	/*Optional SHorts Remover*/
+    ytd-rich-shelf-renderer[is-shorts],
+    ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+    ytd-guide-entry-renderer a[title="Shorts"][role="tablist"]{
+        display: none !important;
+    }    
+	
 	yt-share-target-renderer button[title="Skyrock"],
 	yt-share-target-renderer button[title="Mix"],
 	yt-share-target-renderer button[title="ВКонтакте"],
@@ -16,7 +23,10 @@
 	yt-share-target-renderer button[title="goo"],
 	yt-share-target-renderer button[title="Pinterest"],
 	yt-share-target-renderer button[title="LinkedIn"],
-	yt-share-target-renderer button[title="reddit"],
+/* 	yt-share-target-renderer button[title="Reddit"], */
+	yt-share-target-renderer button[title="KakaoTalk"],
+	yt-share-target-renderer button[title="VK"],
+	yt-share-target-renderer button[title="OK"],
 	ytd-statement-banner-renderer,
 	yt-icon-button[id="scroll-button-forward"],
 	tp-yt-paper-button[aria-label="Join this channel"],
@@ -24,6 +34,7 @@
 	a[href*="tv.youtube.com/?utm_source=youtube_web&utm_medium=ep&utm_campaign=home&ve=34273"],
 	a[href*="music.youtube.com"],
 	a[href*="youtubekids"],
+	ytd-download-button-renderer,
 	div[id="clarify-box"],
 	div[id="voice-search-button"] {
 		display: none !important;
@@ -31,6 +42,9 @@
 
 	yt-formatted-string {
 		color: white;
+	}
+	yt-formatted-string[title="All"]{
+		color:black;
 	}
 
 	div[class="gstl_50 sbdd_a"] {
@@ -69,40 +83,21 @@
 		color: white;
 	}
 
+	g[clip-path="url(#__lottie_element_43)"] g path,
 	button[aria-label^="like this video"] {
+		stroke: #08f !important;
 		color: #08f !important;
 	}
-
+	div[aria-label="Verified"][class^="badge"] yt-icon svg{
+		fill: rgb(29, 155, 240) !important;
+	}
 	button[aria-label^="Dislike this video"] {
 		color: #ff5353 !important;
 	}
-
-	button[aria-label="Report"] {
-		color: #f00 !important;
-	}
-
-	button[aria-label="Custom emoji"] {
-		color: #ebb945;
-	}
-
-	button[aria-label="Share"] {
-		color: #ebe92e;
-	}
-
-	button[aria-label="Clip"] {
-		color: #8ede3c;
-	}
-
-	button[aria-label="Save to playlist"] {
-		color: #bb5dd6;
-	}
-
+	
+	/*REPORT BUTTON*/
 	yt-icon svg g path[d="M13.18,4l0.24,1.2L13.58,6h0.82H19v7h-5.18l-0.24-1.2L13.42,11H12.6H6V4H13.18 M14,3H5v18h1v-9h6.6l0.4,2h7V5h-5.6L14,3 L14,3z"] {
 		color: red;
-	}
-
-	yt-icon svg g path[d="M5,11h2v2H5V11z M15,15H5v2h10V15z M19,15h-2v2h2V15z M19,11H9v2h10V11z M22,6H2v14h20V6z M3,7h18v12H3V7z"] {
-		color: #5cdada;
 	}
 
 	button[aria-label="Send"] {
@@ -110,10 +105,6 @@
 	}
 
 	div[id="offer-module"] {
-		display: none !important;
-	}
-
-	#sentiment.ytd-video-primary-info-renderer {
 		display: none !important;
 	}
 
@@ -195,4 +186,8 @@
 	* {
 		font-family: 'Ubuntu', sans-serif !important;
 	}
+	div[id="gtx-trans"]{
+		display: none;
+	}
+	
 }
