@@ -1,0 +1,62 @@
+/* ==UserStyle==
+@name           PMMP Timings Dark Mode
+@namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/main/stylus/pmmp.io/
+@version        1.0.0
+@description    A Dark/High Contrast version of user submitted timings pages.
+@author         HBIDamian
+==/UserStyle== */
+@-moz-document regexp("^https:\\/\\/timings\\.pmmp\\.io\\/\\?id=\\d+$") {
+	html,
+	body {
+		color: white !important;
+		background-color: black;
+	}
+
+	td.metrics-column[style^="background-color: hsl("],
+	span.highlighted-metric[style^="background-color: hsl("] {
+		color: black !important;
+		font-weight: 1000 !important;
+	}
+
+	.visible-children {
+		background-color: #151515 !important;
+	}
+
+	td.show_rest,
+	div.title,
+	div.footer {
+		background: #333;
+		border-bottom-color: white;
+	}
+	span.triangle-icon div {
+		color: #fff !important;
+		border-top-color: #fff !important;
+	}
+
+	.event:hover,
+	tr[class="event  hidden-children children-hidden-by-default"]:hover,
+	tr[class="event  hidden no-children parent-hovered"]:hover,
+	tr[class="event  hidden no-children grandparent-hovered"]:hover,
+	tr[class="event  hidden-child parent-hovered"]:hover,
+	tr[class*="event  hidden-child"]:hover {
+		background-color: #444 !important;
+	}
+
+	tr[class*="event  hidden hidden-children children-hidden-by-default grandparent-hovered"],
+	tr[class*="event  hidden hidden-children children-hidden-by-default parent-hovered"],
+	tr[class*="event  hidden children-hidden-by-default visible-children"],
+	tr[class*="event  hidden no-children parent-hovered"],
+	tr[class*="event  hidden no-children grandparent-hovered"],
+	tr[class*="event  hidden hidden-children children-hidden-by-default grandparent-hovered"],
+	tr[class*="event  hidden-children parent-hovered"],
+	tr[class*="event  hidden-children children-hidden-by-default parent-hovered"],
+	tr[class*="event  hidden-children children-hidden-by-default grandparent-hovered"],
+	tr[class*="event  children-hidden-by-default hidden-children grandparent-hovered"],
+	tr[class*="event  children-hidden-by-default hidden-children parent-hovered"],
+	tr[class*="event  hidden children-hidden-by-default hidden-children grandparent-hovered"],
+	tr[class*="event  hidden children-hidden-by-default hidden-children parent-hovered"],
+	tr[class*="event  no-children grandparent-hovered"],
+	tr[class*="event  no-children parent-hovered"] {
+		background-color: #333 !important;
+	}
+}
