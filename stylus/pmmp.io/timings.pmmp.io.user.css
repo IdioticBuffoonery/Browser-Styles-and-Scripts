@@ -11,6 +11,15 @@
 		color: white !important;
 		background-color: black;
 	}
+	
+	a{
+		color: #529dff !important;
+	}
+	
+	a:hover{
+		color: #72bfff !important;
+	}
+
 
 	td.metrics-column[style^="background-color: hsl("],
 	span.highlighted-metric[style^="background-color: hsl("] {
