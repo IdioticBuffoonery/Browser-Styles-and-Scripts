@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           PMMP Timings Dark Mode
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/main/stylus/pmmp.io/
-@version        1.0.0
+@version        1.0.1
 @description    A Dark/High Contrast version of user submitted timings pages.
 @author         HBIDamian
 ==/UserStyle== */
@@ -11,20 +11,21 @@
 		color: white !important;
 		background-color: black;
 	}
-	
-	a{
-		color: #529dff !important;
-	}
-	
-	a:hover{
-		color: #72bfff !important;
-	}
-
 
 	td.metrics-column[style^="background-color: hsl("],
 	span.highlighted-metric[style^="background-color: hsl("] {
 		color: black !important;
 		font-weight: 1000 !important;
+	}
+	img[src="https://github.com/pmmp/PocketMine-MP/raw/stable/.github/readme/pocketmine.png"]{
+		    background-color: #151515;
+	}
+	a {
+		color: #529dff !important;
+	}
+
+	a:hover {
+		color: #72bfff !important;
 	}
 
 	.visible-children {
