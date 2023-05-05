@@ -1,0 +1,199 @@
+/* ==UserStyle==
+@name           platform.openai.com/playground
+@namespace      github.com/IdioticBuffoonery/stylus/openai/platform/playground
+@version        1.0.0
+@license        https://userstyles.world/style/8042/openai-playground-dark-mode
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+@-moz-document url-prefix("https://platform.openai.com/playground?") {
+
+	body {
+		background-color: #101016;
+	}
+	.pg-main {
+		background-color: #1C1C27;
+	}
+	.app-header {
+		background-color: #28293D;
+		border-bottom: 1px solid black
+	}
+	.pg-editor {
+		color: white !important;
+	}
+	/* text-input-with-header disabled chat-pg-instructions */
+	.text-input-with-header.disabled .text-input,
+	.text-input-with-header.disabled .text-input-header-wrapper,
+	.chat-pg-mobile-divider,
+	.chat-pg-message.disabled,
+	.chat-pg-message.disabled .text-input-with-focus textarea {
+		background-color: #101016 !important;
+		color: white !important;
+	}
+
+	/*.pg-header {
+        border: none;
+    } */
+	
+	.pg-alert.disabled {
+		filter: invert(1);
+	}
+	.pg-page-title {
+		color: #EAE9EE;
+	}
+
+	.text-input-header-subheading {
+		color: #EAE9EE;
+	}
+	
+	.chat-message-role-text{
+		color:#EAE9EE;
+		background-color: #28293D;
+
+	}
+	.chat-message-role-text:hover{
+		color:black;
+	}
+	.text-input {
+		height: unset;
+	}
+
+	.pg-right-content {
+		background-color: #1C1C27
+	}
+	.select-base > div,
+	div[id^="react-select-3-option-"] {
+		background-color: #28293D;
+		border-color: black;
+	}
+
+	div.engine-select-menu div {
+		background: #28293D;
+		color: white;
+	}
+	div.engine-select-option.selected,
+	div.engine-select-option.selected div {
+		background: #1C1C27 !important
+	}
+
+
+	.select-base > div > *:hover,
+	div[id^="react-select-3-option-"]:hover {
+		background-color: #1C1C27;
+	}
+
+	.btn.btn-sm {
+		background-color: #28293D;
+		border-color: black;
+	}
+
+	.btn-label-inner {
+		color: white;
+	}
+
+	.select-base * {
+		color: white;
+	}
+
+	div.switch-field {
+		background-color: #28293D;
+	}
+
+	.mode-select-beta-tag {
+		color: black;
+	}
+
+	div.switch-field svg {
+		color: white;
+	}
+
+	.switch-field input:checked + label {
+		background-color: #555870;
+	}
+
+	.page-wrapper {
+		color: #EAE9EE;
+	}
+
+	.css-1u8ecqi-control {
+		background-color: #28293D;
+	}
+
+	.css-14yy9ys-multiValue {
+		background-color: #1C1C27;
+	}
+	
+	div.chat-pg-message{
+		background-color: #1C1C27;
+	}
+	div.chat-pg-message textarea{
+		background-color: #28293D !important;
+	}
+	
+	div.text-input-with-focus{
+				background-color: #28293D;
+
+	}
+
+	div.chat-pg-message:hover {
+		background-color: #101016;
+	}
+
+	.css-14yy9ys-multiValue > * {
+		color: #EAE9EE;
+	}
+
+	.inject-text-ta {
+		background-color: #28293D;
+		border-color: black;
+		color: #EAE9EE;
+	}
+
+	.rc-slider-step {
+		background-color: #28293D;
+	}
+
+	.text-input {
+		background-color: #28293D;
+		color: #EAE9EE;
+		height: unset;
+	}
+
+	.timeline-item-selected {
+		background-color: #28293D;
+	}
+
+	.timeline-item:hover {
+		background-color: #101016 !important;
+	}
+
+
+	/*     .pg-alert {
+        display: none;
+    } */
+	.public-DraftEditor-content {
+		background-color: #101016;
+	}
+
+	.public-DraftStyleDefault-block > span {
+		background-color: #101016 !important;
+	}
+
+	.user-details-org {
+		color: white !important;
+	}
+
+	.pg-token-counter {
+		background-color: #101016;
+	}
+
+	.completions-container,
+	.DraftEditor-editorContainer {
+		border-color: #010102 !important;
+	}
+
+	div > svg > path {
+		color: white !important;
+		fill: #eae9ee;
+	}
+}
