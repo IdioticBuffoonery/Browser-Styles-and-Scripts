@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.6.0
+// @version      1.7.0
 // @description  I'm not buying your shit, Elon!
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -75,6 +75,19 @@
         if(document.querySelector('[aria-label="Timeline: Notifications"]')){
             document.querySelector('[aria-label="Timeline: Notifications"]').parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
         }
+        const spanElements = document.getElementsByTagName('span');
+
+        // Iterate over the found elements
+        for (let i = 0; i < spanElements.length; i++) {
+            const span = spanElements[i];
+
+            // Check if the inner text matches the desired text
+            if (span.innerText === ' and get access to their exclusive content') {
+                const closestArticle = span.closest('article');
+                closestArticle.parentElement.remove();
+            }
+        }
+
         for (let i = 0; i < phrasesToRemove.length; ++i) {
             Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
                 .filter(elm => elm.textContent.toLowerCase().includes(phrasesToRemove[i].toLowerCase()))
