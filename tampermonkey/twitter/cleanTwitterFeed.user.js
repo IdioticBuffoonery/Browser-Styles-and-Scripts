@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.9.0
+// @version      1.10.0
 // @description  I'm not buying your shit, Elon!
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -32,8 +32,8 @@
 	// Call the main function to replace/remove unwanted elements
 	takeOutTheTrash();
 	setInterval(takeOutTheTrash, 0);
-	replaceTwitterTitle()
-	setInterval(replaceTwitterTitle, 0);
+	replaceTheJunk()
+	setInterval(replaceTheJunk, 0);
 
 
 	// Main function to remove unwanted elements from the page
@@ -116,11 +116,14 @@
 	}
 
 	// Function to replace "Twitter" with "Titter" in the page title for the lols.
-	function replaceTwitterTitle() {
+    // Also now replaces 𝕏 with Old twitter logo
+	function replaceTheJunk() {
 		const pageTitle = document.title;
 		const newTitle = pageTitle.replace(/Twitter/g, 'Titter');
 		if (newTitle !== pageTitle) {
 			document.title = newTitle;
 		}
+
+        document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
 	}
 })();
