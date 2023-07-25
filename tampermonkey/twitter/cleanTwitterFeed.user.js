@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.10.0
+// @version      1.11.0
 // @description  I'm not buying your shit, Elon!
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -24,8 +24,10 @@
 
 	// Phrases to remove and promoted phrases
 	const phrasesToRemove = [
-		'@elonmusk',
-		'elon musk'
+		//'@elonmusk',
+		//'elon musk'
+        'Manchester United',
+        'Carol Volderman'
 	];
 	const promotedPhrases = ['Promoted', 'Advertisement'];
 
@@ -108,21 +110,25 @@
 
 		// Replace the X logo with a custom logo (oldTwitterLogo)
 		const oldTwitterLogo = 'M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z';
-		const xLogo = document.querySelectorAll('svg g path[d="M14.258 10.152L23.176 0h-2.113l-7.747 8.813L7.133 0H0l9.352 13.328L0 23.973h2.113l8.176-9.309 6.531 9.309h7.133zm-2.895 3.293l-.949-1.328L2.875 1.56h3.246l6.086 8.523.945 1.328 7.91 11.078h-3.246zm0 0"]');
+		const xLogo = document.querySelectorAll('svg g path[d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"]');
 		Array.from(xLogo).forEach(elm => {
 			elm.setAttribute('d', oldTwitterLogo);
 			elm.parentElement.parentElement.setAttribute('viewBox', "0 0 250 200");
+            elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
 		});
 	}
 
 	// Function to replace "Twitter" with "Titter" in the page title for the lols.
+    // Also now replaces "Tweet" Buttons. This is a functioning placeholder ready for when he replaces the word "tweet"
     // Also now replaces 𝕏 with Old twitter logo
 	function replaceTheJunk() {
 		const pageTitle = document.title;
-		const newTitle = pageTitle.replace(/Twitter/g, 'Titter');
+		const newTitle = pageTitle.replace(/Twitter/g, 'Titter').replace(/𝕏/g, 'Twatter');
 		if (newTitle !== pageTitle) {
 			document.title = newTitle;
 		}
+        Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
+            .forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
 
         document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
 	}
