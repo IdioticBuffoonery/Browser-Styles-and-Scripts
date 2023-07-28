@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.11.0
+// @version      1.12.0
 // @description  I'm not buying your shit, Elon!
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -26,10 +26,13 @@
 	const phrasesToRemove = [
 		//'@elonmusk',
 		//'elon musk'
-        'Manchester United',
-        'Carol Volderman'
+		'Manchester United',
+		'Carol Volderman'
 	];
 	const promotedPhrases = ['Promoted', 'Advertisement'];
+
+	// Choose to enable my custom edits or not
+	const enableCustomEdits = true;
 
 	// Call the main function to replace/remove unwanted elements
 	takeOutTheTrash();
@@ -46,52 +49,54 @@
 			unreadCommunitiesElement.remove();
 		}
 
-		// Remove the sidebar column
-		const sidebarColumnElement = document.querySelector('[data-testid="sidebarColumn"]');
-		if (sidebarColumnElement) {
-			sidebarColumnElement.remove();
-		}
-
-		// Replace verified account badges with a poop emoji
-		Array.from(document.querySelectorAll('svg[aria-label="Verified account"]')).forEach(rmElm => (rmElm.outerHTML = '<h1>💩</h1>'));
-
-		// Remove specific elements by querying their href attributes
-		const hrefAttributesToRemove = [
-			'a[href="/i/verified-orgs-signup"]',
-			'a[href="/i/circles"]',
-			'a[href="/i/twitter_blue_sign_up"]',
-		];
-		hrefAttributesToRemove.forEach(hrefAttr => {
-			const elementToRemove = document.querySelector(hrefAttr);
-			if (elementToRemove) {
-				elementToRemove.remove();
+		if (enableCustomEdits === true) {
+			// Remove the sidebar column
+			const sidebarColumnElement = document.querySelector('[data-testid="sidebarColumn"]');
+			if (sidebarColumnElement) {
+				sidebarColumnElement.remove();
 			}
-		});
 
-		// Apply max-width style to certain elements
-		const primaryColumnElement = document.querySelector('[data-testid="primaryColumn"]');
-		if (primaryColumnElement) {
-			primaryColumnElement.style.setProperty("max-width", "100vw", "important");
-		}
-		if (!window.location.pathname.startsWith('/messages')) {
-			const maxwidthElements = document.getElementsByClassName('r-1ye8kvj');
-			Array.from(maxwidthElements).forEach(elm => elm.style.setProperty("max-width", "100vw", "important"));
-		}
+			// Replace verified account badges with a poop emoji
+			Array.from(document.querySelectorAll('svg[aria-label="Verified account"]')).forEach(rmElm => (rmElm.outerHTML = '<h1>💩</h1>'));
 
-		// Adjust the width of timeline elements
-		const timelineHomeElement = document.querySelector('[aria-label="Timeline: Your Home Timeline"]');
-		if (timelineHomeElement) {
-			timelineHomeElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
-		}
+			// Remove specific elements by querying their href attributes
+			const hrefAttributesToRemove = [
+				'a[href="/i/verified-orgs-signup"]',
+				'a[href="/i/circles"]',
+				'a[href="/i/twitter_blue_sign_up"]',
+			];
+			hrefAttributesToRemove.forEach(hrefAttr => {
+				const elementToRemove = document.querySelector(hrefAttr);
+				if (elementToRemove) {
+					elementToRemove.remove();
+				}
+			});
 
-		const timelineExploreElement = document.querySelector('[aria-label="Timeline: Explore"]');
-		if (timelineExploreElement) {
-			timelineExploreElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
-		}
+			// Apply max-width style to certain elements
+			const primaryColumnElement = document.querySelector('[data-testid="primaryColumn"]');
+			if (primaryColumnElement) {
+				primaryColumnElement.style.setProperty("max-width", "100vw", "important");
+			}
+			if (!window.location.pathname.startsWith('/messages')) {
+				const maxwidthElements = document.getElementsByClassName('r-1ye8kvj');
+				Array.from(maxwidthElements).forEach(elm => elm.style.setProperty("max-width", "100vw", "important"));
+			}
 
-		const timelineNotificationsElement = document.querySelector('[aria-label="Timeline: Notifications"]');
-		if (timelineNotificationsElement) {
-			timelineNotificationsElement.parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+			// Adjust the width of timeline elements
+			const timelineHomeElement = document.querySelector('[aria-label="Timeline: Your Home Timeline"]');
+			if (timelineHomeElement) {
+				timelineHomeElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+			}
+
+			const timelineExploreElement = document.querySelector('[aria-label="Timeline: Explore"]');
+			if (timelineExploreElement) {
+				timelineExploreElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+			}
+
+			const timelineNotificationsElement = document.querySelector('[aria-label="Timeline: Notifications"]');
+			if (timelineNotificationsElement) {
+				timelineNotificationsElement.parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+			}
 		}
 
 		// Remove tweets containing specific phrases
@@ -114,22 +119,29 @@
 		Array.from(xLogo).forEach(elm => {
 			elm.setAttribute('d', oldTwitterLogo);
 			elm.parentElement.parentElement.setAttribute('viewBox', "0 0 250 200");
-            elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
+			elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
 		});
 	}
 
 	// Function to replace "Twitter" with "Titter" in the page title for the lols.
-    // Also now replaces "Tweet" Buttons. This is a functioning placeholder ready for when he replaces the word "tweet"
-    // Also now replaces 𝕏 with Old twitter logo
+	// Also now replaces "Tweet" Buttons. This is a functioning placeholder ready for when he replaces the word "tweet"
+	// Also now replaces 𝕏 with Old twitter logo
 	function replaceTheJunk() {
 		const pageTitle = document.title;
-		const newTitle = pageTitle.replace(/Twitter/g, 'Titter').replace(/𝕏/g, 'Twatter');
+        const newTitle = pageTitle.replace(/ \/ X/g, ' / Twitter');
 		if (newTitle !== pageTitle) {
 			document.title = newTitle;
 		}
-        Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
-            .forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
+		if (document.querySelector('[role="button"][data-testid*="tweetButton"]')) {
+		Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
+			.forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
+		}
+		if (document.querySelectorAll('a[href*="/compose/"] div span')) {
+			Array.from(document.querySelectorAll('a[href*="/compose/"] div span'))
+				.forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
+		}
 
-        document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
+
+		document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
 	}
 })();
