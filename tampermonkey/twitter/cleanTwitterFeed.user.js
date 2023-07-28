@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.13.0
+// @version      1.13.1
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -129,7 +129,7 @@
     // Also now replaces 𝕏 with Old twitter logo
     function replaceTheJunk() {
         const pageTitle = document.title;
-        var newTitle = pageTitle.replace(/ \/ X/g, ' / Twitter').replace(/on Twitter:/g, 'on Facebook:');
+        var newTitle = pageTitle.replace(/ \/ X/g, ' / Twitter').replace(/on X:/g, 'on Twitter:');
         if (pageTitle === 'X') {
             document.title = 'Twitter';
             newTitle = 'Twitter';
