@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.13.1
+// @version      1.14.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -33,14 +33,31 @@
     const promotedPhrases = ['Promoted', 'Advertisement'];
 
     // Choose to enable my custom edits or not
-    const enableCustomEdits = true;
+    const enableCustomEdits = false;
+
+    // As Twitter is removing the ability to change the theme,
+    // This part will set the theme to light mode,
+    // assuming they don't remove this ability too.
+    // These values are used to set the theme
+    // 0 = Light Mode
+    // 1 = Dim Mode
+    // 2 = Lights out
+    const displayMode = 0;
+    var night_mode_cookie = document.cookie.split(';').filter((item) => item.includes('night_mode='));
+    if (night_mode_cookie.length > 0) {
+        var night_mode_cookie_value = night_mode_cookie[0].split('=')[1];
+        if (night_mode_cookie_value != displayMode) {
+            document.cookie = 'night_mode=' + displayMode + '; path=/; domain=.twitter.com';
+        }
+    } else {
+        document.cookie = 'night_mode=' + displayMode + '; path=/; domain=.twitter.com';
+    }
 
     // Call the main function to replace/remove unwanted elements
     takeOutTheTrash();
     setInterval(takeOutTheTrash, 0);
     replaceTheJunk()
     setInterval(replaceTheJunk, 0);
-
 
     // Main function to remove unwanted elements from the page
     function takeOutTheTrash() {
