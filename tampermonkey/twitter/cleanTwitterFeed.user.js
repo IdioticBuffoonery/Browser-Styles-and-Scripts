@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.14.0
+// @version      1.15.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -23,17 +23,23 @@
     ss.insertRule('::-webkit-scrollbar-thumb:hover {background: rgb(13, 116, 186);}', 0);
 
     // Phrases to remove and promoted phrases
+    // Please note that the removed posts may still count against the rate limits.
     const phrasesToRemove = [
-        '@elonmusk',
-        'elon musk',
+        //'@elonmusk',
+        //'elon musk',
         'Manchester United',
-        'Carol Volderman',
-        '𝕏'
+        'Carol Volderman'
+        //'𝕏'
     ];
     const promotedPhrases = ['Promoted', 'Advertisement'];
 
     // Choose to enable my custom edits or not
     const enableCustomEdits = false;
+    const enableCustomEdits2 = true;
+    // If both are enabled, disable the first one
+    if (enableCustomEdits2 === true && enableCustomEdits === true) {
+        enableCustomEdits = false;
+    }
 
     // As Twitter is removing the ability to change the theme,
     // This part will set the theme to light mode,
@@ -42,7 +48,7 @@
     // 0 = Light Mode
     // 1 = Dim Mode
     // 2 = Lights out
-    const displayMode = 0;
+    const displayMode = 2;
     var night_mode_cookie = document.cookie.split(';').filter((item) => item.includes('night_mode='));
     if (night_mode_cookie.length > 0) {
         var night_mode_cookie_value = night_mode_cookie[0].split('=')[1];
@@ -67,6 +73,13 @@
             unreadCommunitiesElement.remove();
         }
 
+        if (enableCustomEdits2 === true) {
+            // Remove the sidebar column
+            const trendingTab = document.querySelector('div[aria-label="Timeline: Trending now"]');
+            if (trendingTab) {
+                trendingTab.parentElement.parentElement.parentElement.remove();
+            }
+        }
         if (enableCustomEdits === true) {
             // Remove the sidebar column
             const sidebarColumnElement = document.querySelector('[data-testid="sidebarColumn"]');
@@ -156,12 +169,24 @@
         }
         if (document.querySelector('[role="button"][data-testid*="tweetButton"]')) {
             Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
-                .forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
+                .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
         if (document.querySelectorAll('a[href*="/compose/"] div span')) {
             Array.from(document.querySelectorAll('a[href*="/compose/"] div span'))
-                .forEach(elm => elm.textContent = elm.textContent.replace(/Tweet/g, 'Twote').replace(/𝕏/g, 'Twet'));
+                .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
+
+        // Attempt to bring back "Retweet"
+        if (document.querySelectorAll('div[role="group"] div a[role="link"] span span')) {
+            Array.from(document.querySelectorAll('div[role="group"] div a[role="link"] span span'))
+                .forEach(elm => elm.textContent = elm.textContent.replace(/Repost/g, 'Retweet'));
+        }
+        if(document.querySelectorAll('h2[role="heading"] > span')){
+            Array.from(document.querySelectorAll('h2[role="heading"] > span'))
+                .forEach(elm => elm.textContent.replace(/Reposted/g, 'Retweeted'));
+        }
+
+
         document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
     }
 })();
