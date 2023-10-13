@@ -20,7 +20,7 @@
     // This script was also made with the challenge of not using setTimeout or setInterval.
     // Testing this script was a pain, as YouTube's adblocker blocker dialog doesn't always appear.
     // So, bugs may be present. If you find any, please let me know.
-    
+
     function handleAdblockerBlocker() {
         var closeButton = null;
         var enforcementMessageViewModel = null;
