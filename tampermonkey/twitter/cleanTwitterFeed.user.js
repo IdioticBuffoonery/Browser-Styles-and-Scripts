@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.15.0
+// @version      1.16.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -59,11 +59,27 @@
         document.cookie = 'night_mode=' + displayMode + '; path=/; domain=.twitter.com';
     }
 
-    // Call the main function to replace/remove unwanted elements
     takeOutTheTrash();
-    setInterval(takeOutTheTrash, 0);
-    replaceTheJunk()
-    setInterval(replaceTheJunk, 0);
+    replaceTheJunk();
+    // Define a MutationObserver configuration
+    const observerConfig = {
+        // Watch for changes in the child nodes of the target
+        childList: true,
+        // Watch for changes in the entire subtree of the target
+        subtree: true
+    };
+
+    // Create a MutationObserver
+    const observer = new MutationObserver((mutationsList, observer) => {
+        // Call your functions when mutations occur
+        takeOutTheTrash();
+        replaceTheJunk();
+    });
+
+    // Start observing the document or a specific element (change 'document' to the target element if needed)
+    observer.observe(document, observerConfig);
+
+    // Start observing the document or a specific
 
     // Main function to remove unwanted elements from the page
     function takeOutTheTrash() {
@@ -78,6 +94,11 @@
             const trendingTab = document.querySelector('div[aria-label="Timeline: Trending now"]');
             if (trendingTab) {
                 trendingTab.parentElement.parentElement.parentElement.remove();
+            }
+
+            const subToPremiumElement = document.querySelector('aside[aria-label="Subscribe to Premium"]');
+            if (subToPremiumElement) {
+                subToPremiumElement.parentElement.remove();
             }
         }
         if (enableCustomEdits === true) {
@@ -151,7 +172,12 @@
             elm.setAttribute('d', oldTwitterLogo);
             elm.parentElement.parentElement.setAttribute('viewBox', "0 0 250 200");
             elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
+            // document.querySelector('a[href="/i/verified-choose"]').firstChild.firstChild.firstChild.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
+            if (elm.parentElement.parentElement.parentElement.parentElement.parentElement === document.querySelector('a[href="/i/verified-choose"]')) {
+                elm.parentElement.parentElement.style.setProperty('color', 'rgba(231,233,234,1.00)', 'important');
+            }
         });
+        document.querySelector('a[href="/i/verified-choose"]')
     }
 
     // Function to replace "Twitter" with "Titter" in the page title for the lols.
@@ -186,6 +212,11 @@
                 .forEach(elm => elm.textContent.replace(/Reposted/g, 'Retweeted'));
         }
 
+        var copyrightCheck = document.querySelector('nav[aria-label="Footer"] div[dir="ltr"] span');
+
+        if (copyrightCheck && copyrightCheck.nodeType === Node.TEXT_NODE) {
+            copyrightCheck.textContent = copyrightCheck.textContent.replace("X Corp", "Twitter Inc");
+        }
 
         document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
     }
