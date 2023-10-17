@@ -1,11 +1,9 @@
 // ==UserScript==
 // @name         YouTube Adblocker Blocker Be Gone
 // @namespace    https://hbidamian.xyz
-// @version      1.0.0
+// @version      1.1.0
 // @description  YouTube Adblocker Blocker Be Gone is a userscript that removes the adblocker blocker on YouTube videos.
 // @author       HBIDamian
-// @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/youtube/YouTubeAdblockerBlockerBeGone.user.js
-// @downloadURL  https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/youtube/YouTubeAdblockerBlockerBeGone.user.js
 // @match        *://*.youtube.com*
 // @match        *://youtube.com*
 // @match        *://*.youtube.com/*
@@ -22,25 +20,17 @@
     // So, bugs may be present. If you find any, please let me know.
 
     function handleAdblockerBlocker() {
-        var closeButton = null;
         var enforcementMessageViewModel = null;
         enforcementMessageViewModel = document.querySelector('ytd-enforcement-message-view-model');
+        var playButton = document.querySelector("button.ytp-play-button.ytp-button");
         if (enforcementMessageViewModel && isElementVisible(enforcementMessageViewModel)) {
-            closeButton = enforcementMessageViewModel.querySelector('button[aria-label="Close"]');
-            if (closeButton && isElementVisible(closeButton)) {
-                // click the button.
-                closeButton.click();
-                console.log("[YTABBG] YouTube adblock blocker has been blocked!");
-                // Add an event listener for when the close button's click action is completed
-                closeButton.addEventListener("click", function () {
-                    var playButton = document.querySelector("button.ytp-play-button.ytp-button");
-                    if (playButton) {
-                        if (playButton.getAttribute("data-title-no-tooltip") === "Play") {
-                            playButton.click(); // Click the play button
-                        }
-                    }
-                });
-                console.log("[YTABBG] Closed the AdBlocker Blocker element.");
+            var daddyElement = enforcementMessageViewModel.parentElement.parentElement;
+            daddyElement.remove(); // Remove the adblocker blocker
+            console.log(daddyElement);
+            if (playButton) {
+                if (playButton.getAttribute("data-title-no-tooltip") === "Play") {
+                    playButton.click(); // Click the play button
+                }
             }
         }
     }
