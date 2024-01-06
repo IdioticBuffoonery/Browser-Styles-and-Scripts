@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           platform.openai.com/playground
 @namespace      github.com/IdioticBuffoonery/stylus/openai/platform/playground
-@version        1.0.0
+@version        1.1.0
 @license        https://userstyles.world/style/8042/openai-playground-dark-mode
 @description    A new userstyle
 @author         Me
@@ -21,6 +21,25 @@
 	.pg-editor {
 		color: white !important;
 	}
+    
+    .app-navigation{
+        background-color: #101016 !important;
+    }
+    
+    .app-navigation-menu-item-icon{
+        background-color: #28293D;
+    }
+    
+    .active .app-navigation-menu-item-icon,
+    .app-navigation-menu-item-label {
+        background-color: #555870;
+        color:white;
+    }
+    
+    .app-navigation-logo a svg {
+        color:white;
+    }
+    
 	/* text-input-with-header disabled chat-pg-instructions */
 	.text-input-with-header.disabled .text-input,
 	.text-input-with-header.disabled .text-input-header-wrapper,
@@ -48,11 +67,11 @@
 	
 	.chat-message-role-text{
 		color:#EAE9EE;
-		background-color: #28293D;
+		background-color: #28293D !important;
 
 	}
 	.chat-message-role-text:hover{
-		color:black;
+        background-color: #1e1f2f !important;
 	}
 	.text-input {
 		height: unset;
@@ -73,8 +92,16 @@
 	}
 	div.engine-select-option.selected,
 	div.engine-select-option.selected div {
-		background: #1C1C27 !important
+		background: #1C1C27 !important;
 	}
+    
+    div.engine-select-card,
+    div.engine-select-card-title {
+        background: #1C1C27 !important;
+        color: white;
+
+
+    }
 
 
 	.select-base > div > *:hover,
@@ -123,15 +150,15 @@
 		background-color: #1C1C27;
 	}
 	
-	div.chat-pg-message{
-		background-color: #1C1C27;
+	div.chat-pg-message {
+		background-color: #1C1C27 !important;
 	}
 	div.chat-pg-message textarea{
 		background-color: #28293D !important;
 	}
 	
 	div.text-input-with-focus{
-				background-color: #28293D;
+        background-color: #28293D;
 
 	}
 
@@ -149,7 +176,8 @@
 		color: #EAE9EE;
 	}
 
-	.rc-slider-step {
+	.rc-slider-step,
+    .css-f4vt0h-container div{
 		background-color: #28293D;
 	}
 
@@ -191,6 +219,15 @@
 	.DraftEditor-editorContainer {
 		border-color: #010102 !important;
 	}
+    
+    .modal-dialog,
+    .modal-header,
+    .modal-footer,
+    div.model-body .css-g8vx3q {
+        background: #555870;
+        color:unset !important;
+        color: white !important;
+    }
 
 	div > svg > path {
 		color: white !important;
