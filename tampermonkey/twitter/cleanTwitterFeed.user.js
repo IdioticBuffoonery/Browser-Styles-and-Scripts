@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.16.0
+// @version      1.17.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -25,11 +25,11 @@
     // Phrases to remove and promoted phrases
     // Please note that the removed posts may still count against the rate limits.
     const phrasesToRemove = [
-        //'@elonmusk',
-        //'elon musk',
+        '@elonmusk',
+        'elon musk',
         'Manchester United',
-        'Carol Volderman'
-        //'𝕏'
+        'Carol Volderman',
+        '𝕏'
     ];
     const promotedPhrases = ['Promoted', 'Advertisement'];
 
@@ -190,34 +190,62 @@
             document.title = 'Twitter';
             newTitle = 'Twitter';
         }
+        // replace svg[aria-label="Verified account"] with a poop emoji
+        Array.from(document.querySelectorAll('svg[aria-label="Verified account"]')).forEach(rmElm => (rmElm.outerHTML = '💩'));
+
         if (newTitle !== pageTitle) {
             document.title = newTitle;
         }
+        
         if (document.querySelector('[role="button"][data-testid*="tweetButton"]')) {
             Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
+        
         if (document.querySelectorAll('a[href*="/compose/"] div span')) {
             Array.from(document.querySelectorAll('a[href*="/compose/"] div span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
-
+        
         // Attempt to bring back "Retweet"
         if (document.querySelectorAll('div[role="group"] div a[role="link"] span span')) {
             Array.from(document.querySelectorAll('div[role="group"] div a[role="link"] span span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Repost/g, 'Retweet'));
         }
+
         if(document.querySelectorAll('h2[role="heading"] > span')){
             Array.from(document.querySelectorAll('h2[role="heading"] > span'))
                 .forEach(elm => elm.textContent.replace(/Reposted/g, 'Retweeted'));
         }
 
-        var copyrightCheck = document.querySelector('nav[aria-label="Footer"] div[dir="ltr"] span');
+        // Find the image elements with the specific source URL
+        const images = document.querySelectorAll('img[src="https://pbs.twimg.com/profile_images/1683899100922511378/5lY42eHs_bigger.jpg"]');
 
-        if (copyrightCheck && copyrightCheck.nodeType === Node.TEXT_NODE) {
-            copyrightCheck.textContent = copyrightCheck.textContent.replace("X Corp", "Twitter Inc");
+        // Convert NodeList to an array using Array.from
+        Array.from(images).forEach(image => {
+            // Create a new text node with the desired symbol
+            const symbolNode = document.createTextNode('');
+
+            // Replace the parent element of the image with the text node
+            image.parentNode.parentNode.parentNode.parentNode.replaceWith(symbolNode);
+        });
+        
+        // Find the nav element with aria-label "footer"
+        var footerNav = document.querySelector('nav[aria-label="Footer"]');
+
+        // Check if footerNav exists
+        if (footerNav) {
+            // Find all divs within footerNav
+            var divs = footerNav.querySelectorAll('div');
+
+            // Iterate through each div to find the one containing the span with "$year$ Blorpo."
+            divs.forEach(function(div) {
+                var span = div.querySelector('span');
+                if (span && span.textContent.includes("X Corp")) {
+                    span.textContent = span.textContent.replace("X Corp", "Twitter Inc");
+                }
+            });
         }
-
         document.querySelector('link[rel="shortcut icon"]').setAttribute('href', '//abs.twimg.com/favicons/twitter.2.ico');
     }
 })();
