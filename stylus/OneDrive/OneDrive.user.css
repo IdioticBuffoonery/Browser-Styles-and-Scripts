@@ -1,62 +1,68 @@
 @-moz-document url("https://onedrive.live.com/"), url-prefix("https://onedrive.live.com/?") {
-    * {
-        --main-theme: #0e0e12;
-        --secondary-theme: #16161d;
-        --third-theme: #21212c;
-        --third-theme-hover: #424258;
-        --od3-row-inset-background: #424258 !important;
-    }
-    img[alt="Folder"],
-    img[alt="zip"],
-    img[alt="txt"],
-    i[data-icon-name*="folderCover"] {
-        filter: brightness(0.275) grayscale(1) !important;
-    }
-    
-    span[class*="ms-FolderCover-metadata"] {
-        color: #fff !important;
-    }
-    
-    span.ms-Tile-nameplate,
-    span.ms-Button-label,
-    div[class*="linkTextWrapper"] span[class*="linkText"],
-    h1,
-    h2,
-    h3,
-    span[class*="groupName"] {
-        filter: brightness(4) !important;
-    }
-    
-    i {
-        color: #fff !important;
-    }
-    
-    nav,
-    .od-SuiteNav {
-        background-color: var(--secondary-theme) !important;
-    }
-    
-    div[data-automationid="DetailsHeader"],
-    div[role="columnheader"] * {
-        background-color: var(--secondary-theme) !important;
-        color: #fff !important;
-    }
-    
-    main,
-    div[class*="topBar"],
-    div[class*="body_"] {
-        background-color: var(--main-theme) !important;
-    }
-    
-    /* Files and folders list */
-    div[data-automationid="DetailsRow"] {
-        background: var(--third-theme) !important;
-        color: white !important;
-    }
-    
-    
-    
-    div[data-automationid="DetailsRowCell"] * {
-        color: white !important;
-    }
-    }
+	* {
+	    --main-theme: #0e0e12;
+	    --secondary-theme: #16161d;
+	    --third-theme: #21212c;
+	    --third-theme-hover: #424258;
+	    --od3-row-inset-background: #424258 !important;
+	}
+	img[alt="Folder"],
+	img[alt="zip"],
+	img[src*="genericfile.svg"],
+	img[src*="video.svg"],
+	img[src*="audio.svg"],
+	img[src*="photo.svg"],
+	i[data-icon-name*="folderCover"] {
+	    filter: brightness(0.275) grayscale(1) !important;
+	}
+	
+	span[class*="ms-FolderCover-metadata"] {
+	    color: #fff !important;
+	}
+	
+	span.ms-Tile-nameplate,
+	span.ms-Button-label,
+	div[class*="linkTextWrapper"] span[class*="linkText"],
+	h1,
+	h2,
+	h3,
+	span[class*="groupName"],
+	button.o365sx-button div.o365cs-base,
+	ol.ms-Breadcrumb-list {
+	    filter: brightness(4) !important;
+	}
+	
+	i {
+	    color: #fff !important;
+	}
+	
+	nav,
+	.od-SuiteNav {
+	    background-color: var(--secondary-theme) !important;
+	}
+	
+	div[data-automationid="DetailsHeader"],
+	div[role="columnheader"] *,
+	div[aria-label="List of recently accessed files"] * {
+	    background-color: var(--secondary-theme) !important;
+	    color: #fff !important;
+	}
+	
+	main,
+	div[class*="topBar"],
+	div[class*="body_"] {
+	    background-color: var(--main-theme) !important;
+	}
+	
+	/* Files and folders list */
+	div[data-automationid="DetailsRow"] {
+	    background: var(--third-theme) !important;
+	    color: white !important;
+	}
+	
+	
+	
+	div[data-automationid="DetailsRowCell"] * {
+	    color: white !important;
+	}
+}
