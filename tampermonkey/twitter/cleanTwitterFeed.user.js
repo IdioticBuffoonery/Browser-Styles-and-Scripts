@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.17.0
+// @version      1.18.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -34,7 +34,7 @@
     const promotedPhrases = ['Promoted', 'Advertisement'];
 
     // Choose to enable my custom edits or not
-    const enableCustomEdits = false;
+    let enableCustomEdits = false;
     const enableCustomEdits2 = true;
     // If both are enabled, disable the first one
     if (enableCustomEdits2 === true && enableCustomEdits === true) {
@@ -79,8 +79,6 @@
     // Start observing the document or a specific element (change 'document' to the target element if needed)
     observer.observe(document, observerConfig);
 
-    // Start observing the document or a specific
-
     // Main function to remove unwanted elements from the page
     function takeOutTheTrash() {
         // Remove elements related to unread communities
@@ -100,84 +98,116 @@
             if (subToPremiumElement) {
                 subToPremiumElement.parentElement.remove();
             }
-        }
-        if (enableCustomEdits === true) {
-            // Remove the sidebar column
-            const sidebarColumnElement = document.querySelector('[data-testid="sidebarColumn"]');
-            if (sidebarColumnElement) {
-                sidebarColumnElement.remove();
+
+
+            // In <nav role="navigation"> replace <a href="/i/grok" aria-label="Grok"> with <a href="https://chat.openai.com" aria-label="ChatGPT">
+            const grokElement = document.querySelector('nav[role="navigation"] a[href="/i/grok"]');
+            if (grokElement) {
+                // Clone the element and replace the href attribute
+                const chatGptElement = grokElement.cloneNode(true);
+                chatGptElement.href = 'https://chat.openai.com';
+                chatGptElement.setAttribute('aria-label', 'ChatGPT');
+
+                // look for span within the nested div and change the text
+                const spanElement = chatGptElement.querySelector('div span');
+                if (spanElement) {
+                    spanElement.textContent = 'ChatGPT';
+                }
+                //replace svg with a 🤖
+                const svgElement = chatGptElement.querySelector('svg');
+                if (svgElement) {
+                    svgElement.outerHTML = '🤖';;
+                    //big font
+                    chatGptElement.style.setProperty('font-size', '30px', 'important');
+                }
+
+                grokElement.replaceWith(chatGptElement);
+
+                // // Remove the original element
+                grokElement.remove();
+
+
             }
 
-            // Replace verified account badges with a poop emoji
-            Array.from(document.querySelectorAll('svg[aria-label="Verified account"]')).forEach(rmElm => (rmElm.outerHTML = '<h1>💩</h1>'));
 
-            // Remove specific elements by querying their href attributes
-            const hrefAttributesToRemove = [
-                'a[href="/i/verified-orgs-signup"]',
-                'a[href="/i/circles"]',
-                'a[href="/i/twitter_blue_sign_up"]',
-            ];
-            hrefAttributesToRemove.forEach(hrefAttr => {
-                const elementToRemove = document.querySelector(hrefAttr);
-                if (elementToRemove) {
-                    elementToRemove.remove();
+            if (enableCustomEdits === true) {
+                // Remove the sidebar column
+                const sidebarColumnElement = document.querySelector('[data-testid="sidebarColumn"]');
+                if (sidebarColumnElement) {
+                    sidebarColumnElement.remove();
+                }
+
+                // Replace verified account badges with a poop emoji
+                Array.from(document.querySelectorAll('svg[aria-label="Verified account"]')).forEach(rmElm => (rmElm.outerHTML = '<h1>💩</h1>'));
+
+                // Remove specific elements by querying their href attributes
+                const hrefAttributesToRemove = [
+                    'a[href="/i/verified-orgs-signup"]',
+                    'a[href="/i/circles"]',
+                    'a[href="/i/twitter_blue_sign_up"]',
+                ];
+                hrefAttributesToRemove.forEach(hrefAttr => {
+                    const elementToRemove = document.querySelector(hrefAttr);
+                    if (elementToRemove) {
+                        elementToRemove.remove();
+                    }
+                });
+
+                // Apply max-width style to certain elements
+                const primaryColumnElement = document.querySelector('[data-testid="primaryColumn"]');
+                if (primaryColumnElement) {
+                    primaryColumnElement.style.setProperty("max-width", "100vw", "important");
+                }
+                if (!window.location.pathname.startsWith('/messages')) {
+                    const maxwidthElements = document.getElementsByClassName('r-1ye8kvj');
+                    Array.from(maxwidthElements).forEach(elm => elm.style.setProperty("max-width", "100vw", "important"));
+                }
+
+                // Adjust the width of timeline elements
+                const timelineHomeElement = document.querySelector('[aria-label="Timeline: Your Home Timeline"]');
+                if (timelineHomeElement) {
+                    timelineHomeElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+                }
+
+                const timelineExploreElement = document.querySelector('[aria-label="Timeline: Explore"]');
+                if (timelineExploreElement) {
+                    timelineExploreElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+                }
+
+                const timelineNotificationsElement = document.querySelector('[aria-label="Timeline: Notifications"]');
+                if (timelineNotificationsElement) {
+                    timelineNotificationsElement.parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
+                }
+            }
+
+            // Remove tweets containing specific phrases
+            for (let i = 0; i < phrasesToRemove.length; ++i) {
+                Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
+                    .filter(elm => elm.textContent.toLowerCase().includes(phrasesToRemove[i].toLowerCase()))
+                    .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.innerHTML = '');
+            }
+
+            // Remove elements containing promoted phrases
+            for (let ii = 0; ii < promotedPhrases.length; ++ii) {
+                Array.from(document.querySelectorAll('[data-testid="placementTracking"]'))
+                    .filter(elm => elm.textContent.toLowerCase().includes(promotedPhrases[ii].toLowerCase()))
+                    .forEach(rmElm => rmElm.parentElement.parentElement.innerHTML = '');
+            }
+
+            // Replace the X logo with a custom logo (oldTwitterLogo)
+            const oldTwitterLogo = 'M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z';
+            const xLogo = document.querySelectorAll('svg g path[d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"]');
+            Array.from(xLogo).forEach(elm => {
+                elm.setAttribute('d', oldTwitterLogo);
+                elm.parentElement.parentElement.setAttribute('viewBox', "0 0 250 200");
+                elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
+                // document.querySelector('a[href="/i/verified-choose"]').firstChild.firstChild.firstChild.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
+                if (elm.parentElement.parentElement.parentElement.parentElement.parentElement === document.querySelector('a[href="/i/verified-choose"]')) {
+                    elm.parentElement.parentElement.style.setProperty('color', 'rgba(231,233,234,1.00)', 'important');
                 }
             });
-
-            // Apply max-width style to certain elements
-            const primaryColumnElement = document.querySelector('[data-testid="primaryColumn"]');
-            if (primaryColumnElement) {
-                primaryColumnElement.style.setProperty("max-width", "100vw", "important");
-            }
-            if (!window.location.pathname.startsWith('/messages')) {
-                const maxwidthElements = document.getElementsByClassName('r-1ye8kvj');
-                Array.from(maxwidthElements).forEach(elm => elm.style.setProperty("max-width", "100vw", "important"));
-            }
-
-            // Adjust the width of timeline elements
-            const timelineHomeElement = document.querySelector('[aria-label="Timeline: Your Home Timeline"]');
-            if (timelineHomeElement) {
-                timelineHomeElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
-            }
-
-            const timelineExploreElement = document.querySelector('[aria-label="Timeline: Explore"]');
-            if (timelineExploreElement) {
-                timelineExploreElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
-            }
-
-            const timelineNotificationsElement = document.querySelector('[aria-label="Timeline: Notifications"]');
-            if (timelineNotificationsElement) {
-                timelineNotificationsElement.parentElement.parentElement.parentElement.parentElement.style.maxWidth = "100vw";
-            }
+            document.querySelector('a[href="/i/verified-choose"]');
         }
-
-        // Remove tweets containing specific phrases
-        for (let i = 0; i < phrasesToRemove.length; ++i) {
-            Array.from(document.querySelectorAll('article[data-testid="tweet"]'))
-                .filter(elm => elm.textContent.toLowerCase().includes(phrasesToRemove[i].toLowerCase()))
-                .forEach(rmElm => rmElm.parentElement.parentElement.parentElement.innerHTML = '');
-        }
-
-        // Remove elements containing promoted phrases
-        for (let ii = 0; ii < promotedPhrases.length; ++ii) {
-            Array.from(document.querySelectorAll('[data-testid="placementTracking"]'))
-                .filter(elm => elm.textContent.toLowerCase().includes(promotedPhrases[ii].toLowerCase()))
-                .forEach(rmElm => rmElm.parentElement.parentElement.innerHTML = '');
-        }
-
-        // Replace the X logo with a custom logo (oldTwitterLogo)
-        const oldTwitterLogo = 'M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z';
-        const xLogo = document.querySelectorAll('svg g path[d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"]');
-        Array.from(xLogo).forEach(elm => {
-            elm.setAttribute('d', oldTwitterLogo);
-            elm.parentElement.parentElement.setAttribute('viewBox', "0 0 250 200");
-            elm.parentElement.parentElement.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
-            // document.querySelector('a[href="/i/verified-choose"]').firstChild.firstChild.firstChild.style.setProperty('color', 'rgb(29, 161, 243)', 'important');
-            if (elm.parentElement.parentElement.parentElement.parentElement.parentElement === document.querySelector('a[href="/i/verified-choose"]')) {
-                elm.parentElement.parentElement.style.setProperty('color', 'rgba(231,233,234,1.00)', 'important');
-            }
-        });
-        document.querySelector('a[href="/i/verified-choose"]')
     }
 
     // Function to replace "Twitter" with "Titter" in the page title for the lols.
@@ -196,24 +226,24 @@
         if (newTitle !== pageTitle) {
             document.title = newTitle;
         }
-        
+
         if (document.querySelector('[role="button"][data-testid*="tweetButton"]')) {
             Array.from(document.querySelectorAll('[role="button"][data-testid*="tweetButton"] span span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
-        
+
         if (document.querySelectorAll('a[href*="/compose/"] div span')) {
             Array.from(document.querySelectorAll('a[href*="/compose/"] div span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Post/g, 'Tweet'));
         }
-        
+
         // Attempt to bring back "Retweet"
         if (document.querySelectorAll('div[role="group"] div a[role="link"] span span')) {
             Array.from(document.querySelectorAll('div[role="group"] div a[role="link"] span span'))
                 .forEach(elm => elm.textContent = elm.textContent.replace(/Repost/g, 'Retweet'));
         }
 
-        if(document.querySelectorAll('h2[role="heading"] > span')){
+        if (document.querySelectorAll('h2[role="heading"] > span')) {
             Array.from(document.querySelectorAll('h2[role="heading"] > span'))
                 .forEach(elm => elm.textContent.replace(/Reposted/g, 'Retweeted'));
         }
@@ -229,7 +259,7 @@
             // Replace the parent element of the image with the text node
             image.parentNode.parentNode.parentNode.parentNode.replaceWith(symbolNode);
         });
-        
+
         // Find the nav element with aria-label "footer"
         var footerNav = document.querySelector('nav[aria-label="Footer"]');
 
@@ -239,7 +269,7 @@
             var divs = footerNav.querySelectorAll('div');
 
             // Iterate through each div to find the one containing the span with "$year$ Blorpo."
-            divs.forEach(function(div) {
+            divs.forEach(function (div) {
                 var span = div.querySelector('span');
                 if (span && span.textContent.includes("X Corp")) {
                     span.textContent = span.textContent.replace("X Corp", "Twitter Inc");
