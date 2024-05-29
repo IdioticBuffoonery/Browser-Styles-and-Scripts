@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.19.0
+// @version      1.20.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -99,22 +99,16 @@
             chatGptElement.href = 'https://chat.openai.com';
             chatGptElement.setAttribute('aria-label', 'ChatGPT');
 
-            // look for span within the nested div and change the text
             const spanElement = chatGptElement.querySelector('div span');
             if (spanElement) {
                 spanElement.textContent = 'ChatGPT';
             }
-            //replace svg with a 🤖
             const svgElement = chatGptElement.querySelector('svg');
             if (svgElement) {
-                svgElement.outerHTML = '🤖';;
-                //big font
-                chatGptElement.style.setProperty('font-size', '30px', 'important');
+                var svgClasses = svgElement.getAttribute('class');
+                svgElement.outerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" class="'+ svgClasses + '" data-testid="icon"><g><path d="M1.996 5.5c0-1.38 1.119-2.5 2.5-2.5h15c1.38 0 2.5 1.12 2.5 2.5v13c0 1.38-1.12 2.5-2.5 2.5h-15c-1.381 0-2.5-1.12-2.5-2.5v-13zm2.5-.5c-.277 0-.5.22-.5.5v13c0 .28.223.5.5.5h15c.276 0 .5-.22.5-.5v-13c0-.28-.224-.5-.5-.5h-15zm8.085 5H8.996V8h7v7h-2v-3.59l-5.293 5.3-1.415-1.42L12.581 10z"></path></g></svg>';
             }
-
             grokElement.replaceWith(chatGptElement);
-
-            // // Remove the original element
             grokElement.remove();
         }
 
