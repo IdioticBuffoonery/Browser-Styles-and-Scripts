@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IMDb Restore Filmotype
 // @namespace    imdbRestoreFilmotype.user.js
-// @version      0.1
+// @version      0.1.1
 // @description  Restore IMDb's "Filmotype" to actor's pages. PROOF OF CONCEPT.
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/imdb/imdbRestoreFilmotype.user.js
@@ -17,7 +17,7 @@
     'use strict';
     var url = document.location.origin + document.location.pathname;
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url + 'filmotype', true);
+    xhr.open('GET', url + 'fullcredits', true);
     xhr.responseType = 'document';
     xhr.send();
     xhr.onload = function(e) {
