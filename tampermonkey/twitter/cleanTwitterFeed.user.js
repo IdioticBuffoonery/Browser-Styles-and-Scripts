@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         A Clean Twitter Feed!
 // @namespace    cleanTwitterFeed.user.js
-// @version      1.20.1
+// @version      1.21.0
 // @description  𝕏 Sucks. Twitter Inc. was GOAT
 // @author       HBIDamian
 // @updateURL    https://github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/cleanTwitterFeed.user.js
@@ -88,6 +88,11 @@
         const subToPremiumElement = document.querySelector('aside[aria-label="Subscribe to Premium"]');
         if (subToPremiumElement) {
             subToPremiumElement.parentElement.remove();
+        }
+
+        const premiumSignUp = document.querySelector('[href="/i/premium_sign_up"]');
+        if (premiumSignUp) {
+            premiumSignUp.remove();
         }
 
         // In <nav role="navigation"> replace <a href="/i/grok" aria-label="Grok"> with <a href="https://chat.openai.com" aria-label="ChatGPT">
