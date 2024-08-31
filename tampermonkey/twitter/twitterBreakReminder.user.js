@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter Break Reminder
 // @namespace    twitterBreakReminder.user.js
-// @version      1.0.0
+// @version      1.1.0
 // @description  Redirects you to a blank page with a message after 5 minutes of inactivity on Twitter to remind you to take a break.
 // @author       HBIDamian
 // @updateURL    https://raw.githubusercontent.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/twitter/twitterBreakReminder.user.js
@@ -17,7 +17,7 @@
 (function() {
     'use strict';
 
-    var timeoutTime = 300000; // 5 minutes = 300,000 ms
+    var timeoutTime = timeInMinutes(5); // Timeout time in milliseconds (5 minutes by default)
 
     // Array of messages to randomly choose from
     const messages = [
@@ -32,6 +32,12 @@
         "You've been scrolling for too long!",
         "You're not missing out on anything!",
     ];
+
+    // Function to change the timeout time from minutes to milliseconds
+    function timeInMinutes(minutes) {
+        var timeoutTimeConvert = minutes * 60000;
+        return timeoutTimeConvert;
+    }
 
     // Function to get a random message
     function getRandomMessage() {
@@ -76,7 +82,7 @@
                 // Remove the title of the page to make it feel more blank
                 document.title = 'Blocked';
             }
-        }, timeoutTime); // 5 minutes = 300,000 ms
+        }, timeoutTime);
     }
 
     // Variable to store the timeout ID
