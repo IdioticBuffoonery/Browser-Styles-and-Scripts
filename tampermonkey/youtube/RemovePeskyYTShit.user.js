@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RemovePeskyYTShit
 // @namespace    RemovePeskyYTShit.user.js
-// @version      1.2.0
+// @version      1.3.0
 // @description  Removes various elements on YouTube, including Playables, paid promotions, and continuation items.
 // @author       HBIDamian
 // @updateURL    https://raw.githubusercontent.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/youtube/RemovePeskyYTShit.user.js
@@ -23,11 +23,7 @@
         subtree: true
     };
 
-    // Variable to prevent infinite loop when reverting from shorts
-    // It is experimental, and isn't the best solution. 
-    // This can also be used to toggle the feature on and off
-    // Otherwise, it's best to leave it as false
-    var disableShortsHistoryReverter = false;
+    var used = false;
 
     // Function to remove unwanted elements
     const takeOutTheTrash = () => {
@@ -51,7 +47,7 @@
         sections.forEach(section => {
             // Check if it contains a span with the text "Shorts"
             const shortsSpan = Array.from(section.querySelectorAll('span')).find(span => span.textContent.trim() === 'Shorts');
-            
+
             // If found, remove the ytd-rich-section-renderer
             if (shortsSpan) {
                 section.remove();
@@ -69,19 +65,31 @@
         });
 
         // If url contains "shorts" then go to last non-shorts video in browser's history
-        if (window.location.href.includes('shorts') && !disableShortsHistoryReverter) {
-            disableShortsHistoryReverter = true;
+        if (window.location.href.includes('shorts') && !used) {
+            used = true;
             window.history.go(-1);
         }
 
-        // Remove continuation items
+        // Find the <yt-formatted-string> element with the exact text "About"
+        const aboutElement = [...document.querySelectorAll('yt-formatted-string')]
+        .find(el => el.textContent.trim() === "About");
+
+        // If the element exists, access its nested <tp-yt-paper-dialog> element
+        const dialogElement = aboutElement ? aboutElement.closest('tp-yt-paper-dialog') : null;
+
+        // Remove continuation items excluding those inside dialogElement
         const elements = document.querySelectorAll('ytd-continuation-item-renderer');
         const commentSections = document.querySelectorAll('ytd-comments');
 
         elements.forEach(element => {
             const isInsideCommentSection = Array.from(commentSections).some(commentSection => commentSection.contains(element));
-            if (!isInsideCommentSection) element.remove();
+            const isInsideDialogElement = dialogElement && dialogElement.contains(element);
+
+            if (!isInsideCommentSection && !isInsideDialogElement) {
+                element.remove();
+            }
         });
+
     };
 
     // Run the function on window load
