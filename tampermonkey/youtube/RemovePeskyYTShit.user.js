@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RemovePeskyYTShit
 // @namespace    RemovePeskyYTShit.user.js
-// @version      1.3.0
+// @version      1.3.1
 // @description  Removes various elements on YouTube, including Playables, paid promotions, and continuation items.
 // @author       HBIDamian
 // @updateURL    https://raw.githubusercontent.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/youtube/RemovePeskyYTShit.user.js
@@ -36,7 +36,7 @@
         });
 
         // Removes "Includes Paid Promotions" popup
-        document.querySelectorAll('div[class^="YtInlinePlayerControlsTopLeftControls"]').forEach(element => {
+        document.querySelectorAll('ytm-paid-content-overlay-renderer').forEach(element => {
             element.remove();
         });
 
