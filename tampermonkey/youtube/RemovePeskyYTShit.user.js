@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RemovePeskyYTShit
 // @namespace    RemovePeskyYTShit.user.js
-// @version      1.3.1
+// @version      1.3.2
 // @description  Removes various elements on YouTube, including Playables, paid promotions, and continuation items.
 // @author       HBIDamian
 // @updateURL    https://raw.githubusercontent.com/IdioticBuffoonery/Browser-Styles-and-Scripts/raw/main/tampermonkey/youtube/RemovePeskyYTShit.user.js
@@ -39,6 +39,15 @@
         document.querySelectorAll('ytm-paid-content-overlay-renderer').forEach(element => {
             element.remove();
         });
+        document.querySelectorAll('yt-ad-slot-renderer').forEach(element => {
+            let parent = element.closest('ytd-rich-item-renderer');
+            if (parent) {
+                parent.remove();
+            }
+        });
+
+
+        // ytd-ad-slot-renderer.parentElement.parentElement.remove();
 
         // Remove Shorts sections
         // Select all ytd-rich-section-renderer elements
