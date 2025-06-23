@@ -1,919 +1,922 @@
 /* ==UserStyle==
 @name           OneDrive - Dark Mode Variables
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/onedrive
-@version        2.0.0
+@version        2.0.1
 @description    Dark Mode for OneDrive - Using OneDrive's Variables
 @author         HBIDamian
 @license        Apache-2.0
 ==/UserStyle== */
 
-/*
-====================================
-FLUENT DESIGN DARK THEME
-====================================
-*/
+@-moz-document domain("onedrive.live.com") {
+    /*
+    ====================================
+    FLUENT DESIGN DARK THEME
+    ====================================
+    */
 
-/* [data-theme=fluent-light] { */
-body {
-    /* ==== BORDER RADIUS ==== */
-    --borderRadiusNone: 0 !important;
-    --borderRadiusSmall: 2px !important;
-    --borderRadiusMedium: 4px !important;
-    --borderRadiusLarge: 6px !important;
-    --borderRadiusXLarge: 8px !important;
-    --borderRadiusCircular: 10000px !important;
+    /* [data-theme=fluent-light] { */
+    body {
+        /* ==== BORDER RADIUS ==== */
+        --borderRadiusNone: 0 !important;
+        --borderRadiusSmall: 2px !important;
+        --borderRadiusMedium: 4px !important;
+        --borderRadiusLarge: 6px !important;
+        --borderRadiusXLarge: 8px !important;
+        --borderRadiusCircular: 10000px !important;
 
-    /* ==== FONT SIZES ==== */
-    --fontSizeBase100: 10px !important;
-    --fontSizeBase200: 12px !important;
-    --fontSizeBase300: 14px !important;
-    --fontSizeBase400: 16px !important;
-    --fontSizeBase500: 20px !important;
-    --fontSizeBase600: 24px !important;
-    --fontSizeHero700: 28px !important;
-    --fontSizeHero800: 32px !important;
-    --fontSizeHero900: 40px !important;
-    --fontSizeHero1000: 68px !important;
+        /* ==== FONT SIZES ==== */
+        --fontSizeBase100: 10px !important;
+        --fontSizeBase200: 12px !important;
+        --fontSizeBase300: 14px !important;
+        --fontSizeBase400: 16px !important;
+        --fontSizeBase500: 20px !important;
+        --fontSizeBase600: 24px !important;
+        --fontSizeHero700: 28px !important;
+        --fontSizeHero800: 32px !important;
+        --fontSizeHero900: 40px !important;
+        --fontSizeHero1000: 68px !important;
 
-    /* ==== LINE HEIGHTS ==== */
-    --lineHeightBase100: 14px !important;
-    --lineHeightBase200: 16px !important;
-    --lineHeightBase300: 20px !important;
-    --lineHeightBase400: 22px !important;
-    --lineHeightBase500: 28px !important;
-    --lineHeightBase600: 32px !important;
-    --lineHeightHero700: 36px !important;
-    --lineHeightHero800: 40px !important;
-    --lineHeightHero900: 52px !important;
-    --lineHeightHero1000: 92px !important;
+        /* ==== LINE HEIGHTS ==== */
+        --lineHeightBase100: 14px !important;
+        --lineHeightBase200: 16px !important;
+        --lineHeightBase300: 20px !important;
+        --lineHeightBase400: 22px !important;
+        --lineHeightBase500: 28px !important;
+        --lineHeightBase600: 32px !important;
+        --lineHeightHero700: 36px !important;
+        --lineHeightHero800: 40px !important;
+        --lineHeightHero900: 52px !important;
+        --lineHeightHero1000: 92px !important;
 
-    /* ==== FONT FAMILIES ==== */
-    --fontFamilyBase: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-    --fontFamilyMonospace: Consolas, "Courier New", Courier, monospace !important;
-    --fontFamilyNumeric: Bahnschrift, "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+        /* ==== FONT FAMILIES ==== */
+        --fontFamilyBase: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+        --fontFamilyMonospace: Consolas, "Courier New", Courier, monospace !important;
+        --fontFamilyNumeric: Bahnschrift, "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 
-    /* ==== FONT WEIGHTS ==== */
-    --fontWeightRegular: 400 !important;
-    --fontWeightMedium: 500 !important;
-    --fontWeightSemibold: 600 !important;
-    --fontWeightBold: 700 !important;
+        /* ==== FONT WEIGHTS ==== */
+        --fontWeightRegular: 400 !important;
+        --fontWeightMedium: 500 !important;
+        --fontWeightSemibold: 600 !important;
+        --fontWeightBold: 700 !important;
 
-    /* ==== STROKE WIDTHS ==== */
-    --strokeWidthThin: 1px !important;
-    --strokeWidthThick: 2px !important;
-    --strokeWidthThicker: 3px !important;
-    --strokeWidthThickest: 4px !important;
+        /* ==== STROKE WIDTHS ==== */
+        --strokeWidthThin: 1px !important;
+        --strokeWidthThick: 2px !important;
+        --strokeWidthThicker: 3px !important;
+        --strokeWidthThickest: 4px !important;
 
-    /* ==== SPACING - HORIZONTAL ==== */
-    --spacingHorizontalNone: 0 !important;
-    --spacingHorizontalXXS: 2px !important;
-    --spacingHorizontalXS: 4px !important;
-    --spacingHorizontalSNudge: 6px !important;
-    --spacingHorizontalS: 8px !important;
-    --spacingHorizontalMNudge: 10px !important;
-    --spacingHorizontalM: 12px !important;
-    --spacingHorizontalL: 16px !important;
-    --spacingHorizontalXL: 20px !important;
-    --spacingHorizontalXXL: 24px !important;
-    --spacingHorizontalXXXL: 32px !important;
+        /* ==== SPACING - HORIZONTAL ==== */
+        --spacingHorizontalNone: 0 !important;
+        --spacingHorizontalXXS: 2px !important;
+        --spacingHorizontalXS: 4px !important;
+        --spacingHorizontalSNudge: 6px !important;
+        --spacingHorizontalS: 8px !important;
+        --spacingHorizontalMNudge: 10px !important;
+        --spacingHorizontalM: 12px !important;
+        --spacingHorizontalL: 16px !important;
+        --spacingHorizontalXL: 20px !important;
+        --spacingHorizontalXXL: 24px !important;
+        --spacingHorizontalXXXL: 32px !important;
 
-    /* ==== SPACING - VERTICAL ==== */
-    --spacingVerticalNone: 0 !important;
-    --spacingVerticalXXS: 2px !important;
-    --spacingVerticalXS: 4px !important;
-    --spacingVerticalSNudge: 6px !important;
-    --spacingVerticalS: 8px !important;
-    --spacingVerticalMNudge: 10px !important;
-    --spacingVerticalM: 12px !important;
-    --spacingVerticalL: 16px !important;
-    --spacingVerticalXL: 20px !important;
-    --spacingVerticalXXL: 24px !important;
-    --spacingVerticalXXXL: 32px !important;
+        /* ==== SPACING - VERTICAL ==== */
+        --spacingVerticalNone: 0 !important;
+        --spacingVerticalXXS: 2px !important;
+        --spacingVerticalXS: 4px !important;
+        --spacingVerticalSNudge: 6px !important;
+        --spacingVerticalS: 8px !important;
+        --spacingVerticalMNudge: 10px !important;
+        --spacingVerticalM: 12px !important;
+        --spacingVerticalL: 16px !important;
+        --spacingVerticalXL: 20px !important;
+        --spacingVerticalXXL: 24px !important;
+        --spacingVerticalXXXL: 32px !important;
 
-    /* ==== ANIMATION DURATIONS ==== */
-    --durationUltraFast: 50ms !important;
-    --durationFaster: 100ms !important;
-    --durationFast: 150ms !important;
-    --durationNormal: 200ms !important;
-    --durationGentle: 250ms !important;
-    --durationSlow: 300ms !important;
-    --durationSlower: 400ms !important;
-    --durationUltraSlow: 500ms !important;
+        /* ==== ANIMATION DURATIONS ==== */
+        --durationUltraFast: 50ms !important;
+        --durationFaster: 100ms !important;
+        --durationFast: 150ms !important;
+        --durationNormal: 200ms !important;
+        --durationGentle: 250ms !important;
+        --durationSlow: 300ms !important;
+        --durationSlower: 400ms !important;
+        --durationUltraSlow: 500ms !important;
 
-    /* ==== ANIMATION CURVES ==== */
-    --curveAccelerateMax: cubic-bezier(0.9, 0.1, 1, 0.2) !important;
-    --curveAccelerateMid: cubic-bezier(1, 0, 1, 1) !important;
-    --curveAccelerateMin: cubic-bezier(0.8, 0, 0.78, 1) !important;
-    --curveDecelerateMax: cubic-bezier(0, 0, 0, 1) !important;
-    --curveDecelerateMid: cubic-bezier(0.1, 0.9, 0.2, 1) !important;
-    --curveDecelerateMin: cubic-bezier(0.33, 0, 0.1, 1) !important;
-    --curveEasyEaseMax: cubic-bezier(0.8, 0, 0.1, 1) !important;
-    --curveEasyEase: cubic-bezier(0.33, 0, 0.67, 1) !important;
-    --curveLinear: cubic-bezier(0, 0, 1, 1) !important;
+        /* ==== ANIMATION CURVES ==== */
+        --curveAccelerateMax: cubic-bezier(0.9, 0.1, 1, 0.2) !important;
+        --curveAccelerateMid: cubic-bezier(1, 0, 1, 1) !important;
+        --curveAccelerateMin: cubic-bezier(0.8, 0, 0.78, 1) !important;
+        --curveDecelerateMax: cubic-bezier(0, 0, 0, 1) !important;
+        --curveDecelerateMid: cubic-bezier(0.1, 0.9, 0.2, 1) !important;
+        --curveDecelerateMin: cubic-bezier(0.33, 0, 0.1, 1) !important;
+        --curveEasyEaseMax: cubic-bezier(0.8, 0, 0.1, 1) !important;
+        --curveEasyEase: cubic-bezier(0.33, 0, 0.67, 1) !important;
+        --curveLinear: cubic-bezier(0, 0, 1, 1) !important;
 
-    /* ==== NEUTRAL FOREGROUND COLORS ====
+        /* ==== NEUTRAL FOREGROUND COLORS ====
     /* ==== NEUTRAL FOREGROUND COLORS ==== */
-    --colorNeutralForeground1: #ffffff !important;
-    --colorNeutralForeground1Hover: #ffffff !important;
-    --colorNeutralForeground1Pressed: #ffffff !important;
-    --colorNeutralForeground1Selected: #ffffff !important;
-    --colorNeutralForeground2: #c8c8c8 !important;
-    --colorNeutralForeground2Hover: #ffffff !important;
-    --colorNeutralForeground2Pressed: #ffffff !important;
-    --colorNeutralForeground2Selected: #ffffff !important;
-    --colorNeutralForeground2BrandHover: #479ef5 !important;
-    --colorNeutralForeground2BrandPressed: #62abf5 !important;
-    --colorNeutralForeground2BrandSelected: #479ef5 !important;
-    --colorNeutralForeground3: #a0a0a0 !important;
-    --colorNeutralForeground3Hover: #c8c8c8 !important;
-    --colorNeutralForeground3Pressed: #c8c8c8 !important;
-    --colorNeutralForeground3Selected: #c8c8c8 !important;
-    --colorNeutralForeground3BrandHover: #479ef5 !important;
-    --colorNeutralForeground3BrandPressed: #62abf5 !important;
-    --colorNeutralForeground3BrandSelected: #479ef5 !important;
-    --colorNeutralForeground4: #8a8a8a !important;
-    --colorNeutralForegroundDisabled: #484848 !important;
-    --colorNeutralForegroundInvertedDisabled: rgba(0, 0, 0, 0.4) !important;
+        --colorNeutralForeground1: #ffffff !important;
+        --colorNeutralForeground1Hover: #ffffff !important;
+        --colorNeutralForeground1Pressed: #ffffff !important;
+        --colorNeutralForeground1Selected: #ffffff !important;
+        --colorNeutralForeground2: #c8c8c8 !important;
+        --colorNeutralForeground2Hover: #ffffff !important;
+        --colorNeutralForeground2Pressed: #ffffff !important;
+        --colorNeutralForeground2Selected: #ffffff !important;
+        --colorNeutralForeground2BrandHover: #479ef5 !important;
+        --colorNeutralForeground2BrandPressed: #62abf5 !important;
+        --colorNeutralForeground2BrandSelected: #479ef5 !important;
+        --colorNeutralForeground3: #a0a0a0 !important;
+        --colorNeutralForeground3Hover: #c8c8c8 !important;
+        --colorNeutralForeground3Pressed: #c8c8c8 !important;
+        --colorNeutralForeground3Selected: #c8c8c8 !important;
+        --colorNeutralForeground3BrandHover: #479ef5 !important;
+        --colorNeutralForeground3BrandPressed: #62abf5 !important;
+        --colorNeutralForeground3BrandSelected: #479ef5 !important;
+        --colorNeutralForeground4: #8a8a8a !important;
+        --colorNeutralForegroundDisabled: #484848 !important;
+        --colorNeutralForegroundInvertedDisabled: rgba(0, 0, 0, 0.4) !important;
 
-    /* ==== BRAND FOREGROUND COLORS ==== */
-    --colorBrandForegroundLink: #62abf5 !important;
-    --colorBrandForegroundLinkHover: #479ef5 !important;
-    --colorBrandForegroundLinkPressed: #3a9bf5 !important;
-    --colorBrandForegroundLinkSelected: #62abf5 !important;
-    --colorNeutralForeground2Link: #c8c8c8 !important;
-    --colorNeutralForeground2LinkHover: #ffffff !important;
-    --colorNeutralForeground2LinkPressed: #ffffff !important;
-    --colorNeutralForeground2LinkSelected: #ffffff !important;
-    --colorCompoundBrandForeground1: #479ef5 !important;
-    --colorCompoundBrandForeground1Hover: #62abf5 !important;
-    --colorCompoundBrandForeground1Pressed: #3a9bf5 !important;
-    --colorBrandForeground1: #479ef5 !important;
-    --colorBrandForeground2: #62abf5 !important;
-    --colorBrandForeground2Hover: #479ef5 !important;
-    --colorBrandForeground2Pressed: #74b3f5 !important;
+        /* ==== BRAND FOREGROUND COLORS ==== */
+        --colorBrandForegroundLink: #62abf5 !important;
+        --colorBrandForegroundLinkHover: #479ef5 !important;
+        --colorBrandForegroundLinkPressed: #3a9bf5 !important;
+        --colorBrandForegroundLinkSelected: #62abf5 !important;
+        --colorNeutralForeground2Link: #c8c8c8 !important;
+        --colorNeutralForeground2LinkHover: #ffffff !important;
+        --colorNeutralForeground2LinkPressed: #ffffff !important;
+        --colorNeutralForeground2LinkSelected: #ffffff !important;
+        --colorCompoundBrandForeground1: #479ef5 !important;
+        --colorCompoundBrandForeground1Hover: #62abf5 !important;
+        --colorCompoundBrandForeground1Pressed: #3a9bf5 !important;
+        --colorBrandForeground1: #479ef5 !important;
+        --colorBrandForeground2: #62abf5 !important;
+        --colorBrandForeground2Hover: #479ef5 !important;
+        --colorBrandForeground2Pressed: #74b3f5 !important;
 
-    /* ==== INVERTED FOREGROUND COLORS ==== */
-    --colorNeutralForeground1Static: #ffffff !important;
-    --colorNeutralForegroundStaticInverted: #242424 !important;
-    --colorNeutralForegroundInverted: #242424 !important;
-    --colorNeutralForegroundInvertedHover: #242424 !important;
-    --colorNeutralForegroundInvertedPressed: #242424 !important;
-    --colorNeutralForegroundInvertedSelected: #242424 !important;
-    --colorNeutralForegroundInverted2: #242424 !important;
-    --colorNeutralForegroundOnBrand: #242424 !important;
-    --colorNeutralForegroundInvertedLink: #242424 !important;
-    --colorNeutralForegroundInvertedLinkHover: #242424 !important;
-    --colorNeutralForegroundInvertedLinkPressed: #242424 !important;
-    --colorNeutralForegroundInvertedLinkSelected: #242424 !important;
-    --colorBrandForegroundInverted: #0f6cbd !important;
-    --colorBrandForegroundInvertedHover: #115ea3 !important;
-    --colorBrandForegroundInvertedPressed: #0f548c !important;
-    --colorBrandForegroundOnLight: #479ef5 !important;
-    --colorBrandForegroundOnLightHover: #62abf5 !important;
-    --colorBrandForegroundOnLightPressed: #74b3f5 !important;
-    --colorBrandForegroundOnLightSelected: #479ef5 !important;
+        /* ==== INVERTED FOREGROUND COLORS ==== */
+        --colorNeutralForeground1Static: #ffffff !important;
+        --colorNeutralForegroundStaticInverted: #242424 !important;
+        --colorNeutralForegroundInverted: #242424 !important;
+        --colorNeutralForegroundInvertedHover: #242424 !important;
+        --colorNeutralForegroundInvertedPressed: #242424 !important;
+        --colorNeutralForegroundInvertedSelected: #242424 !important;
+        --colorNeutralForegroundInverted2: #242424 !important;
+        --colorNeutralForegroundOnBrand: #242424 !important;
+        --colorNeutralForegroundInvertedLink: #242424 !important;
+        --colorNeutralForegroundInvertedLinkHover: #242424 !important;
+        --colorNeutralForegroundInvertedLinkPressed: #242424 !important;
+        --colorNeutralForegroundInvertedLinkSelected: #242424 !important;
+        --colorBrandForegroundInverted: #0f6cbd !important;
+        --colorBrandForegroundInvertedHover: #115ea3 !important;
+        --colorBrandForegroundInvertedPressed: #0f548c !important;
+        --colorBrandForegroundOnLight: #479ef5 !important;
+        --colorBrandForegroundOnLightHover: #62abf5 !important;
+        --colorBrandForegroundOnLightPressed: #74b3f5 !important;
+        --colorBrandForegroundOnLightSelected: #479ef5 !important;
 
-    /* ==== NEUTRAL BACKGROUND COLORS ==== */
-    --colorNeutralBackground1: #1a1a1a !important;
-    --colorNeutralBackground1Hover: #262626 !important;
-    --colorNeutralBackground1Pressed: #333333 !important;
-    --colorNeutralBackground1Selected: #2e2e2e !important;
-    --colorNeutralBackground2: #161616 !important;
-    --colorNeutralBackground2Hover: #222222 !important;
-    --colorNeutralBackground2Pressed: #2f2f2f !important;
-    --colorNeutralBackground2Selected: #292929 !important;
-    --colorNeutralBackground3: #262626 !important;
-    --colorNeutralBackground3Hover: #2e2e2e !important;
-    --colorNeutralBackground3Pressed: #3b3b3b !important;
-    --colorNeutralBackground3Selected: #333333 !important;
-    --colorNeutralBackground4: #222222 !important;
-    --colorNeutralBackground4Hover: #161616 !important;
-    --colorNeutralBackground4Pressed: #262626 !important;
-    --colorNeutralBackground4Selected: #1a1a1a !important;
-    --colorNeutralBackground5: #2e2e2e !important;
-    --colorNeutralBackground5Hover: #262626 !important;
-    --colorNeutralBackground5Pressed: #222222 !important;
-    --colorNeutralBackground5Selected: #161616 !important;
-    --colorNeutralBackground6: #00000033 !important;
-    --colorNeutralBackground7: #0000004d !important;
-    --colorNeutralBackground8: #00000066 !important;
-    --colorNeutralBackground9: #7c55ce0f !important;
-    --colorNeutralBackground10: #28abf503 !important;
-    --colorNeutralBackground11: #ffffff0a !important;
-    --colorNeutralBackground12: #ffffff0c !important;
-    --colorNeutralBackground13: #ffffff28 !important;
-    --colorNeutralBackground14: #ffffff14 !important;
-    --colorNeutralBackground15: #3e4142 !important;
-    --colorNeutralBackground16: #454249 !important;
-    --colorNeutralBackground17: #41434a !important;
-    --colorNeutralBackground18: #424445 !important;
-    --colorNeutralBackground19: #33333357 !important;
-    --colorNeutralBackgroundInverted: #f0f0f0 !important;
-    --colorNeutralBackgroundStatic: #cccccc !important;
-    --colorNeutralBackgroundAlpha: rgba(0, 0, 0, 0.5) !important;
-    --colorNeutralBackgroundAlpha2: rgba(0, 0, 0, 0.8) !important;
-    --colorNeutralBackgroundDisabled: #222222 !important;
-    --colorNeutralBackgroundInvertedDisabled: rgba(0, 0, 0, 0.1) !important;
+        /* ==== NEUTRAL BACKGROUND COLORS ==== */
+        --colorNeutralBackground1: #1a1a1a !important;
+        --colorNeutralBackground1Hover: #262626 !important;
+        --colorNeutralBackground1Pressed: #333333 !important;
+        --colorNeutralBackground1Selected: #2e2e2e !important;
+        --colorNeutralBackground2: #161616 !important;
+        --colorNeutralBackground2Hover: #222222 !important;
+        --colorNeutralBackground2Pressed: #2f2f2f !important;
+        --colorNeutralBackground2Selected: #292929 !important;
+        --colorNeutralBackground3: #262626 !important;
+        --colorNeutralBackground3Hover: #2e2e2e !important;
+        --colorNeutralBackground3Pressed: #3b3b3b !important;
+        --colorNeutralBackground3Selected: #333333 !important;
+        --colorNeutralBackground4: #222222 !important;
+        --colorNeutralBackground4Hover: #161616 !important;
+        --colorNeutralBackground4Pressed: #262626 !important;
+        --colorNeutralBackground4Selected: #1a1a1a !important;
+        --colorNeutralBackground5: #2e2e2e !important;
+        --colorNeutralBackground5Hover: #262626 !important;
+        --colorNeutralBackground5Pressed: #222222 !important;
+        --colorNeutralBackground5Selected: #161616 !important;
+        --colorNeutralBackground6: #00000033 !important;
+        --colorNeutralBackground7: #0000004d !important;
+        --colorNeutralBackground8: #00000066 !important;
+        --colorNeutralBackground9: #7c55ce0f !important;
+        --colorNeutralBackground10: #28abf503 !important;
+        --colorNeutralBackground11: #ffffff0a !important;
+        --colorNeutralBackground12: #ffffff0c !important;
+        --colorNeutralBackground13: #ffffff28 !important;
+        --colorNeutralBackground14: #ffffff14 !important;
+        --colorNeutralBackground15: #3e4142 !important;
+        --colorNeutralBackground16: #454249 !important;
+        --colorNeutralBackground17: #41434a !important;
+        --colorNeutralBackground18: #424445 !important;
+        --colorNeutralBackground19: #33333357 !important;
+        --colorNeutralBackgroundInverted: #f0f0f0 !important;
+        --colorNeutralBackgroundStatic: #cccccc !important;
+        --colorNeutralBackgroundAlpha: rgba(0, 0, 0, 0.5) !important;
+        --colorNeutralBackgroundAlpha2: rgba(0, 0, 0, 0.8) !important;
+        --colorNeutralBackgroundDisabled: #222222 !important;
+        --colorNeutralBackgroundInvertedDisabled: rgba(0, 0, 0, 0.1) !important;
 
-    /* ==== SUBTLE BACKGROUND COLORS ==== */
-    --colorSubtleBackground: transparent !important;
-    --colorSubtleBackgroundHover: #262626 !important;
-    --colorSubtleBackgroundPressed: #333333 !important;
-    --colorSubtleBackgroundSelected: #2e2e2e !important;
-    --colorSubtleBackgroundLightAlphaHover: rgba(0, 0, 0, 0.7) !important;
-    --colorSubtleBackgroundLightAlphaPressed: rgba(0, 0, 0, 0.5) !important;
-    --colorSubtleBackgroundLightAlphaSelected: transparent !important;
-    --colorSubtleBackgroundInverted: transparent !important;
-    --colorSubtleBackgroundInvertedHover: rgba(255, 255, 255, 0.1) !important;
-    --colorSubtleBackgroundInvertedPressed: rgba(255, 255, 255, 0.3) !important;
-    --colorSubtleBackgroundInvertedSelected: rgba(255, 255, 255, 0.2) !important;
+        /* ==== SUBTLE BACKGROUND COLORS ==== */
+        --colorSubtleBackground: transparent !important;
+        --colorSubtleBackgroundHover: #262626 !important;
+        --colorSubtleBackgroundPressed: #333333 !important;
+        --colorSubtleBackgroundSelected: #2e2e2e !important;
+        --colorSubtleBackgroundLightAlphaHover: rgba(0, 0, 0, 0.7) !important;
+        --colorSubtleBackgroundLightAlphaPressed: rgba(0, 0, 0, 0.5) !important;
+        --colorSubtleBackgroundLightAlphaSelected: transparent !important;
+        --colorSubtleBackgroundInverted: transparent !important;
+        --colorSubtleBackgroundInvertedHover: rgba(255, 255, 255, 0.1) !important;
+        --colorSubtleBackgroundInvertedPressed: rgba(255, 255, 255, 0.3) !important;
+        --colorSubtleBackgroundInvertedSelected: rgba(255, 255, 255, 0.2) !important;
 
-    /* ==== TRANSPARENT BACKGROUND COLORS ==== */
-    --colorTransparentBackground: transparent !important;
-    --colorTransparentBackgroundHover: transparent !important;
-    --colorTransparentBackgroundPressed: transparent !important;
-    --colorTransparentBackgroundSelected: transparent !important;
-    /* ==== STENCIL COLORS ==== */
-    --colorNeutralStencil1: #3b3b3b !important;
-    --colorNeutralStencil2: #161616 !important;
-    --colorNeutralStencil1Alpha: rgba(255, 255, 255, 0.1) !important;
-    --colorNeutralStencil2Alpha: rgba(255, 255, 255, 0.05) !important;
+        /* ==== TRANSPARENT BACKGROUND COLORS ==== */
+        --colorTransparentBackground: transparent !important;
+        --colorTransparentBackgroundHover: transparent !important;
+        --colorTransparentBackgroundPressed: transparent !important;
+        --colorTransparentBackgroundSelected: transparent !important;
+        /* ==== STENCIL COLORS ==== */
+        --colorNeutralStencil1: #3b3b3b !important;
+        --colorNeutralStencil2: #161616 !important;
+        --colorNeutralStencil1Alpha: rgba(255, 255, 255, 0.1) !important;
+        --colorNeutralStencil2Alpha: rgba(255, 255, 255, 0.05) !important;
 
-    /* ==== OVERLAY COLORS ==== */
-    --colorBackgroundOverlay: rgba(0, 0, 0, 0.6) !important;
-    --colorScrollbarOverlay: rgba(255, 255, 255, 0.5) !important;
+        /* ==== OVERLAY COLORS ==== */
+        --colorBackgroundOverlay: rgba(0, 0, 0, 0.6) !important;
+        --colorScrollbarOverlay: rgba(255, 255, 255, 0.5) !important;
 
-    /* ==== BRAND BACKGROUND COLORS ==== */
-    --colorBrandBackground: #479ef5 !important;
-    --colorBrandBackgroundHover: #62abf5 !important;
-    --colorBrandBackgroundPressed: #3a9bf5 !important;
-    --colorBrandBackgroundSelected: #479ef5 !important;
-    --colorCompoundBrandBackground: #479ef5 !important;
-    --colorCompoundBrandBackgroundHover: #62abf5 !important;
-    --colorCompoundBrandBackgroundPressed: #3a9bf5 !important;
-    --colorBrandBackgroundStatic: #479ef5 !important;
-    --colorBrandBackground2: #1e3a5f !important;
-    --colorBrandBackground2Hover: #2e4a6f !important;
-    --colorBrandBackground2Pressed: #3e5a7f !important;
-    --colorBrandBackground3Static: #479ef5 !important;
-    --colorBrandBackground4Static: #3a9bf5 !important;
-    --colorBrandBackgroundInverted: #1a1a1a !important;
-    --colorBrandBackgroundInvertedHover: #1e3a5f !important;
-    --colorBrandBackgroundInvertedPressed: #2e4a6f !important;
-    --colorBrandBackgroundInvertedSelected: #3e5a7f !important;
+        /* ==== BRAND BACKGROUND COLORS ==== */
+        --colorBrandBackground: #479ef5 !important;
+        --colorBrandBackgroundHover: #62abf5 !important;
+        --colorBrandBackgroundPressed: #3a9bf5 !important;
+        --colorBrandBackgroundSelected: #479ef5 !important;
+        --colorCompoundBrandBackground: #479ef5 !important;
+        --colorCompoundBrandBackgroundHover: #62abf5 !important;
+        --colorCompoundBrandBackgroundPressed: #3a9bf5 !important;
+        --colorBrandBackgroundStatic: #479ef5 !important;
+        --colorBrandBackground2: #1e3a5f !important;
+        --colorBrandBackground2Hover: #2e4a6f !important;
+        --colorBrandBackground2Pressed: #3e5a7f !important;
+        --colorBrandBackground3Static: #479ef5 !important;
+        --colorBrandBackground4Static: #3a9bf5 !important;
+        --colorBrandBackgroundInverted: #1a1a1a !important;
+        --colorBrandBackgroundInvertedHover: #1e3a5f !important;
+        --colorBrandBackgroundInvertedPressed: #2e4a6f !important;
+        --colorBrandBackgroundInvertedSelected: #3e5a7f !important;
 
-    /* ==== CARD BACKGROUND COLORS ==== */
-    --colorNeutralCardBackground: #161616 !important;
-    --colorNeutralCardBackgroundHover: #1a1a1a !important;
-    --colorNeutralCardBackgroundPressed: #262626 !important;
-    --colorNeutralCardBackgroundSelected: #2e2e2e !important;
-    --colorNeutralCardBackgroundDisabled: #222222 !important;
+        /* ==== CARD BACKGROUND COLORS ==== */
+        --colorNeutralCardBackground: #161616 !important;
+        --colorNeutralCardBackgroundHover: #1a1a1a !important;
+        --colorNeutralCardBackgroundPressed: #262626 !important;
+        --colorNeutralCardBackgroundSelected: #2e2e2e !important;
+        --colorNeutralCardBackgroundDisabled: #222222 !important;
 
-    /* ==== STROKE COLORS ==== */
-    --colorNeutralStrokeAccessible: #a0a0a0 !important;
-    --colorNeutralStrokeAccessibleHover: #b0b0b0 !important;
-    --colorNeutralStrokeAccessiblePressed: #c0c0c0 !important;
-    --colorNeutralStrokeAccessibleSelected: #479ef5 !important;
-    --colorNeutralStroke1: #404040 !important;
-    --colorNeutralStroke1Hover: #4a4a4a !important;
-    --colorNeutralStroke1Pressed: #5a5a5a !important;
-    --colorNeutralStroke1Selected: #484848 !important;
-    --colorNeutralStroke2: #333333 !important;
-    --colorNeutralStroke3: #222222 !important;
-    --colorNeutralStrokeSubtle: #333333 !important;
-    --colorNeutralStrokeOnBrand: #000000 !important;
-    --colorNeutralStrokeOnBrand2: #000000 !important;
-    --colorNeutralStrokeOnBrand2Hover: #000000 !important;
-    --colorNeutralStrokeOnBrand2Pressed: #000000 !important;
-    --colorNeutralStrokeOnBrand2Selected: #000000 !important;
-    --colorBrandStroke1: #479ef5 !important;
-    --colorBrandStroke2: #2e4a6f !important;
-    --colorBrandStroke2Hover: #3e5a7f !important;
-    --colorBrandStroke2Pressed: #479ef5 !important;
-    --colorBrandStroke2Contrast: #2e4a6f !important;
-    --colorCompoundBrandStroke: #479ef5 !important;
-    --colorCompoundBrandStrokeHover: #62abf5 !important;
-    --colorCompoundBrandStrokePressed: #3a9bf5 !important;
-    --colorNeutralStrokeDisabled: #333333 !important;
-    --colorNeutralStrokeInvertedDisabled: rgba(0, 0, 0, 0.4) !important;
-    --colorTransparentStroke: transparent !important;
-    --colorTransparentStrokeInteractive: transparent !important;
-    --colorTransparentStrokeDisabled: transparent !important;
-    --colorNeutralStrokeAlpha: rgba(255, 255, 255, 0.05) !important;
-    --colorNeutralStrokeAlpha2: rgba(0, 0, 0, 0.2) !important;
+        /* ==== STROKE COLORS ==== */
+        --colorNeutralStrokeAccessible: #a0a0a0 !important;
+        --colorNeutralStrokeAccessibleHover: #b0b0b0 !important;
+        --colorNeutralStrokeAccessiblePressed: #c0c0c0 !important;
+        --colorNeutralStrokeAccessibleSelected: #479ef5 !important;
+        --colorNeutralStroke1: #404040 !important;
+        --colorNeutralStroke1Hover: #4a4a4a !important;
+        --colorNeutralStroke1Pressed: #5a5a5a !important;
+        --colorNeutralStroke1Selected: #484848 !important;
+        --colorNeutralStroke2: #333333 !important;
+        --colorNeutralStroke3: #222222 !important;
+        --colorNeutralStrokeSubtle: #333333 !important;
+        --colorNeutralStrokeOnBrand: #000000 !important;
+        --colorNeutralStrokeOnBrand2: #000000 !important;
+        --colorNeutralStrokeOnBrand2Hover: #000000 !important;
+        --colorNeutralStrokeOnBrand2Pressed: #000000 !important;
+        --colorNeutralStrokeOnBrand2Selected: #000000 !important;
+        --colorBrandStroke1: #479ef5 !important;
+        --colorBrandStroke2: #2e4a6f !important;
+        --colorBrandStroke2Hover: #3e5a7f !important;
+        --colorBrandStroke2Pressed: #479ef5 !important;
+        --colorBrandStroke2Contrast: #2e4a6f !important;
+        --colorCompoundBrandStroke: #479ef5 !important;
+        --colorCompoundBrandStrokeHover: #62abf5 !important;
+        --colorCompoundBrandStrokePressed: #3a9bf5 !important;
+        --colorNeutralStrokeDisabled: #333333 !important;
+        --colorNeutralStrokeInvertedDisabled: rgba(0, 0, 0, 0.4) !important;
+        --colorTransparentStroke: transparent !important;
+        --colorTransparentStrokeInteractive: transparent !important;
+        --colorTransparentStrokeDisabled: transparent !important;
+        --colorNeutralStrokeAlpha: rgba(255, 255, 255, 0.05) !important;
+        --colorNeutralStrokeAlpha2: rgba(0, 0, 0, 0.2) !important;
 
-    /* ==== FOCUS COLORS ==== */
-    --colorStrokeFocus1: #000000 !important;
-    --colorStrokeFocus2: #ffffff !important;
-    --colorStrokeFocus3: #ffffff0d !important;
+        /* ==== FOCUS COLORS ==== */
+        --colorStrokeFocus1: #000000 !important;
+        --colorStrokeFocus2: #ffffff !important;
+        --colorStrokeFocus3: #ffffff0d !important;
 
-    /* ==== SHADOW COLORS ==== */
-    --colorNeutralShadowAmbient: rgba(0, 0, 0, 0.12) !important;
-    --colorNeutralShadowKey: rgba(0, 0, 0, 0.14) !important;
-    --colorNeutralShadowAmbientLighter: rgba(0, 0, 0, 0.06) !important;
-    --colorNeutralShadowKeyLighter: rgba(0, 0, 0, 0.07) !important;
-    --colorNeutralShadowAmbientDarker: rgba(0, 0, 0, 0.2) !important;
-    --colorNeutralShadowKeyDarker: rgba(0, 0, 0, 0.24) !important;
-    --colorBrandShadowAmbient: rgba(0, 0, 0, 0.3) !important;
-    --colorBrandShadowKey: rgba(0, 0, 0, 0.25) !important;
-    /* ==== COLOR PALETTE - RED ==== */
-    --colorPaletteRedBackground1: #fdf6f6 !important;
-    --colorPaletteRedBackground2: #f1bbbc !important;
-    --colorPaletteRedBackground3: #d13438 !important;
-    --colorPaletteRedForeground1: #bc2f32 !important;
-    --colorPaletteRedForeground2: #751d1f !important;
-    --colorPaletteRedForeground3: #d13438 !important;
-    --colorPaletteRedBorderActive: #d13438 !important;
-    --colorPaletteRedBorder1: #f1bbbc !important;
-    --colorPaletteRedBorder2: #d13438 !important;
-    --colorPaletteRedForegroundInverted: #dc5e62 !important;
-    --colorPaletteDarkRedBackground2: #d69ca5 !important;
-    --colorPaletteDarkRedForeground2: #420610 !important;
-    --colorPaletteDarkRedBorderActive: #750b1c !important;
+        /* ==== SHADOW COLORS ==== */
+        --colorNeutralShadowAmbient: rgba(0, 0, 0, 0.12) !important;
+        --colorNeutralShadowKey: rgba(0, 0, 0, 0.14) !important;
+        --colorNeutralShadowAmbientLighter: rgba(0, 0, 0, 0.06) !important;
+        --colorNeutralShadowKeyLighter: rgba(0, 0, 0, 0.07) !important;
+        --colorNeutralShadowAmbientDarker: rgba(0, 0, 0, 0.2) !important;
+        --colorNeutralShadowKeyDarker: rgba(0, 0, 0, 0.24) !important;
+        --colorBrandShadowAmbient: rgba(0, 0, 0, 0.3) !important;
+        --colorBrandShadowKey: rgba(0, 0, 0, 0.25) !important;
+        /* ==== COLOR PALETTE - RED ==== */
+        --colorPaletteRedBackground1: #fdf6f6 !important;
+        --colorPaletteRedBackground2: #f1bbbc !important;
+        --colorPaletteRedBackground3: #d13438 !important;
+        --colorPaletteRedForeground1: #bc2f32 !important;
+        --colorPaletteRedForeground2: #751d1f !important;
+        --colorPaletteRedForeground3: #d13438 !important;
+        --colorPaletteRedBorderActive: #d13438 !important;
+        --colorPaletteRedBorder1: #f1bbbc !important;
+        --colorPaletteRedBorder2: #d13438 !important;
+        --colorPaletteRedForegroundInverted: #dc5e62 !important;
+        --colorPaletteDarkRedBackground2: #d69ca5 !important;
+        --colorPaletteDarkRedForeground2: #420610 !important;
+        --colorPaletteDarkRedBorderActive: #750b1c !important;
 
-    /* ==== COLOR PALETTE - GREEN ==== */
-    --colorPaletteGreenBackground1: #f1faf1 !important;
-    --colorPaletteGreenBackground2: #9fd89f !important;
-    --colorPaletteGreenBackground3: #107c10 !important;
-    --colorPaletteGreenForeground1: #0e700e !important;
-    --colorPaletteGreenForeground2: #094509 !important;
-    --colorPaletteGreenForeground3: #107c10 !important;
-    --colorPaletteGreenBorderActive: #107c10 !important;
-    --colorPaletteGreenBorder1: #9fd89f !important;
-    --colorPaletteGreenBorder2: #107c10 !important;
-    --colorPaletteGreenForegroundInverted: #359b35 !important;
-    --colorPaletteLightGreenBackground1: #f2fbf2 !important;
-    --colorPaletteLightGreenBackground2: #a7e3a5 !important;
-    --colorPaletteLightGreenBackground3: #13a10e !important;
-    --colorPaletteLightGreenForeground1: #11910d !important;
-    --colorPaletteLightGreenForeground2: #0b5a08 !important;
-    --colorPaletteLightGreenForeground3: #13a10e !important;
-    --colorPaletteLightGreenBorderActive: #13a10e !important;
-    --colorPaletteLightGreenBorder1: #a7e3a5 !important;
-    --colorPaletteLightGreenBorder2: #13a10e !important;
-    --colorPaletteDarkGreenBackground2: #9ad29a !important;
-    --colorPaletteDarkGreenForeground2: #063b06 !important;
-    --colorPaletteDarkGreenBorderActive: #0b6a0b !important;
+        /* ==== COLOR PALETTE - GREEN ==== */
+        --colorPaletteGreenBackground1: #f1faf1 !important;
+        --colorPaletteGreenBackground2: #9fd89f !important;
+        --colorPaletteGreenBackground3: #107c10 !important;
+        --colorPaletteGreenForeground1: #0e700e !important;
+        --colorPaletteGreenForeground2: #094509 !important;
+        --colorPaletteGreenForeground3: #107c10 !important;
+        --colorPaletteGreenBorderActive: #107c10 !important;
+        --colorPaletteGreenBorder1: #9fd89f !important;
+        --colorPaletteGreenBorder2: #107c10 !important;
+        --colorPaletteGreenForegroundInverted: #359b35 !important;
+        --colorPaletteLightGreenBackground1: #f2fbf2 !important;
+        --colorPaletteLightGreenBackground2: #a7e3a5 !important;
+        --colorPaletteLightGreenBackground3: #13a10e !important;
+        --colorPaletteLightGreenForeground1: #11910d !important;
+        --colorPaletteLightGreenForeground2: #0b5a08 !important;
+        --colorPaletteLightGreenForeground3: #13a10e !important;
+        --colorPaletteLightGreenBorderActive: #13a10e !important;
+        --colorPaletteLightGreenBorder1: #a7e3a5 !important;
+        --colorPaletteLightGreenBorder2: #13a10e !important;
+        --colorPaletteDarkGreenBackground2: #9ad29a !important;
+        --colorPaletteDarkGreenForeground2: #063b06 !important;
+        --colorPaletteDarkGreenBorderActive: #0b6a0b !important;
 
-    /* ==== COLOR PALETTE - ORANGE ==== */
-    --colorPaletteDarkOrangeBackground1: #fdf6f3 !important;
-    --colorPaletteDarkOrangeBackground2: #f4bfab !important;
-    --colorPaletteDarkOrangeBackground3: #da3b01 !important;
-    --colorPaletteDarkOrangeForeground1: #c43501 !important;
-    --colorPaletteDarkOrangeForeground2: #7a2101 !important;
-    --colorPaletteDarkOrangeForeground3: #da3b01 !important;
-    --colorPaletteDarkOrangeBorderActive: #da3b01 !important;
-    --colorPaletteDarkOrangeBorder1: #f4bfab !important;
-    --colorPaletteDarkOrangeBorder2: #da3b01 !important;
+        /* ==== COLOR PALETTE - ORANGE ==== */
+        --colorPaletteDarkOrangeBackground1: #fdf6f3 !important;
+        --colorPaletteDarkOrangeBackground2: #f4bfab !important;
+        --colorPaletteDarkOrangeBackground3: #da3b01 !important;
+        --colorPaletteDarkOrangeForeground1: #c43501 !important;
+        --colorPaletteDarkOrangeForeground2: #7a2101 !important;
+        --colorPaletteDarkOrangeForeground3: #da3b01 !important;
+        --colorPaletteDarkOrangeBorderActive: #da3b01 !important;
+        --colorPaletteDarkOrangeBorder1: #f4bfab !important;
+        --colorPaletteDarkOrangeBorder2: #da3b01 !important;
 
-    /* ==== COLOR PALETTE - YELLOW ==== */
-    --colorPaletteYellowBackground1: #fffef5 !important;
-    --colorPaletteYellowBackground2: #fef7b2 !important;
-    --colorPaletteYellowBackground3: #fde300 !important;
-    --colorPaletteYellowForeground1: #817400 !important;
-    --colorPaletteYellowForeground2: #817400 !important;
-    --colorPaletteYellowForeground3: #fde300 !important;
-    --colorPaletteYellowBorderActive: #fde300 !important;
-    --colorPaletteYellowBorder1: #fef7b2 !important;
-    --colorPaletteYellowBorder2: #fde300 !important;
-    --colorPaletteYellowForegroundInverted: #fef7b2 !important;
+        /* ==== COLOR PALETTE - YELLOW ==== */
+        --colorPaletteYellowBackground1: #fffef5 !important;
+        --colorPaletteYellowBackground2: #fef7b2 !important;
+        --colorPaletteYellowBackground3: #fde300 !important;
+        --colorPaletteYellowForeground1: #817400 !important;
+        --colorPaletteYellowForeground2: #817400 !important;
+        --colorPaletteYellowForeground3: #fde300 !important;
+        --colorPaletteYellowBorderActive: #fde300 !important;
+        --colorPaletteYellowBorder1: #fef7b2 !important;
+        --colorPaletteYellowBorder2: #fde300 !important;
+        --colorPaletteYellowForegroundInverted: #fef7b2 !important;
 
-    /* ==== COLOR PALETTE - BERRY ==== */
-    --colorPaletteBerryBackground1: #fdf5fc !important;
-    --colorPaletteBerryBackground2: #edbbe7 !important;
-    --colorPaletteBerryBackground3: #c239b3 !important;
-    --colorPaletteBerryForeground1: #af33a1 !important;
-    --colorPaletteBerryForeground2: #6d2064 !important;
-    --colorPaletteBerryForeground3: #c239b3 !important;
-    --colorPaletteBerryBorderActive: #c239b3 !important;
-    --colorPaletteBerryBorder1: #edbbe7 !important;
-    --colorPaletteBerryBorder2: #c239b3 !important;
+        /* ==== COLOR PALETTE - BERRY ==== */
+        --colorPaletteBerryBackground1: #fdf5fc !important;
+        --colorPaletteBerryBackground2: #edbbe7 !important;
+        --colorPaletteBerryBackground3: #c239b3 !important;
+        --colorPaletteBerryForeground1: #af33a1 !important;
+        --colorPaletteBerryForeground2: #6d2064 !important;
+        --colorPaletteBerryForeground3: #c239b3 !important;
+        --colorPaletteBerryBorderActive: #c239b3 !important;
+        --colorPaletteBerryBorder1: #edbbe7 !important;
+        --colorPaletteBerryBorder2: #c239b3 !important;
 
-    /* ==== COLOR PALETTE - MARIGOLD ==== */
-    --colorPaletteMarigoldBackground1: #fefbf4 !important;
-    --colorPaletteMarigoldBackground2: #f9e2ae !important;
-    --colorPaletteMarigoldBackground3: #eaa300 !important;
-    --colorPaletteMarigoldForeground1: #d39300 !important;
-    --colorPaletteMarigoldForeground2: #835b00 !important;
-    --colorPaletteMarigoldForeground3: #eaa300 !important;
-    --colorPaletteMarigoldBorderActive: #eaa300 !important;
-    --colorPaletteMarigoldBorder1: #f9e2ae !important;
-    --colorPaletteMarigoldBorder2: #eaa300 !important;
+        /* ==== COLOR PALETTE - MARIGOLD ==== */
+        --colorPaletteMarigoldBackground1: #fefbf4 !important;
+        --colorPaletteMarigoldBackground2: #f9e2ae !important;
+        --colorPaletteMarigoldBackground3: #eaa300 !important;
+        --colorPaletteMarigoldForeground1: #d39300 !important;
+        --colorPaletteMarigoldForeground2: #835b00 !important;
+        --colorPaletteMarigoldForeground3: #eaa300 !important;
+        --colorPaletteMarigoldBorderActive: #eaa300 !important;
+        --colorPaletteMarigoldBorder1: #f9e2ae !important;
+        --colorPaletteMarigoldBorder2: #eaa300 !important;
 
-    /* ==== COLOR PALETTE - ADDITIONAL COLORS ==== */
-    --colorPaletteCranberryBackground2: #eeacb2 !important;
-    --colorPaletteCranberryForeground2: #6e0811 !important;
-    --colorPaletteCranberryBorderActive: #c50f1f !important;
-    --colorPalettePumpkinBackground2: #efc4ad !important;
-    --colorPalettePumpkinForeground2: #712d09 !important;
-    --colorPalettePumpkinBorderActive: #ca5010 !important;
-    --colorPalettePeachBackground2: #ffddb3 !important;
-    --colorPalettePeachForeground2: #8f4e00 !important;
-    --colorPalettePeachBorderActive: #ff8c00 !important;
-    --colorPaletteGoldBackground2: #ecdfa5 !important;
-    --colorPaletteGoldForeground2: #6c5700 !important;
-    --colorPaletteGoldBorderActive: #c19c00 !important;
-    --colorPaletteBrassBackground2: #e0cea2 !important;
-    --colorPaletteBrassForeground2: #553e06 !important;
-    --colorPaletteBrassBorderActive: #986f0b !important;
-    --colorPaletteBrownBackground2: #ddc3b0 !important;
-    --colorPaletteBrownForeground2: #50301a !important;
-    --colorPaletteBrownBorderActive: #8e562e !important;
-    --colorPaletteForestBackground2: #bdd99b !important;
-    --colorPaletteForestForeground2: #294903 !important;
-    --colorPaletteForestBorderActive: #498205 !important;
-    --colorPaletteSeafoamBackground2: #a8f0cd !important;
-    --colorPaletteSeafoamForeground2: #00723b !important;
-    --colorPaletteSeafoamBorderActive: #00cc6a !important;
-    --colorPaletteLightTealBackground2: #a6e9ed !important;
-    --colorPaletteLightTealForeground2: #00666d !important;
-    --colorPaletteLightTealBorderActive: #00b7c3 !important;
-    --colorPaletteTealBackground2: #9bd9db !important;
-    --colorPaletteTealForeground2: #02494c !important;
-    --colorPaletteTealBorderActive: #038387 !important;
-    --colorPaletteSteelBackground2: #94c8d4 !important;
-    --colorPaletteSteelForeground2: #00333f !important;
-    --colorPaletteSteelBorderActive: #005b70 !important;
-    --colorPaletteBlueBackground2: #a9d3f2 !important;
-    --colorPaletteBlueForeground2: #004377 !important;
-    --colorPaletteBlueBorderActive: #0078d4 !important;
-    --colorPaletteRoyalBlueBackground2: #9abfdc !important;
-    --colorPaletteRoyalBlueForeground2: #002c4e !important;
-    --colorPaletteRoyalBlueBorderActive: #004e8c !important;
-    --colorPaletteCornflowerBackground2: #c8d1fa !important;
-    --colorPaletteCornflowerForeground2: #2c3c85 !important;
-    --colorPaletteCornflowerBorderActive: #4f6bed !important;
-    --colorPaletteNavyBackground2: #a3b2e8 !important;
-    --colorPaletteNavyForeground2: #001665 !important;
-    --colorPaletteNavyBorderActive: #0027b4 !important;
-    --colorPaletteLavenderBackground2: #d2ccf8 !important;
-    --colorPaletteLavenderForeground2: #3f3682 !important;
-    --colorPaletteLavenderBorderActive: #7160e8 !important;
-    --colorPalettePurpleBackground2: #c6b1de !important;
-    --colorPalettePurpleForeground2: #341a51 !important;
-    --colorPalettePurpleBorderActive: #5c2e91 !important;
-    --colorPaletteGrapeBackground2: #d9a7e0 !important;
-    --colorPaletteGrapeForeground2: #4c0d55 !important;
-    --colorPaletteGrapeBorderActive: #881798 !important;
-    --colorPaletteLilacBackground2: #e6bfed !important;
-    --colorPaletteLilacForeground2: #63276d !important;
-    --colorPaletteLilacBorderActive: #b146c2 !important;
-    --colorPalettePinkBackground2: #f7c0e3 !important;
-    --colorPalettePinkForeground2: #80215d !important;
-    --colorPalettePinkBorderActive: #e43ba6 !important;
-    --colorPaletteMagentaBackground2: #eca5d1 !important;
-    --colorPaletteMagentaForeground2: #6b0043 !important;
-    --colorPaletteMagentaBorderActive: #bf0077 !important;
-    --colorPalettePlumBackground2: #d696c0 !important;
-    --colorPalettePlumForeground2: #43002b !important;
-    --colorPalettePlumBorderActive: #77004d !important;
-    --colorPaletteBeigeBackground2: #d7d4d4 !important;
-    --colorPaletteBeigeForeground2: #444241 !important;
-    --colorPaletteBeigeBorderActive: #7a7574 !important;
-    --colorPaletteMinkBackground2: #cecccb !important;
-    --colorPaletteMinkForeground2: #343231 !important;
-    --colorPaletteMinkBorderActive: #5d5a58 !important;
-    --colorPalettePlatinumBackground2: #cdd6d8 !important;
-    --colorPalettePlatinumForeground2: #3b4447 !important;
-    --colorPalettePlatinumBorderActive: #69797e !important;
-    --colorPaletteAnchorBackground2: #bcc3c7 !important;
-    --colorPaletteAnchorForeground2: #202427 !important;
-    --colorPaletteAnchorBorderActive: #394146 !important;
-    /* ==== STATUS COLORS ==== */
-    --colorStatusSuccessBackground1: #f1faf1 !important;
-    --colorStatusSuccessBackground2: #9fd89f !important;
-    --colorStatusSuccessBackground3: #107c10 !important;
-    --colorStatusSuccessForeground1: #0e700e !important;
-    --colorStatusSuccessForeground2: #094509 !important;
-    --colorStatusSuccessForeground3: #107c10 !important;
-    --colorStatusSuccessForegroundInverted: #54b054 !important;
-    --colorStatusSuccessBorderActive: #107c10 !important;
-    --colorStatusSuccessBorder1: #9fd89f !important;
-    --colorStatusSuccessBorder2: #107c10 !important;
+        /* ==== COLOR PALETTE - ADDITIONAL COLORS ==== */
+        --colorPaletteCranberryBackground2: #eeacb2 !important;
+        --colorPaletteCranberryForeground2: #6e0811 !important;
+        --colorPaletteCranberryBorderActive: #c50f1f !important;
+        --colorPalettePumpkinBackground2: #efc4ad !important;
+        --colorPalettePumpkinForeground2: #712d09 !important;
+        --colorPalettePumpkinBorderActive: #ca5010 !important;
+        --colorPalettePeachBackground2: #ffddb3 !important;
+        --colorPalettePeachForeground2: #8f4e00 !important;
+        --colorPalettePeachBorderActive: #ff8c00 !important;
+        --colorPaletteGoldBackground2: #ecdfa5 !important;
+        --colorPaletteGoldForeground2: #6c5700 !important;
+        --colorPaletteGoldBorderActive: #c19c00 !important;
+        --colorPaletteBrassBackground2: #e0cea2 !important;
+        --colorPaletteBrassForeground2: #553e06 !important;
+        --colorPaletteBrassBorderActive: #986f0b !important;
+        --colorPaletteBrownBackground2: #ddc3b0 !important;
+        --colorPaletteBrownForeground2: #50301a !important;
+        --colorPaletteBrownBorderActive: #8e562e !important;
+        --colorPaletteForestBackground2: #bdd99b !important;
+        --colorPaletteForestForeground2: #294903 !important;
+        --colorPaletteForestBorderActive: #498205 !important;
+        --colorPaletteSeafoamBackground2: #a8f0cd !important;
+        --colorPaletteSeafoamForeground2: #00723b !important;
+        --colorPaletteSeafoamBorderActive: #00cc6a !important;
+        --colorPaletteLightTealBackground2: #a6e9ed !important;
+        --colorPaletteLightTealForeground2: #00666d !important;
+        --colorPaletteLightTealBorderActive: #00b7c3 !important;
+        --colorPaletteTealBackground2: #9bd9db !important;
+        --colorPaletteTealForeground2: #02494c !important;
+        --colorPaletteTealBorderActive: #038387 !important;
+        --colorPaletteSteelBackground2: #94c8d4 !important;
+        --colorPaletteSteelForeground2: #00333f !important;
+        --colorPaletteSteelBorderActive: #005b70 !important;
+        --colorPaletteBlueBackground2: #a9d3f2 !important;
+        --colorPaletteBlueForeground2: #004377 !important;
+        --colorPaletteBlueBorderActive: #0078d4 !important;
+        --colorPaletteRoyalBlueBackground2: #9abfdc !important;
+        --colorPaletteRoyalBlueForeground2: #002c4e !important;
+        --colorPaletteRoyalBlueBorderActive: #004e8c !important;
+        --colorPaletteCornflowerBackground2: #c8d1fa !important;
+        --colorPaletteCornflowerForeground2: #2c3c85 !important;
+        --colorPaletteCornflowerBorderActive: #4f6bed !important;
+        --colorPaletteNavyBackground2: #a3b2e8 !important;
+        --colorPaletteNavyForeground2: #001665 !important;
+        --colorPaletteNavyBorderActive: #0027b4 !important;
+        --colorPaletteLavenderBackground2: #d2ccf8 !important;
+        --colorPaletteLavenderForeground2: #3f3682 !important;
+        --colorPaletteLavenderBorderActive: #7160e8 !important;
+        --colorPalettePurpleBackground2: #c6b1de !important;
+        --colorPalettePurpleForeground2: #341a51 !important;
+        --colorPalettePurpleBorderActive: #5c2e91 !important;
+        --colorPaletteGrapeBackground2: #d9a7e0 !important;
+        --colorPaletteGrapeForeground2: #4c0d55 !important;
+        --colorPaletteGrapeBorderActive: #881798 !important;
+        --colorPaletteLilacBackground2: #e6bfed !important;
+        --colorPaletteLilacForeground2: #63276d !important;
+        --colorPaletteLilacBorderActive: #b146c2 !important;
+        --colorPalettePinkBackground2: #f7c0e3 !important;
+        --colorPalettePinkForeground2: #80215d !important;
+        --colorPalettePinkBorderActive: #e43ba6 !important;
+        --colorPaletteMagentaBackground2: #eca5d1 !important;
+        --colorPaletteMagentaForeground2: #6b0043 !important;
+        --colorPaletteMagentaBorderActive: #bf0077 !important;
+        --colorPalettePlumBackground2: #d696c0 !important;
+        --colorPalettePlumForeground2: #43002b !important;
+        --colorPalettePlumBorderActive: #77004d !important;
+        --colorPaletteBeigeBackground2: #d7d4d4 !important;
+        --colorPaletteBeigeForeground2: #444241 !important;
+        --colorPaletteBeigeBorderActive: #7a7574 !important;
+        --colorPaletteMinkBackground2: #cecccb !important;
+        --colorPaletteMinkForeground2: #343231 !important;
+        --colorPaletteMinkBorderActive: #5d5a58 !important;
+        --colorPalettePlatinumBackground2: #cdd6d8 !important;
+        --colorPalettePlatinumForeground2: #3b4447 !important;
+        --colorPalettePlatinumBorderActive: #69797e !important;
+        --colorPaletteAnchorBackground2: #bcc3c7 !important;
+        --colorPaletteAnchorForeground2: #202427 !important;
+        --colorPaletteAnchorBorderActive: #394146 !important;
+        /* ==== STATUS COLORS ==== */
+        --colorStatusSuccessBackground1: #f1faf1 !important;
+        --colorStatusSuccessBackground2: #9fd89f !important;
+        --colorStatusSuccessBackground3: #107c10 !important;
+        --colorStatusSuccessForeground1: #0e700e !important;
+        --colorStatusSuccessForeground2: #094509 !important;
+        --colorStatusSuccessForeground3: #107c10 !important;
+        --colorStatusSuccessForegroundInverted: #54b054 !important;
+        --colorStatusSuccessBorderActive: #107c10 !important;
+        --colorStatusSuccessBorder1: #9fd89f !important;
+        --colorStatusSuccessBorder2: #107c10 !important;
 
-    --colorStatusWarningBackground1: #fff9f5 !important;
-    --colorStatusWarningBackground2: #fdcfb4 !important;
-    --colorStatusWarningBackground3: #f7630c !important;
-    --colorStatusWarningForeground1: #bc4b09 !important;
-    --colorStatusWarningForeground2: #8a3707 !important;
-    --colorStatusWarningForeground3: #bc4b09 !important;
-    --colorStatusWarningForegroundInverted: #faa06b !important;
-    --colorStatusWarningBorderActive: #f7630c !important;
-    --colorStatusWarningBorder1: #fdcfb4 !important;
-    --colorStatusWarningBorder2: #bc4b09 !important;
+        --colorStatusWarningBackground1: #fff9f5 !important;
+        --colorStatusWarningBackground2: #fdcfb4 !important;
+        --colorStatusWarningBackground3: #f7630c !important;
+        --colorStatusWarningForeground1: #bc4b09 !important;
+        --colorStatusWarningForeground2: #8a3707 !important;
+        --colorStatusWarningForeground3: #bc4b09 !important;
+        --colorStatusWarningForegroundInverted: #faa06b !important;
+        --colorStatusWarningBorderActive: #f7630c !important;
+        --colorStatusWarningBorder1: #fdcfb4 !important;
+        --colorStatusWarningBorder2: #bc4b09 !important;
 
-    --colorStatusDangerBackground1: #fdf3f4 !important;
-    --colorStatusDangerBackground2: #eeacb2 !important;
-    --colorStatusDangerBackground3: #c50f1f !important;
-    --colorStatusDangerForeground1: #b10e1c !important;
-    --colorStatusDangerForeground2: #6e0811 !important;
-    --colorStatusDangerForeground3: #c50f1f !important;
-    --colorStatusDangerForegroundInverted: #dc626d !important;
-    --colorStatusDangerBorderActive: #c50f1f !important;
-    --colorStatusDangerBorder1: #eeacb2 !important;
-    --colorStatusDangerBorder2: #c50f1f !important;
-    --colorStatusDangerBackground3Hover: #b10e1c !important;
-    --colorStatusDangerBackground3Pressed: #960b18 !important;
+        --colorStatusDangerBackground1: #fdf3f4 !important;
+        --colorStatusDangerBackground2: #eeacb2 !important;
+        --colorStatusDangerBackground3: #c50f1f !important;
+        --colorStatusDangerForeground1: #b10e1c !important;
+        --colorStatusDangerForeground2: #6e0811 !important;
+        --colorStatusDangerForeground3: #c50f1f !important;
+        --colorStatusDangerForegroundInverted: #dc626d !important;
+        --colorStatusDangerBorderActive: #c50f1f !important;
+        --colorStatusDangerBorder1: #eeacb2 !important;
+        --colorStatusDangerBorder2: #c50f1f !important;
+        --colorStatusDangerBackground3Hover: #b10e1c !important;
+        --colorStatusDangerBackground3Pressed: #960b18 !important;
 
-    /* ==== SHADOWS ==== */
-    --shadow2: 0 0 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) !important;
-    --shadow4: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14) !important;
-    --shadow8: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14) !important;
-    --shadow16: 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14) !important;
-    --shadow28: 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14) !important;
-    --shadow64: 0 0 8px rgba(0, 0, 0, 0.2), 0 32px 64px rgba(0, 0, 0, 0.24) !important;
-    --shadow2Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25) !important;
-    --shadow4Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25) !important;
-    --shadow8Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25) !important;
-    --shadow16Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25) !important;
-    --shadow28Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 14px 28px rgba(0, 0, 0, 0.25) !important;
-    --shadow64Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.25) !important;
+        /* ==== SHADOWS ==== */
+        --shadow2: 0 0 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14) !important;
+        --shadow4: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14) !important;
+        --shadow8: 0 0 2px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.14) !important;
+        --shadow16: 0 0 2px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.14) !important;
+        --shadow28: 0 0 8px rgba(0, 0, 0, 0.12), 0 14px 28px rgba(0, 0, 0, 0.14) !important;
+        --shadow64: 0 0 8px rgba(0, 0, 0, 0.2), 0 32px 64px rgba(0, 0, 0, 0.24) !important;
+        --shadow2Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+        --shadow4Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+        --shadow8Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.25) !important;
+        --shadow16Brand: 0 0 2px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.25) !important;
+        --shadow28Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 14px 28px rgba(0, 0, 0, 0.25) !important;
+        --shadow64Brand: 0 0 8px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.25) !important;
 
-    /* ==== MISCELLANEOUS ==== */
-    --xxs: 2px !important;
-    --sNudge: 6px !important;
-    --s: 8px !important;
-    --mNudge: 10px !important;
-    --m: 12px !important;
-    --l: 16px !important;
-    --xxl: 24px !important;
-}
+        /* ==== MISCELLANEOUS ==== */
+        --xxs: 2px !important;
+        --sNudge: 6px !important;
+        --s: 8px !important;
+        --mNudge: 10px !important;
+        --m: 12px !important;
+        --l: 16px !important;
+        --xxl: 24px !important;
+    }
 
-/*
+    /*
 ====================================
 MICROSOFT DESIGN SYSTEM COLORS
 ====================================
 */
 
-html, body {
-    /* ==== THEME PALETTE ==== */
-    --ms-palette-themeDarker: #82c8ff !important;
-    --ms-palette-themeDark: #6cb8f5 !important;
-    --ms-palette-themeDarkAlt: #4ba7f0 !important;
-    --ms-palette-themePrimary: #0078D4 !important;
-    --ms-palette-themeSecondary: #1a86db !important;
-    --ms-palette-themeTertiary: #2e8bd9 !important;
-    --ms-palette-themeLight: #004578 !important;
-    --ms-palette-themeLighter: #003d6b !important;
-    --ms-palette-themeLighterAlt: #002440 !important;
-    --ms-palette-black: #ffffff !important;
-    --ms-palette-blackTranslucent40: rgba(255, 255, 255, .4) !important;
-    --ms-palette-white: #1b1a19 !important;
-    --ms-palette-whiteTranslucent40: rgba(27, 26, 25, .4) !important;
-    --ms-palette-accent: #0078D4 !important;
+    html,
+    body {
+        /* ==== THEME PALETTE ==== */
+        --ms-palette-themeDarker: #82c8ff !important;
+        --ms-palette-themeDark: #6cb8f5 !important;
+        --ms-palette-themeDarkAlt: #4ba7f0 !important;
+        --ms-palette-themePrimary: #0078D4 !important;
+        --ms-palette-themeSecondary: #1a86db !important;
+        --ms-palette-themeTertiary: #2e8bd9 !important;
+        --ms-palette-themeLight: #004578 !important;
+        --ms-palette-themeLighter: #003d6b !important;
+        --ms-palette-themeLighterAlt: #002440 !important;
+        --ms-palette-black: #ffffff !important;
+        --ms-palette-blackTranslucent40: rgba(255, 255, 255, .4) !important;
+        --ms-palette-white: #1b1a19 !important;
+        --ms-palette-whiteTranslucent40: rgba(27, 26, 25, .4) !important;
+        --ms-palette-accent: #0078D4 !important;
 
-    /* ==== NEUTRAL PALETTE ==== */
-    --ms-palette-neutralDark: #f8f8f8 !important;
-    --ms-palette-neutralPrimary: #ffffff !important;
-    --ms-palette-neutralPrimaryAlt: #dadada !important;
-    --ms-palette-neutralSecondary: #c8c8c8 !important;
-    --ms-palette-neutralSecondaryAlt: #a6a6a6 !important;
-    --ms-palette-neutralTertiary: #6d6d6d !important;
-    --ms-palette-neutralTertiaryAlt: #595959 !important;
-    --ms-palette-neutralQuaternary: #484644 !important;
-    --ms-palette-neutralQuaternaryAlt: #3b3937 !important;
-    --ms-palette-neutralLight: #2d2c2a !important;
-    --ms-palette-neutralLighter: #252423 !important;
-    --ms-palette-neutralLighterAlt: #1b1a19 !important;
-    --ms-palette-grey96: #292827 !important;
-    --ms-palette-grey74: #484644 !important;
+        /* ==== NEUTRAL PALETTE ==== */
+        --ms-palette-neutralDark: #f8f8f8 !important;
+        --ms-palette-neutralPrimary: #ffffff !important;
+        --ms-palette-neutralPrimaryAlt: #dadada !important;
+        --ms-palette-neutralSecondary: #c8c8c8 !important;
+        --ms-palette-neutralSecondaryAlt: #a6a6a6 !important;
+        --ms-palette-neutralTertiary: #6d6d6d !important;
+        --ms-palette-neutralTertiaryAlt: #595959 !important;
+        --ms-palette-neutralQuaternary: #484644 !important;
+        --ms-palette-neutralQuaternaryAlt: #3b3937 !important;
+        --ms-palette-neutralLight: #2d2c2a !important;
+        --ms-palette-neutralLighter: #252423 !important;
+        --ms-palette-neutralLighterAlt: #1b1a19 !important;
+        --ms-palette-grey96: #292827 !important;
+        --ms-palette-grey74: #484644 !important;
 
-    /* ==== COLOR PALETTE ==== */
-    --ms-palette-yellowDark: #ffb900 !important;
-    --ms-palette-yellow: #ffc83d !important;
-    --ms-palette-yellowLight: #ffdc5e !important;
-    --ms-palette-orange: #ff8c42 !important;
-    --ms-palette-orangeLight: #ff9349 !important;
-    --ms-palette-orangeLighter: #ffad66 !important;
-    --ms-palette-redDark: #ff6b70 !important;
-    --ms-palette-red: #ff4343 !important;
-    --ms-palette-magentaDark: #e1b7e1 !important;
-    --ms-palette-magenta: #d67bd6 !important;
-    --ms-palette-magentaLight: #ea8cea !important;
-    --ms-palette-purpleDark: #c8b5db !important;
-    --ms-palette-purple: #b29cdb !important;
-    --ms-palette-purpleLight: #9a82db !important;
-    --ms-palette-blueDark: #82c8ff !important;
-    --ms-palette-blueMid: #4ba7f0 !important;
-    --ms-palette-blue: #0078d4 !important;
-    --ms-palette-blueLight: #0099bc !important;
-    --ms-palette-tealDark: #76dbd1 !important;
-    --ms-palette-teal: #00b7a7 !important;
-    --ms-palette-tealLight: #13a085 !important;
-    --ms-palette-greenDark: #9fd89f !important;
-    --ms-palette-green: #6bb26b !important;
-    --ms-palette-greenLight: #a4c739 !important;
+        /* ==== COLOR PALETTE ==== */
+        --ms-palette-yellowDark: #ffb900 !important;
+        --ms-palette-yellow: #ffc83d !important;
+        --ms-palette-yellowLight: #ffdc5e !important;
+        --ms-palette-orange: #ff8c42 !important;
+        --ms-palette-orangeLight: #ff9349 !important;
+        --ms-palette-orangeLighter: #ffad66 !important;
+        --ms-palette-redDark: #ff6b70 !important;
+        --ms-palette-red: #ff4343 !important;
+        --ms-palette-magentaDark: #e1b7e1 !important;
+        --ms-palette-magenta: #d67bd6 !important;
+        --ms-palette-magentaLight: #ea8cea !important;
+        --ms-palette-purpleDark: #c8b5db !important;
+        --ms-palette-purple: #b29cdb !important;
+        --ms-palette-purpleLight: #9a82db !important;
+        --ms-palette-blueDark: #82c8ff !important;
+        --ms-palette-blueMid: #4ba7f0 !important;
+        --ms-palette-blue: #0078d4 !important;
+        --ms-palette-blueLight: #0099bc !important;
+        --ms-palette-tealDark: #76dbd1 !important;
+        --ms-palette-teal: #00b7a7 !important;
+        --ms-palette-tealLight: #13a085 !important;
+        --ms-palette-greenDark: #9fd89f !important;
+        --ms-palette-green: #6bb26b !important;
+        --ms-palette-greenLight: #a4c739 !important;
 
-    /* ==== SEMANTIC COLORS ==== */
-    --ms-semanticColors-bodyBackground: #1b1a19 !important;
-    --ms-semanticColors-bodyFrameBackground: #1b1a19 !important;
-    --ms-semanticColors-bodyStandoutBackground: #1b1a19 !important;
-    --ms-semanticColors-defaultStateBackground: #1b1a19 !important;
-    --ms-semanticColors-bodyBackgroundChecked: #252423 !important;
-    --ms-semanticColors-bodyBackgroundHovered: #252423 !important;
-    --ms-semanticColors-bodyFrameDivider: #484644 !important;
-    --ms-semanticColors-bodyDivider: #2d2c2a !important;
+        /* ==== SEMANTIC COLORS ==== */
+        --ms-semanticColors-bodyBackground: #1b1a19 !important;
+        --ms-semanticColors-bodyFrameBackground: #1b1a19 !important;
+        --ms-semanticColors-bodyStandoutBackground: #1b1a19 !important;
+        --ms-semanticColors-defaultStateBackground: #1b1a19 !important;
+        --ms-semanticColors-bodyBackgroundChecked: #252423 !important;
+        --ms-semanticColors-bodyBackgroundHovered: #252423 !important;
+        --ms-semanticColors-bodyFrameDivider: #484644 !important;
+        --ms-semanticColors-bodyDivider: #2d2c2a !important;
 
-    /* ==== BUTTON COLORS ==== */
-    --ms-semanticColors-accentButtonText: #000000 !important;
-    --ms-semanticColors-accentButtonBackground: #0078D4 !important;
-    --ms-semanticColors-buttonBackground: #2d2c2a !important;
-    --ms-semanticColors-buttonBackgroundChecked: #252423 !important;
-    --ms-semanticColors-buttonBackgroundCheckedHovered: #3b3937 !important;
-    --ms-semanticColors-buttonBackgroundHovered: #252423 !important;
-    --ms-semanticColors-buttonBackgroundPressed: #3b3937 !important;
-    --ms-semanticColors-buttonBackgroundDisabled: #2d2c2a !important;
-    --ms-semanticColors-buttonBorder: #484644 !important;
-    --ms-semanticColors-buttonBorderDisabled: #484644 !important;
-    --ms-semanticColors-buttonText: #ffffff !important;
-    --ms-semanticColors-buttonTextHovered: #ffffff !important;
-    --ms-semanticColors-buttonTextChecked: #ffffff !important;
-    --ms-semanticColors-buttonTextCheckedHovered: #ffffff !important;
-    --ms-semanticColors-buttonTextPressed: #ffffff !important;
-    --ms-semanticColors-buttonTextDisabled: #6d6d6d !important;
+        /* ==== BUTTON COLORS ==== */
+        --ms-semanticColors-accentButtonText: #000000 !important;
+        --ms-semanticColors-accentButtonBackground: #0078D4 !important;
+        --ms-semanticColors-buttonBackground: #2d2c2a !important;
+        --ms-semanticColors-buttonBackgroundChecked: #252423 !important;
+        --ms-semanticColors-buttonBackgroundCheckedHovered: #3b3937 !important;
+        --ms-semanticColors-buttonBackgroundHovered: #252423 !important;
+        --ms-semanticColors-buttonBackgroundPressed: #3b3937 !important;
+        --ms-semanticColors-buttonBackgroundDisabled: #2d2c2a !important;
+        --ms-semanticColors-buttonBorder: #484644 !important;
+        --ms-semanticColors-buttonBorderDisabled: #484644 !important;
+        --ms-semanticColors-buttonText: #ffffff !important;
+        --ms-semanticColors-buttonTextHovered: #ffffff !important;
+        --ms-semanticColors-buttonTextChecked: #ffffff !important;
+        --ms-semanticColors-buttonTextCheckedHovered: #ffffff !important;
+        --ms-semanticColors-buttonTextPressed: #ffffff !important;
+        --ms-semanticColors-buttonTextDisabled: #6d6d6d !important;
 
-    /* ==== PRIMARY BUTTON COLORS ==== */
-    --ms-semanticColors-primaryButtonText: #000000 !important;
-    --ms-semanticColors-primaryButtonTextHovered: #000000 !important;
-    --ms-semanticColors-primaryButtonTextPressed: #000000 !important;
-    --ms-semanticColors-primaryButtonTextDisabled: #6d6d6d !important;
-    --ms-semanticColors-primaryButtonBackground: #0078D4 !important;
-    --ms-semanticColors-primaryButtonBackgroundHovered: #1a86db !important;
-    --ms-semanticColors-primaryButtonBackgroundPressed: #82c8ff !important;
-    --ms-semanticColors-primaryButtonBackgroundDisabled: #2d2c2a !important;
-    --ms-semanticColors-primaryButtonBorder: transparent !important;
+        /* ==== PRIMARY BUTTON COLORS ==== */
+        --ms-semanticColors-primaryButtonText: #000000 !important;
+        --ms-semanticColors-primaryButtonTextHovered: #000000 !important;
+        --ms-semanticColors-primaryButtonTextPressed: #000000 !important;
+        --ms-semanticColors-primaryButtonTextDisabled: #6d6d6d !important;
+        --ms-semanticColors-primaryButtonBackground: #0078D4 !important;
+        --ms-semanticColors-primaryButtonBackgroundHovered: #1a86db !important;
+        --ms-semanticColors-primaryButtonBackgroundPressed: #82c8ff !important;
+        --ms-semanticColors-primaryButtonBackgroundDisabled: #2d2c2a !important;
+        --ms-semanticColors-primaryButtonBorder: transparent !important;
 
-    /* ==== INPUT COLORS ==== */
-    --ms-semanticColors-inputBackground: #2d2c2a !important;
-    --ms-semanticColors-inputBackgroundChecked: #0078D4 !important;
-    --ms-semanticColors-inputBackgroundCheckedHovered: #6cb8f5 !important;
-    --ms-semanticColors-inputForegroundChecked: #000000 !important;
-    --ms-semanticColors-inputText: #ffffff !important;
-    --ms-semanticColors-inputTextHovered: #ffffff !important;
-    --ms-semanticColors-inputBorder: #c8c8c8 !important;
-    --ms-semanticColors-inputBorderHovered: #dadada !important;
-    --ms-semanticColors-inputFocusBorderAlt: #4ba7f0 !important;
-    --ms-semanticColors-smallInputBorder: #c8c8c8 !important;
-    --ms-semanticColors-inputPlaceholderText: #c8c8c8 !important;
-    --ms-semanticColors-inputPlaceholderBackgroundChecked: #003d6b !important;
-    --ms-semanticColors-inputIcon: #4ba7f0 !important;
-    --ms-semanticColors-inputIconHovered: #6cb8f5 !important;
-    --ms-semanticColors-inputIconDisabled: #6d6d6d !important;
+        /* ==== INPUT COLORS ==== */
+        --ms-semanticColors-inputBackground: #2d2c2a !important;
+        --ms-semanticColors-inputBackgroundChecked: #0078D4 !important;
+        --ms-semanticColors-inputBackgroundCheckedHovered: #6cb8f5 !important;
+        --ms-semanticColors-inputForegroundChecked: #000000 !important;
+        --ms-semanticColors-inputText: #ffffff !important;
+        --ms-semanticColors-inputTextHovered: #ffffff !important;
+        --ms-semanticColors-inputBorder: #c8c8c8 !important;
+        --ms-semanticColors-inputBorderHovered: #dadada !important;
+        --ms-semanticColors-inputFocusBorderAlt: #4ba7f0 !important;
+        --ms-semanticColors-smallInputBorder: #c8c8c8 !important;
+        --ms-semanticColors-inputPlaceholderText: #c8c8c8 !important;
+        --ms-semanticColors-inputPlaceholderBackgroundChecked: #003d6b !important;
+        --ms-semanticColors-inputIcon: #4ba7f0 !important;
+        --ms-semanticColors-inputIconHovered: #6cb8f5 !important;
+        --ms-semanticColors-inputIconDisabled: #6d6d6d !important;
 
-    /* ==== LIST & MENU COLORS ==== */
-    --ms-semanticColors-listBackground: #1b1a19 !important;
-    --ms-semanticColors-listText: #ffffff !important;
-    --ms-semanticColors-listTextColor: #ffffff !important;
-    --ms-semanticColors-listItemBackgroundChecked: #252423 !important;
-    --ms-semanticColors-listItemBackgroundCheckedHovered: #3b3937 !important;
-    --ms-semanticColors-listItemBackgroundHovered: #252423 !important;
-    --ms-semanticColors-listHeaderBackgroundHovered: #252423 !important;
-    --ms-semanticColors-listHeaderBackgroundPressed: #252423 !important;
-    --ms-semanticColors-menuBackground: #252423 !important;
-    --ms-semanticColors-menuIcon: #4ba7f0 !important;
-    --ms-semanticColors-menuHeader: #4ba7f0 !important;
-    --ms-semanticColors-menuItemText: #dadada !important;
-    --ms-semanticColors-menuItemTextHovered: #dadada !important;
-    --ms-semanticColors-menuItemBackgroundHovered: #252423 !important;
-    --ms-semanticColors-menuItemBackgroundPressed: #3b3937 !important;
-    --ms-semanticColors-menuItemBackgroundChecked: #252423 !important;
-    --ms-semanticColors-menuDivider: #484644 !important;
+        /* ==== LIST & MENU COLORS ==== */
+        --ms-semanticColors-listBackground: #1b1a19 !important;
+        --ms-semanticColors-listText: #ffffff !important;
+        --ms-semanticColors-listTextColor: #ffffff !important;
+        --ms-semanticColors-listItemBackgroundChecked: #252423 !important;
+        --ms-semanticColors-listItemBackgroundCheckedHovered: #3b3937 !important;
+        --ms-semanticColors-listItemBackgroundHovered: #252423 !important;
+        --ms-semanticColors-listHeaderBackgroundHovered: #252423 !important;
+        --ms-semanticColors-listHeaderBackgroundPressed: #252423 !important;
+        --ms-semanticColors-menuBackground: #252423 !important;
+        --ms-semanticColors-menuIcon: #4ba7f0 !important;
+        --ms-semanticColors-menuHeader: #4ba7f0 !important;
+        --ms-semanticColors-menuItemText: #dadada !important;
+        --ms-semanticColors-menuItemTextHovered: #dadada !important;
+        --ms-semanticColors-menuItemBackgroundHovered: #252423 !important;
+        --ms-semanticColors-menuItemBackgroundPressed: #3b3937 !important;
+        --ms-semanticColors-menuItemBackgroundChecked: #252423 !important;
+        --ms-semanticColors-menuDivider: #484644 !important;
 
-    /* ==== CARD COLORS ==== */
-    --ms-semanticColors-cardStandoutBackground: #2d2c2a !important;
-    --ms-semanticColors-cardShadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
-    --ms-semanticColors-cardShadowHovered: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        /* ==== CARD COLORS ==== */
+        --ms-semanticColors-cardStandoutBackground: #2d2c2a !important;
+        --ms-semanticColors-cardShadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        --ms-semanticColors-cardShadowHovered: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
 
-    /* ==== TEXT COLORS ==== */
-    --ms-semanticColors-bodyText: #ffffff !important;
-    --ms-semanticColors-bodyTextChecked: #ffffff !important;
-    --ms-semanticColors-bodySubtext: #c8c8c8 !important;
-    --ms-semanticColors-actionLink: #dadada !important;
-    --ms-semanticColors-actionLinkHovered: #ffffff !important;
-    --ms-semanticColors-link: #4ba7f0 !important;
-    --ms-semanticColors-linkHovered: #82c8ff !important;
+        /* ==== TEXT COLORS ==== */
+        --ms-semanticColors-bodyText: #ffffff !important;
+        --ms-semanticColors-bodyTextChecked: #ffffff !important;
+        --ms-semanticColors-bodySubtext: #c8c8c8 !important;
+        --ms-semanticColors-actionLink: #dadada !important;
+        --ms-semanticColors-actionLinkHovered: #ffffff !important;
+        --ms-semanticColors-link: #4ba7f0 !important;
+        --ms-semanticColors-linkHovered: #82c8ff !important;
 
-    /* ==== DISABLED COLORS ==== */
-    --ms-semanticColors-disabledBackground: #2d2c2a !important;
-    --ms-semanticColors-disabledText: #6d6d6d !important;
-    --ms-semanticColors-disabledBodyText: #6d6d6d !important;
-    --ms-semanticColors-disabledSubtext: #595959 !important;
-    --ms-semanticColors-disabledBodySubtext: #6d6d6d !important;
-    --ms-semanticColors-disabledBorder: #484644 !important;
+        /* ==== DISABLED COLORS ==== */
+        --ms-semanticColors-disabledBackground: #2d2c2a !important;
+        --ms-semanticColors-disabledText: #6d6d6d !important;
+        --ms-semanticColors-disabledBodyText: #6d6d6d !important;
+        --ms-semanticColors-disabledSubtext: #595959 !important;
+        --ms-semanticColors-disabledBodySubtext: #6d6d6d !important;
+        --ms-semanticColors-disabledBorder: #484644 !important;
 
-    /* ==== FOCUS & VARIANT BORDERS ==== */
-    --ms-semanticColors-focusBorder: #ffffff !important;
-    --ms-semanticColors-variantBorder: #484644 !important;
-    --ms-semanticColors-variantBorderHovered: #a6a6a6 !important;
+        /* ==== FOCUS & VARIANT BORDERS ==== */
+        --ms-semanticColors-focusBorder: #ffffff !important;
+        --ms-semanticColors-variantBorder: #484644 !important;
+        --ms-semanticColors-variantBorderHovered: #a6a6a6 !important;
 
-    /* ==== MESSAGE & STATUS COLORS ==== */
-    --ms-semanticColors-messageText: #ffffff !important;
-    --ms-semanticColors-messageLink: #6cb8f5 !important;
-    --ms-semanticColors-messageLinkHovered: #82c8ff !important;
-    --ms-semanticColors-warningText: #ffffff !important;
-    --ms-semanticColors-warningHighlight: #ffc83d !important;
-    --ms-semanticColors-warningBackground: #433519 !important;
-    --ms-semanticColors-severeWarningBackground: #3d2a1f !important;
-    --ms-semanticColors-errorText: #ff6b70 !important;
-    --ms-semanticColors-errorBackground: #442726 !important;
-    --ms-semanticColors-blockingBackground: #442726 !important;
-    --ms-semanticColors-successText: #6bb26b !important;
-    --ms-semanticColors-successBackground: #1f3a1f !important;
+        /* ==== MESSAGE & STATUS COLORS ==== */
+        --ms-semanticColors-messageText: #ffffff !important;
+        --ms-semanticColors-messageLink: #6cb8f5 !important;
+        --ms-semanticColors-messageLinkHovered: #82c8ff !important;
+        --ms-semanticColors-warningText: #ffffff !important;
+        --ms-semanticColors-warningHighlight: #ffc83d !important;
+        --ms-semanticColors-warningBackground: #433519 !important;
+        --ms-semanticColors-severeWarningBackground: #3d2a1f !important;
+        --ms-semanticColors-errorText: #ff6b70 !important;
+        --ms-semanticColors-errorBackground: #442726 !important;
+        --ms-semanticColors-blockingBackground: #442726 !important;
+        --ms-semanticColors-successText: #6bb26b !important;
+        --ms-semanticColors-successBackground: #1f3a1f !important;
 
-    /* ==== ICON COLORS ==== */
-    --ms-semanticColors-infoIcon: #c8c8c8 !important;
-    --ms-semanticColors-errorIcon: #ff6b70 !important;
-    --ms-semanticColors-blockingIcon: #442726 !important;
-    --ms-semanticColors-warningIcon: #c8c8c8 !important;
-    --ms-semanticColors-severeWarningIcon: #ff8c42 !important;
-    --ms-semanticColors-successIcon: #6bb26b !important;
-    --ms-semanticColors-infoBackground: #2d2c2a !important;
+        /* ==== ICON COLORS ==== */
+        --ms-semanticColors-infoIcon: #c8c8c8 !important;
+        --ms-semanticColors-errorIcon: #ff6b70 !important;
+        --ms-semanticColors-blockingIcon: #442726 !important;
+        --ms-semanticColors-warningIcon: #c8c8c8 !important;
+        --ms-semanticColors-severeWarningIcon: #ff8c42 !important;
+        --ms-semanticColors-successIcon: #6bb26b !important;
+        --ms-semanticColors-infoBackground: #2d2c2a !important;
 
-    /* ==== FONT SETTINGS ==== */
-    --ms-fonts-tiny-fontSize: 10px !important;
-    --ms-fonts-tiny-fontWeight: 400 !important;
-    --ms-fonts-xSmall-fontSize: 10px !important;
-    --ms-fonts-xSmall-fontWeight: 400 !important;
-    --ms-fonts-small-fontSize: 12px !important;
-    --ms-fonts-small-fontWeight: 400 !important;
-    --ms-fonts-smallPlus-fontSize: 12px !important;
-    --ms-fonts-smallPlus-fontWeight: 400 !important;
-    --ms-fonts-medium-fontSize: 14px !important;
-    --ms-fonts-medium-fontWeight: 400 !important;
-    --ms-fonts-mediumPlus-fontSize: 16px !important;
-    --ms-fonts-mediumPlus-fontWeight: 400 !important;
-    --ms-fonts-large-fontSize: 18px !important;
-    --ms-fonts-large-fontWeight: 400 !important;
-    --ms-fonts-xLarge-fontSize: 20px !important;
-    --ms-fonts-xLarge-fontWeight: 600 !important;
-    --ms-fonts-xLargePlus-fontSize: 24px !important;
-    --ms-fonts-xLargePlus-fontWeight: 600 !important;
-    --ms-fonts-xxLarge-fontSize: 28px !important;
-    --ms-fonts-xxLarge-fontWeight: 600 !important;
-    --ms-fonts-xxLargePlus-fontSize: 32px !important;
-    --ms-fonts-xxLargePlus-fontWeight: 600 !important;
-    --ms-fonts-superLarge-fontSize: 42px !important;
-    --ms-fonts-superLarge-fontWeight: 600 !important;
-    --ms-fonts-mega-fontSize: 68px !important;
-    --ms-fonts-mega-fontWeight: 600 !important;
+        /* ==== FONT SETTINGS ==== */
+        --ms-fonts-tiny-fontSize: 10px !important;
+        --ms-fonts-tiny-fontWeight: 400 !important;
+        --ms-fonts-xSmall-fontSize: 10px !important;
+        --ms-fonts-xSmall-fontWeight: 400 !important;
+        --ms-fonts-small-fontSize: 12px !important;
+        --ms-fonts-small-fontWeight: 400 !important;
+        --ms-fonts-smallPlus-fontSize: 12px !important;
+        --ms-fonts-smallPlus-fontWeight: 400 !important;
+        --ms-fonts-medium-fontSize: 14px !important;
+        --ms-fonts-medium-fontWeight: 400 !important;
+        --ms-fonts-mediumPlus-fontSize: 16px !important;
+        --ms-fonts-mediumPlus-fontWeight: 400 !important;
+        --ms-fonts-large-fontSize: 18px !important;
+        --ms-fonts-large-fontWeight: 400 !important;
+        --ms-fonts-xLarge-fontSize: 20px !important;
+        --ms-fonts-xLarge-fontWeight: 600 !important;
+        --ms-fonts-xLargePlus-fontSize: 24px !important;
+        --ms-fonts-xLargePlus-fontWeight: 600 !important;
+        --ms-fonts-xxLarge-fontSize: 28px !important;
+        --ms-fonts-xxLarge-fontWeight: 600 !important;
+        --ms-fonts-xxLargePlus-fontSize: 32px !important;
+        --ms-fonts-xxLargePlus-fontWeight: 600 !important;
+        --ms-fonts-superLarge-fontSize: 42px !important;
+        --ms-fonts-superLarge-fontWeight: 600 !important;
+        --ms-fonts-mega-fontSize: 68px !important;
+        --ms-fonts-mega-fontWeight: 600 !important;
 
-    /* ==== EFFECTS ==== */
-    --ms-effects-elevation2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
-    --ms-effects-elevation4: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
-    --ms-effects-elevation8: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
-    --ms-effects-elevation16: 0px 8px 16px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
-    --ms-effects-elevation28: 0px 14px 28.8px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.3) !important;
-    --ms-effects-elevation64: 0px 32px 64px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.3) !important;
-    --ms-effects-roundedCorner2: 2px !important;
-    --ms-effects-roundedCorner4: 4px !important;
-    --ms-effects-roundedCorner6: 6px !important;
-    --ms-effects-roundedCorner8: 8px !important;
-    --ms-effects-roundedCornerCircle: 50% !important;
-}
+        /* ==== EFFECTS ==== */
+        --ms-effects-elevation2: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        --ms-effects-elevation4: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        --ms-effects-elevation8: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        --ms-effects-elevation16: 0px 8px 16px rgba(0, 0, 0, 0.3), 0px 0px 2px rgba(0, 0, 0, 0.2) !important;
+        --ms-effects-elevation28: 0px 14px 28.8px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.3) !important;
+        --ms-effects-elevation64: 0px 32px 64px rgba(0, 0, 0, 0.4), 0px 0px 8px rgba(0, 0, 0, 0.3) !important;
+        --ms-effects-roundedCorner2: 2px !important;
+        --ms-effects-roundedCorner4: 4px !important;
+        --ms-effects-roundedCorner6: 6px !important;
+        --ms-effects-roundedCorner8: 8px !important;
+        --ms-effects-roundedCornerCircle: 50% !important;
+    }
 
-/*
+    /*
 ====================================
 SCROLLBAR CUSTOMIZATION
 ====================================
 */
 
-:root {
-    scrollbar-color: #c8c8c8aa #2d2c2a80 !important;
-}
+    :root {
+        scrollbar-color: #c8c8c8aa #2d2c2a80 !important;
+    }
 
-/*
+    /*
 ====================================
 CUSTOM GRADIENT DEFINITIONS
 ====================================
 */
 
-:root {
-    --gradient: var(--general-color) !important;
-    --panel-separator-zap-gradient1: linear-gradient(to left, var(--general-color), var(--arrowpanel-background)) !important;
-    --panel-separator-zap-gradient2: linear-gradient(to right, var(--general-color) 82%, transparent 96%) !important;
-    --panel-separator-zap-gradient3: linear-gradient(to left, var(--general-color) 90.7%, transparent 90.7%) !important;
-    --panel-separator-zap-gradient4: linear-gradient(to left, var(--general-color), transparent) !important;
-    --button-bgcolor: color-mix(in srgb, var(--general-color) 40%, transparent) !important;
-    --button-hover-bgcolor: color-mix(in srgb, var(--general-color) 55%, transparent) !important;
-    --button-active-bgcolor: color-mix(in srgb, var(--general-color) 75%, transparent) !important;
-}
+    :root {
+        --gradient: var(--general-color) !important;
+        --panel-separator-zap-gradient1: linear-gradient(to left, var(--general-color), var(--arrowpanel-background)) !important;
+        --panel-separator-zap-gradient2: linear-gradient(to right, var(--general-color) 82%, transparent 96%) !important;
+        --panel-separator-zap-gradient3: linear-gradient(to left, var(--general-color) 90.7%, transparent 90.7%) !important;
+        --panel-separator-zap-gradient4: linear-gradient(to left, var(--general-color), transparent) !important;
+        --button-bgcolor: color-mix(in srgb, var(--general-color) 40%, transparent) !important;
+        --button-hover-bgcolor: color-mix(in srgb, var(--general-color) 55%, transparent) !important;
+        --button-active-bgcolor: color-mix(in srgb, var(--general-color) 75%, transparent) !important;
+    }
 
-/*
+    /*
 ====================================
 LAYOUT & UI CUSTOMIZATION
 ====================================
 */
 
-:root {
-    --tab-height-personal: 30px !important;
-    --toolbar-height-personal: 38px !important;
-    --my-vertical-tabs-width: 51px !important;
-    --menu-label: "Menu" !important;
-    --padding-left-tab: 74px !important;
-    --logo-wordmark-visibility: 1 !important;
-    --logo-wordmark-display: flex !important;
-    --searchbar-on-off: 1 !important;
-    --searchbar-display: flex !important;
-    --orientation-display: block !important;
-    --newtab-pinnedsites-background: color-mix(in srgb, black 10%, transparent) !important;
-    --newtab-pinnedsites-position-top: start !important;
-    --selected-text-background: var(--general-color) !important;
-    --personal-blur: blur(16px) !important;
-}
+    :root {
+        --tab-height-personal: 30px !important;
+        --toolbar-height-personal: 38px !important;
+        --my-vertical-tabs-width: 51px !important;
+        --menu-label: "Menu" !important;
+        --padding-left-tab: 74px !important;
+        --logo-wordmark-visibility: 1 !important;
+        --logo-wordmark-display: flex !important;
+        --searchbar-on-off: 1 !important;
+        --searchbar-display: flex !important;
+        --orientation-display: block !important;
+        --newtab-pinnedsites-background: color-mix(in srgb, black 10%, transparent) !important;
+        --newtab-pinnedsites-position-top: start !important;
+        --selected-text-background: var(--general-color) !important;
+        --personal-blur: blur(16px) !important;
+    }
 
-/*
+    /*
 ====================================
 WALLPAPER & IMAGE SETTINGS
 ====================================
 */
 
-:root {
-    --lwt-main-image: url("../newtab/wallpaper-dark1.png") !important;
-    --lwt-private-image: url("../newtab/private-dark.png") !important;
-    --brightness-wallpaper: brightness(50%) !important;
-}
+    :root {
+        --lwt-main-image: url("../newtab/wallpaper-dark1.png") !important;
+        --lwt-private-image: url("../newtab/private-dark.png") !important;
+        --brightness-wallpaper: brightness(50%) !important;
+    }
 
-/*
+    /*
 ====================================
 CUSTOM COLOR PALETTE
 ====================================
 */
 
-:root {
-    /* ==== BASE COLORS ==== */
-    --fuchsia: #fa1e4e !important;
-    --blue: #4c4cff !important;
-    --aqua: #00bfff !important;
-    --cyan: #00ffff !important;
-    --lightblue: #45a1ff !important;
-    --pink: #FF0F7E !important;
-    --catppuccino: #f38ba8 !important;
-    --purple: #8d35e2 !important;
-    --green: #05b694 !important;
-    --aquamarine: #00ffa2 !important;
-    --lightgreen: #36ff4e !important;
-    --yellowbrown: #febd60 !important;
-    --swampautumn: #fdf008 !important;
-    --gray: #bfb6d2 !important;
-    --orange: #ff6c22 !important;
-    --yellow: #ffe20f !important;
-    --red: #ff3230 !important;
-    --navyblue: #0050cE !important;
-    --poison: #cb17cf !important;
+    :root {
+        /* ==== BASE COLORS ==== */
+        --fuchsia: #fa1e4e !important;
+        --blue: #4c4cff !important;
+        --aqua: #00bfff !important;
+        --cyan: #00ffff !important;
+        --lightblue: #45a1ff !important;
+        --pink: #FF0F7E !important;
+        --catppuccino: #f38ba8 !important;
+        --purple: #8d35e2 !important;
+        --green: #05b694 !important;
+        --aquamarine: #00ffa2 !important;
+        --lightgreen: #36ff4e !important;
+        --yellowbrown: #febd60 !important;
+        --swampautumn: #fdf008 !important;
+        --gray: #bfb6d2 !important;
+        --orange: #ff6c22 !important;
+        --yellow: #ffe20f !important;
+        --red: #ff3230 !important;
+        --navyblue: #0050cE !important;
+        --poison: #cb17cf !important;
 
-    /* ==== GENERAL COLOR ==== */
-    --lwt-toolbarbutton-icon-fill-attention: #ffffff !important;
-    --general-color: var(--lwt-toolbarbutton-icon-fill-attention, var(--fuchsia)) !important;
+        /* ==== GENERAL COLOR ==== */
+        --lwt-toolbarbutton-icon-fill-attention: #ffffff !important;
+        --general-color: var(--lwt-toolbarbutton-icon-fill-attention, var(--fuchsia)) !important;
 
-    /* ==== DARK THEME COMBINATIONS ==== */
-    --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;
-    --general-color-dark1: var(--fuchsia) !important;
-    --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;
-    --general-color-dark2: var(--purple) !important;
-    --wallpaper-dark3: url("../newtab/wallpaper-dark3.png") !important;
-    --general-color-dark3: var(--blue) !important;
-    --wallpaper-dark4: url("../newtab/wallpaper-dark4.png") !important;
-    --general-color-dark4: var(--swampautumn) !important;
-    --wallpaper-dark5: url("../newtab/wallpaper-dark5.png") !important;
-    --general-color-dark5: var(--gray) !important;
+        /* ==== DARK THEME COMBINATIONS ==== */
+        --wallpaper-dark1: url("../newtab/wallpaper-dark1.png") !important;
+        --general-color-dark1: var(--fuchsia) !important;
+        --wallpaper-dark2: url("../newtab/wallpaper-dark2.png") !important;
+        --general-color-dark2: var(--purple) !important;
+        --wallpaper-dark3: url("../newtab/wallpaper-dark3.png") !important;
+        --general-color-dark3: var(--blue) !important;
+        --wallpaper-dark4: url("../newtab/wallpaper-dark4.png") !important;
+        --general-color-dark4: var(--swampautumn) !important;
+        --wallpaper-dark5: url("../newtab/wallpaper-dark5.png") !important;
+        --general-color-dark5: var(--gray) !important;
 
-    /* ==== LIGHT THEME COMBINATIONS ==== */
-    --wallpaper-light1: url("../newtab/wallpaper-light1.png") !important;
-    --general-color-light1: var(--fuchsia) !important;
-    --wallpaper-light2: url("../newtab/wallpaper-light2.png") !important;
-    --general-color-light2: var(--purple) !important;
-    --wallpaper-light3: url("../newtab/wallpaper-light3.png") !important;
-    --general-color-light3: var(--blue) !important;
-    --wallpaper-light4: url("../newtab/wallpaper-light4.png") !important;
-    --general-color-light4: var(--fuchsia) !important;
-    --wallpaper-light5: url("../newtab/wallpaper-light5.png") !important;
-    --general-color-light5: var(--lightgreen) !important;
-}
+        /* ==== LIGHT THEME COMBINATIONS ==== */
+        --wallpaper-light1: url("../newtab/wallpaper-light1.png") !important;
+        --general-color-light1: var(--fuchsia) !important;
+        --wallpaper-light2: url("../newtab/wallpaper-light2.png") !important;
+        --general-color-light2: var(--purple) !important;
+        --wallpaper-light3: url("../newtab/wallpaper-light3.png") !important;
+        --general-color-light3: var(--blue) !important;
+        --wallpaper-light4: url("../newtab/wallpaper-light4.png") !important;
+        --general-color-light4: var(--fuchsia) !important;
+        --wallpaper-light5: url("../newtab/wallpaper-light5.png") !important;
+        --general-color-light5: var(--lightgreen) !important;
+    }
 
 
-/* ==================================== */
-/* CUSTOM OVERIDES */
-/* ==================================== */
+    /* ==================================== */
+    /* CUSTOM OVERIDES */
+    /* ==================================== */
 
-/* Div contains nested span element(s) */
-div > span,
-span {
-    color: var(--general-color) !important;
-    stroke: var(--general-color) !important;
-    fill: var(--general-color) !important;
-}
+    /* Div contains nested span element(s) */
+    div>span,
+    span {
+        color: var(--general-color) !important;
+        stroke: var(--general-color) !important;
+        fill: var(--general-color) !important;
+    }
 
-img[alt="Folder"],
-img[alt="zip"],
-img[src*="genericfile.svg"],
-img[src*="video.svg"],
-img[src*="audio.svg"],
-img[src*="photo.svg"],
-i[data-icon-name*="folderCover"] {
-    filter: brightness(0.275) grayscale(1) !important;
-}
+    img[alt="Folder"],
+    img[alt="zip"],
+    img[src*="genericfile.svg"],
+    img[src*="video.svg"],
+    img[src*="audio.svg"],
+    img[src*="photo.svg"],
+    i[data-icon-name*="folderCover"] {
+        filter: brightness(0.275) grayscale(1) !important;
+    }
 
-div[data-automationid="commandbar"] div div div {
-    background: var(--ms-semanticColors-bodyFrameBackground) !important;
+    div[data-automationid="commandbar"] div div div {
+        background: var(--ms-semanticColors-bodyFrameBackground) !important;
 
+    }
 }
