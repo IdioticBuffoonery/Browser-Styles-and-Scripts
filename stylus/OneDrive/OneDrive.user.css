@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           OneDrive - Dark Mode Variables
 @namespace      github.com/IdioticBuffoonery/Browser-Styles-and-Scripts/tree/main/stylus/onedrive
-@version        2.1.0
+@version        2.1.1
 @description    Dark Mode for OneDrive - Using OneDrive's Variables first, then manually overriding if needed
 @author         HBIDamian
 @license        Apache-2.0
@@ -1283,18 +1283,6 @@ CUSTOM COLOR PALETTE
 	button[class*="ms-"] {
 		color: var(--colorNeutralForeground1) !important;
 	}
-
-	div[class*="ms-"]:not([class*="icon"]):not([class*="Icon"]) {
-		background-color: inherit !important;
-	}
-
-	/* Force background on main content areas
-	main,
-	[role="main"],
-	.od-Files-main,
-	.od-ItemPane {
-		background-color: var(--colorNeutralBackground1) !important;
-	} */
 
 	/* Text inputs everywhere */
 	input[type="text"],
